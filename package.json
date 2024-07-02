@@ -1,0 +1,15 @@
+{
+  "name": "eleventy-site",
+  "version": "1.0.0",
+  "description": "Ibrahim Al-Alali is a Java and Kotlin software developer",
+  "main": "index.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ibrahim Al-Alali",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
