@@ -8,35 +8,23 @@ layout: main_layout.njk
 
 I'm an Android app developer
 
+## My Apps
+<div class="app-list">
 
-## Apps
+{% app "Hide Persistent Notification", "hide+persistent+notification+icon.png", "/subsites/hide_persistent_notification", "com.iboalali.hidepersistentnotifications" %}
+Choose a persistent notification to hide, and keep it hidden as long as this app is installed.
+{% endapp %}
 
-### [Hide Persistent Notification](/subsites/hide_persistent_notification)
+{% app "Billboard", "billboard+icon.png", "", "com.iboalali.billboard" %}
+This app will help you to show large text on the screen, and makes it as big as possible without cutting of the text.
+{% endapp %}
 
+{% app "Basic Root Checker", "basic+root+checker+icon.png", "", "com.iboalali.basicrootchecker" %}
+You're not sure that your device is rooted (has root access)? use Basic Root Checker to find out.
+{% endapp %}
 
-Choose a persistent notification to hide, and keep it hidden as long as this app is installed
+{% app "Droppin (⚒ Work in Progress)", "droppin+icon.png", "", "com.iboalali.droppins" %}
+Drag and drop content into the app to access it later.
+{% endapp %}
 
-{% appIcon "Hide Persistent Notification" "hide+persistent+notification+icon.png" %} {% playStoreBadge "Hide Persistent Notification" "com.iboalali.hidepersistentnotifications" %}
-
-
-### Billboard
-
-{% appIcon "Billboard" "billboard+icon.png" %} {% playStoreBadge "Billboard" "com.iboalali.billboard" %}
-
-### Basic Root Checker
-
-{% appIcon "Basic Root Checker" "basic+root+checker+icon.png" %}
-
-{% playStoreBadge "Basic Root Checker" "com.iboalali.basicrootchecker" %}
-
-### Droppin (⚒ Work in Progress)
-
-{% appIcon "Droppin" "droppin+icon.png" %}
-
-{% playStoreBadge "Droppin" "com.iboalali.droppins" %}
-
-### Hide "using battery" Notification (☠ deprecated)
-
-{% appIcon "Hide 'using battery' Notification" "Hide+using+battery+notificaion+icon.png" %}
-
-{% playStoreBadge "Hide 'using battery' Notification" "com.iboalali.sysnotifsnooze" %}
+</div>

@@ -143,6 +143,46 @@ a.btn-container img:hover {
     gap: 10px 20px;
 }
 
+/* App list styles */
+.app-list {
+    margin-top: 40px;
+}
+
+.app-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.app-item .app-icon {
+    width: 128px;
+    height: 128px;
+    margin-left: 0;
+    flex-shrink: 0;
+}
+
+.app-item-details {
+    flex-grow: 1;
+}
+
+.app-item-details h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.app-item-details p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.app-item-details .btn-container img {
+    height: 45px;
+    margin-right: 0;
+    border-width: 2px;
+}
+
+
 /* Smaller desktop and tablet screens */
 
 @media screen and (max-width: 800px) {
@@ -194,6 +234,11 @@ a.btn-container img:hover {
         line-height: 30px;
     }
 
+    .app-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /* Dark mode support */
