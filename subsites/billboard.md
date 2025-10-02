@@ -9,7 +9,7 @@ Can be used in meeting to vote on a subject with a number or a text.
 
 
 ## Changelog
-* ### Version 2.1.1
+### Version 2.1.1
 * ➕ Support for Android 16
 * ➖ Remove support for Android 5 and 5.1
 
