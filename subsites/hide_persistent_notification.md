@@ -3,8 +3,33 @@ layout: main_layout.njk
 ---
 
 # Hide Persistent Notification
+Choose a persistent notification to hide, and keep it hidden as long as this app is installed.
+
+✨✨ New ✨✨
+- See the history of hidden notification
+- Completely new design
+
 
 ## Changelog
+### Version 1.8.1:
+* ➕ Support for Android 16
+* ➕ Added German translation
+* 🔨 Fixed spelling
+
+### Version 1.7:
+* ➕ Support for Android 15
+
+### Version 1.6:
+* ➕ Support for Android 13
+* ➕ Option to include all data from the notification in the logs, even if it might be sensitive
+* 🔨 Fixed a bug were a Notification will not be hidden after selecting it
+* ✨ Reduced app download size in half
+
+### Version 1.5:
+* ✨ More update to the design, closer to Material You, but no dynamic colors (yet 😉)
+* ➕ Better handling of showing hidden notification, no restart needed
+* ➕ History of hiding notification has been added, accessible via Settings
+
 ### Version 1.4: 
 * ✨ Updated the design of the app to be more modern
 * 🔧 Updated logic to better handle the notification
