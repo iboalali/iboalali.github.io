@@ -182,6 +182,26 @@ a.btn-container img:hover {
     border-width: 2px;
 }
 
+.icon-link {
+  display: flex;         
+  align-items: center;            /* Vertically centers the icon and text */
+  
+  text-decoration: none;          /* Removes the default underline */
+  color: #333;                  /* Sets a specific text color (or 'inherit') */
+}
+
+.icon-link:hover {
+  text-decoration: underline;     /* Adds underline back on hover */
+  color: #007bff;               /* Changes color on hover */
+}
+
+.small-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
 
 /* Smaller desktop and tablet screens */
 
