@@ -64,5 +64,5 @@ This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 ### Version 1.0:
 * ➕ Basic Root Checker comes in 3 languages: English, German and Arabic
 
-## Privacy Policy
+<h2 id="privacy-policy">Privacy Policy</h2>
 The app _Basic Root Checker_ does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.
