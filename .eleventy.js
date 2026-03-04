@@ -37,6 +37,11 @@ module.exports = function (eleventyConfig) {
         </div>`;
     });
 
+    // Heading shortcode with an anchor id for direct linking
+    eleventyConfig.addShortcode("heading", function (text, id, level = 2) {
+        return `<h${level} id="${id}">${text}</h${level}>`;
+    });
+
     eleventyConfig.addShortcode("socials", function (name, link, icon) {
         return `<a href="${link}" class="icon-link">
                   <img src="/media/${icon}" alt="${name}" class="small-icon">

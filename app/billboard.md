@@ -49,5 +49,5 @@ Can be used in meeting to vote on a subject with a number or a text.
 * ➕ Added keyboard type options
 * ➕ Added saving orientation and keyboard options.
 
-<h2 id="privacy-policy">Privacy Policy</h2>
+{% heading "Privacy Policy", "privacy-policy" %}
 The app _Billboard_ does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.

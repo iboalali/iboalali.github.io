@@ -72,7 +72,7 @@ Choose a persistent notification to hide, and keep it hidden as long as this app
 ### Version 1.0.0:
 * ✨ Initial Release
 
-<h2 id="privacy-policy">Privacy Policy</h2>
+{% heading "Privacy Policy", "privacy-policy" %}
 The app *Hide Persistent Notifications* does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.
 
 The app *Hide Persistent Notifications* does **need** access to the notification on your device, but it does not do anything with the notification except for displaying it to you in the app, for you to choose if you want to hide it.
