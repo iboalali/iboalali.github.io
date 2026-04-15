@@ -157,6 +157,18 @@ nav ul li a:hover {
 	text-decoration: none;
 }
 
+.nav-current {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    background: var(--accent);
+    border-radius: 14px;
+    color: var(--text-on-accent);
+    padding: 0 20px;
+    margin-bottom: 5px;
+    cursor: default;
+}
+
 a.btn-container img {
     margin-right: 15px;
 	height: 60px;
@@ -502,7 +514,8 @@ a.btn-container img:hover {
         margin: 0 2px;
     }
 
-    nav ul li a {
+    nav ul li a,
+    .nav-current {
         font-size: 16px;
         height: 30px;
         line-height: 30px;

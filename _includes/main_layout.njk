@@ -46,13 +46,13 @@ title: Ibrahim Al-Alali
         <nav>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    {% if page.url == "/" %}<span class="nav-current">Home</span>{% else %}<a href="/">Home</a>{% endif %}
                 </li>
                 <li>
-                    <a href="/about">About</a>
+                    {% if page.url == "/about/" %}<span class="nav-current">About</span>{% else %}<a href="/about">About</a>{% endif %}
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    {% if page.url == "/contact/" %}<span class="nav-current">Contact</span>{% else %}<a href="/contact">Contact</a>{% endif %}
                 </li>
             </ul>
         </nav>
