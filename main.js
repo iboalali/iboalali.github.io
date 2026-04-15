@@ -6,3 +6,32 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         linkEl.setAttribute('rel', 'nofollow')
     }
 })
+
+// Theme toggle
+;(function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    function isDark() {
+        var explicit = document.documentElement.getAttribute('data-theme');
+        if (explicit) return explicit === 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function updateIcon() {
+        btn.textContent = isDark() ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+
+    btn.addEventListener('click', function () {
+        var next = isDark() ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcon();
+    });
+
+    updateIcon();
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+        if (!localStorage.getItem('theme')) updateIcon();
+    });
+})();

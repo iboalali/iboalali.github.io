@@ -14,6 +14,12 @@ title: Ibrahim Al-Alali
         <meta name="language" content="English">
         <meta name="supported-color-schemes" content="dark light">
         <link rel="stylesheet" type="text/css" href="/media/styles.css">
+        <script>
+            (function() {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            })();
+        </script>
         <link rel="icon" type="image/png" href="/media/icon_x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="/media/icon_x64.png" sizes="64x64">
         <link rel="icon" type="image/png" href="/media/icon_x128.png" sizes="128x128">
@@ -54,6 +60,8 @@ title: Ibrahim Al-Alali
         <main>
             {{ content | safe }}
         </main>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
 
         <!-- Main script -->
         <script src="/main.js" ></script>
