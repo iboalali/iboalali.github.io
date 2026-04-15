@@ -19,12 +19,22 @@ There are no test or lint scripts configured.
 ## Architecture
 
 - **Static site generator:** Eleventy with Nunjucks templates and Markdown content
-- **Single layout:** `_includes/main_layout.njk` — base HTML template used by all pages
+- **Single layout:** `_includes/main_layout.njk` — base HTML template used by all pages, includes nav with active page highlighting via `page.url`
 - **Content pages:** Top-level `.md` files (`index.md`, `about.md`, `contact.md`, `404.md`)
 - **App detail pages:** `app/*.md` — each Android app has its own page with changelog and privacy policy
-- **Styling:** Single stylesheet at `media/styles.css` with CSS-based light/dark theme (`prefers-color-scheme`)
-- **Client JS:** `main.js` — minimal vanilla JS (opens external links in new tabs)
+- **Styling:** Single stylesheet at `media/styles.css`
+- **Client JS:** `main.js` — opens external links in new tabs, handles dark/light theme toggle with localStorage persistence
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)
+- **Ignored by Eleventy:** `CLAUDE.md` is listed in `.eleventyignore` to prevent template processing of `{% %}` examples
+
+## Theming
+
+CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. Dark mode is supported three ways:
+1. **OS preference** — `@media (prefers-color-scheme: dark)` overrides variables when no user choice is stored
+2. **Explicit toggle** — `[data-theme="dark"]` / `[data-theme="light"]` on `<html>`, set by the toggle button
+3. **Persistence** — `localStorage.getItem('theme')` is applied in an inline `<script>` in `<head>` before paint to prevent flash
+
+Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Light accent is `#B37FDF` (purple), dark accent is `#9adefe` (blue). When adding new themed elements, use these variables rather than hardcoded colors.
 
 ## Custom Shortcodes (defined in .eleventy.js)
 
