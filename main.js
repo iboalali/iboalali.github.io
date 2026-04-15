@@ -20,6 +20,13 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
 
     function updateIcon() {
         btn.textContent = isDark() ? '\u2600\uFE0F' : '\uD83C\uDF19';
+
+        var ghIcon = document.querySelector('.small-icon[alt="Github"]');
+        if (ghIcon) {
+            ghIcon.src = isDark()
+                ? '/media/github_icon_white.png'
+                : '/media/github_icon.png';
+        }
     }
 
     btn.addEventListener('click', function () {
