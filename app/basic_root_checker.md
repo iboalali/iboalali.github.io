@@ -14,8 +14,10 @@ This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 
 ## Changelog
-### Version 1.14:
+### Version 2.0:
+* ➕ Complete rewrite with Jetpack Compose
 * ➕ Added support for changing the apps language independent of the systems (Android 15 and up)
+* 🛠️ Dropped support for Android 5.0 and 5.1, new minimum is 6.0
 * 🛠️ Dependency updates
 
 ### Version 1.13:
