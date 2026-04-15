@@ -2,10 +2,23 @@
 layout: main_layout.njk
 ---
 
+<div class="about-hero">
+
 {% profilePhoto %}
 
-I'm an Android app developer. I work for [Blueworld GmbH](https://www.blueworld-gmbh.de/) and develop a B2B telematic application. But I also work on my own apps in my free time.
+<h1 class="about-name">Ibrahim Al-Alali</h1>
+<span class="about-role">Android Developer</span>
 
-You can see my apps [here](/) or in the [PlayStore](https://play.google.com/store/apps/dev?id=7518575784939651133)
+</div>
 
-[Get in touch with me](/contact)
+<div class="about-bio">
+
+I work for [Blueworld GmbH](https://www.blueworld-gmbh.de/) developing a B2B telematic application, and I build my own apps in my free time.
+
+</div>
+
+<div class="about-actions">
+<a href="/" class="about-btn">My Apps</a>
+<a href="https://play.google.com/store/apps/dev?id=7518575784939651133" class="about-btn">Play Store</a>
+<a href="/contact" class="about-btn about-btn-primary">Get in Touch</a>
+</div>
