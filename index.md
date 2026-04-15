@@ -2,13 +2,17 @@
 layout: main_layout.njk
 ---
 
+<div class="home-hero">
+
 {% profilePhoto %}
 
-# Hi, I'm Ibrahim Al-Alali
+<h1 class="home-name">Hi, I'm Ibrahim Al-Alali</h1>
+<span class="home-subtitle">Android App Developer</span>
 
-I'm an Android app developer
+</div>
 
-## My Apps
+<h2 class="home-section-title">My Apps</h2>
+
 <div class="app-list">
 
 {% app "Hide Persistent Notification", "hide+persistent+notification+icon.png", "/app/hide_persistent_notification", "com.iboalali.hidepersistentnotifications" %}
