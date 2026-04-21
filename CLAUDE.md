@@ -19,9 +19,9 @@ There are no test or lint scripts configured.
 ## Architecture
 
 - **Static site generator:** Eleventy with Nunjucks templates and Markdown content
-- **Single layout:** `_includes/main_layout.njk` — base HTML template used by all pages, includes nav with active page highlighting via `page.url`
+- **Layouts:** `_includes/main_layout.njk` is the base HTML template with nav. `_includes/app_layout.njk` chains onto it for app detail pages, rendering a hero (icon, name, tagline, Play Store CTA) from frontmatter before the markdown body.
 - **Content pages:** Top-level `.md` files (`index.md`, `about.md`, `contact.md`, `404.md`)
-- **App detail pages:** `app/*.md` — each Android app has its own page with changelog and privacy policy
+- **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Body holds the What's New callout, changelog, and privacy policy.
 - **Styling:** Single stylesheet at `media/styles.css`
 - **Client JS:** `main.js` — opens external links in new tabs, handles dark/light theme toggle with localStorage persistence
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)
@@ -41,6 +41,8 @@ Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Ligh
 - `{% profilePhoto %}` — Gravatar profile image
 - `{% app name, icon, link, packageName %}...{% endapp %}` — paired shortcode for app cards with Play Store badges
 - `{% socials name, link, icon %}` — social media link with icon
+- `{% heading text, id, level %}` — heading with an explicit id for deep-linking (level defaults to 2)
+- `{% whatsNew label %}...{% endwhatsNew %}` — paired shortcode that renders its markdown body inside an accent-bordered "What's New" callout card (label defaults to "What's New")
 
 ## Deployment
 
