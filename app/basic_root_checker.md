@@ -1,9 +1,11 @@
 ---
-layout: main_layout.njk
+layout: app_layout.njk
+title: Basic Root Checker — Ibrahim Al-Alali
+appName: Basic Root Checker
+icon: basic+root+checker+icon.png
+packageName: com.iboalali.basicrootchecker
+tagline: Check whether your device has root access - quick, simple, no-frills.
 ---
-
-# Basic Root Checker
-You're not sure that your device is rooted (has root access)? use _Basic Root Checker_ to find out.
 
 _Basic Root Checker_ does **NOT** root your device. It will only show you if your device has root access (or is rooted).
 
@@ -11,6 +13,10 @@ This app *requires* ROOT, use it at your own risk.
 This app does **NOT** collect any data or personal information.
 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
+
+{% whatsNew %}
+Complete rewrite with modern technologies
+{% endwhatsNew %}
 
 
 ## Changelog
@@ -67,4 +73,13 @@ This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 * ➕ Basic Root Checker comes in 3 languages: English, German and Arabic
 
 {% heading "Privacy Policy", "privacy-policy" %}
-The app _Basic Root Checker_ does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.
+
+The app _Basic Root Checker_ does **not** collect any personal information. The app itself works fully offline; anonymous usage telemetry is sent when a connection is available.
+
+A small amount of analytics is included in the app. **No personal information** (PII) is included in this telemetry. See [What data is collected by TelemetryDeck SDK for apps?](https://telemetrydeck.com/docs/guides/privacy-faq/#what-data-is-collected-by-telemetrydeck-sdk-for-apps%3F) for the defaults. In addition, the developer records:
+
+* Screen navigation within the app
+* Root check started
+* Root check completed (with result)
+* Privacy policy opened
+* Other Apps section opened
