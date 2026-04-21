@@ -8,7 +8,6 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
 })
 
 // Theme toggle
-// TODO: expand toggle to include an "auto" mode that follows prefers-color-scheme
 ;(function () {
     var btn = document.getElementById('theme-toggle');
     if (!btn) return;
