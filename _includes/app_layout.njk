@@ -1,0 +1,21 @@
+---
+layout: main_layout.njk
+---
+<a href="/" class="app-back-link">&larr; All apps</a>
+
+<header class="app-hero">
+    <img src="/media/{{ icon }}" alt="{{ appName }} app icon" class="app-hero-icon">
+    <h1 class="app-hero-name">{{ appName }}</h1>
+    {% if tagline %}
+    <p class="app-hero-tagline">{{ tagline }}</p>
+    {% endif %}
+    {% if packageName %}
+    <a href="https://play.google.com/store/apps/details?id={{ packageName }}&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1" target="_blank" class="btn-container app-hero-cta">
+        <img src="/media/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Download {{ appName }} from the Play Store" />
+    </a>
+    {% endif %}
+</header>
+
+<div class="app-content">
+    {{ content | safe }}
+</div>

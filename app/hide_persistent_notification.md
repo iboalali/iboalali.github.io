@@ -1,13 +1,16 @@
 ---
-layout: main_layout.njk
+layout: app_layout.njk
+title: Hide Persistent Notification — Ibrahim Al-Alali
+appName: Hide Persistent Notification
+icon: hide+persistent+notification+icon.png
+packageName: com.iboalali.hidepersistentnotifications
+tagline: Pick a persistent notification and keep it hidden for as long as the app is installed.
 ---
 
-# Hide Persistent Notification
-Choose a persistent notification to hide, and keep it hidden as long as this app is installed.
-
-✨✨ New ✨✨
+{% whatsNew %}
 - See the history of hidden notification
 - Completely new design
+{% endwhatsNew %}
 
 
 ## Changelog
@@ -73,6 +76,7 @@ Choose a persistent notification to hide, and keep it hidden as long as this app
 * ✨ Initial Release
 
 {% heading "Privacy Policy", "privacy-policy" %}
+
 The app *Hide Persistent Notifications* does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.
 
 The app *Hide Persistent Notifications* does **need** access to the notification on your device, but it does not do anything with the notification except for displaying it to you in the app, for you to choose if you want to hide it.

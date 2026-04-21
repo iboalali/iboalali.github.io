@@ -33,3 +33,7 @@ The static site is generated into the `_site/` directory.
 ## Deployment
 
 Pushing to `main` automatically builds and deploys to GitHub Pages via the GitHub Actions workflow.
+
+## TODO
+
+- Expand the light/dark mode toggle to include an "auto" mode that follows `prefers-color-scheme`.

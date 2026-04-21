@@ -1,9 +1,11 @@
 ---
-layout: main_layout.njk
+layout: app_layout.njk
+title: Billboard — Ibrahim Al-Alali
+appName: Billboard
+icon: billboard+icon.png
+packageName: com.iboalali.billboard
+tagline: Show large text on screen, sized to fit without ever cutting off.
 ---
-
-# Billboard
-This app will help you to show large text on the screen, and makes it as big as possible without cutting of the text.
 
 Can be used in meeting to vote on a subject with a number or a text.
 
@@ -50,4 +52,5 @@ Can be used in meeting to vote on a subject with a number or a text.
 * ➕ Added saving orientation and keyboard options.
 
 {% heading "Privacy Policy", "privacy-policy" %}
+
 The app _Billboard_ does **not** collect any personal information, and does **not** need an internet connection to function, and it does not contain any analytic code.

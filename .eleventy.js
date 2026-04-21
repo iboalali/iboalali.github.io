@@ -1,3 +1,6 @@
+const markdownIt = require("markdown-it");
+const md = markdownIt({ html: true });
+
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
 
@@ -40,6 +43,12 @@ module.exports = function (eleventyConfig) {
     // Heading shortcode with an anchor id for direct linking
     eleventyConfig.addShortcode("heading", function (text, id, level = 2) {
         return `<h${level} id="${id}">${text}</h${level}>`;
+    });
+
+    // What's New callout — renders its markdown body inside an accent card
+    eleventyConfig.addPairedShortcode("whatsNew", function (content, label = "What's New") {
+        const body = md.render(content.trim()).replace(/\n+/g, "");
+        return `<aside class="whats-new"><span class="whats-new-label">${label}</span>${body}</aside>`;
     });
 
     eleventyConfig.addShortcode("socials", function (name, link, icon) {
