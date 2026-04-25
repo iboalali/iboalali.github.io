@@ -29,9 +29,11 @@ title: Ibrahim Al-Alali
         document.createElement('nav'); 
         </script>
         <![endif]-->
-        <!-- Analytics 
-        <script defer data-domain="corbin.io" src="https://plausible.io/js/plausible.js"></script>
-        -->
+        <!-- Analytics: TelemetryDeck -->
+        <script
+            src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+            data-app-id="2D083718-D442-4A8E-B797-68F24ADD0C7E"
+        ></script>
         <!-- Open Graph card -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content="{{ title }}" />
@@ -53,6 +55,9 @@ title: Ibrahim Al-Alali
                 </li>
                 <li>
                     {% if page.url == "/contact/" %}<span class="nav-current">Contact</span>{% else %}<a href="/contact">Contact</a>{% endif %}
+                </li>
+                <li>
+                    {% if page.url == "/privacy/" %}<span class="nav-current">Privacy</span>{% else %}<a href="/privacy">Privacy</a>{% endif %}
                 </li>
             </ul>
         </nav>
