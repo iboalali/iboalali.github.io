@@ -23,11 +23,13 @@ module.exports = function (eleventyConfig) {
     });
 
     // App listing paired shortcode to display an app with its details
-    eleventyConfig.addPairedShortcode("app", function (description, name, icon, link, packageName) {
+    eleventyConfig.addPairedShortcode("app", function (description, name, icon, link, packageName, repoUrl) {
         // Create a link for the title if a URL is provided
         const title = link ? `<a href="${link}">${name}</a>` : name;
         // Create the Play Store button if a package name is provided
         const playStoreButton = packageName ? `<a href="https://play.google.com/store/apps/details?id=${packageName}&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1" target="_blank" class="btn-container"><img src="/media/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Download ${name} from the Play Store" /></a>` : '';
+        // Create the GitHub button if a repo URL is provided
+        const githubButton = repoUrl ? `<a href="${repoUrl}" target="_blank" rel="noopener" class="btn-container"><img src="/media/github_badge.svg" alt="View ${name} source on GitHub" /></a>` : '';
 
         // Return the HTML structure for an app item
         return `<div class="app-item">
@@ -35,7 +37,7 @@ module.exports = function (eleventyConfig) {
             <div class="app-item-details">
                 <h3>${title}</h3>
                 <p>${description.trim()}</p>
-                ${playStoreButton}
+                <div class="app-item-ctas">${playStoreButton}${githubButton}</div>
             </div>
         </div>`;
     });
@@ -49,6 +51,12 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPairedShortcode("whatsNew", function (content, label = "What's New") {
         const body = md.render(content.trim()).replace(/\n+/g, "");
         return `<aside class="whats-new"><span class="whats-new-label">${label}</span>${body}</aside>`;
+    });
+
+    // GitHub badge paired shortcode — body is the alt / screen-reader text
+    eleventyConfig.addPairedShortcode("github", function (content, link) {
+        const alt = content.trim();
+        return `<a href="${link}" class="btn-container" target="_blank" rel="noopener"><img src="/media/github_badge.svg" alt="${alt}" /></a>`;
     });
 
     eleventyConfig.addShortcode("socials", function (name, link, icon) {

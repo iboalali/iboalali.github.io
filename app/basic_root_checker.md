@@ -4,6 +4,7 @@ title: Basic Root Checker — Ibrahim Al-Alali
 appName: Basic Root Checker
 icon: basic+root+checker+icon.png
 packageName: com.iboalali.basicrootchecker
+repoUrl: https://github.com/iboalali/Basic-Root-Checker
 tagline: Check whether your device has root access - quick, simple, no-frills.
 ---
 
