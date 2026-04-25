@@ -9,11 +9,18 @@ layout: main_layout.njk
     {% if tagline %}
     <p class="app-hero-tagline">{{ tagline }}</p>
     {% endif %}
+    <div class="app-hero-ctas">
     {% if packageName %}
     <a href="https://play.google.com/store/apps/details?id={{ packageName }}&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1" target="_blank" class="btn-container app-hero-cta">
         <img src="/media/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Download {{ appName }} from the Play Store" />
     </a>
     {% endif %}
+    {% if repoUrl %}
+    <a href="{{ repoUrl }}" target="_blank" rel="noopener" class="btn-container app-hero-cta">
+        <img src="/media/github_badge.svg" alt="View {{ appName }} source on GitHub" />
+    </a>
+    {% endif %}
+    </div>
 </header>
 
 <div class="app-content">
