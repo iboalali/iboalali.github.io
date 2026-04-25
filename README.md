@@ -37,3 +37,5 @@ Pushing to `main` automatically builds and deploys to GitHub Pages via the GitHu
 ## TODO
 
 - Expand the light/dark mode toggle to include an "auto" mode that follows `prefers-color-scheme`.
+- GitHub badge
+- Auto-updating changelogs
