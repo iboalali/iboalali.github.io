@@ -761,6 +761,31 @@ a.btn-container img:hover {
     box-shadow: 0 4px 16px var(--shadow-accent);
 }
 
+.theme-toggle-tooltip {
+    position: fixed;
+    bottom: 82px;
+    right: 24px;
+    z-index: 100;
+    background: var(--bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.theme-toggle-tooltip.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Smaller desktop and tablet screens */
 
 @media screen and (max-width: 800px) {
@@ -882,6 +907,11 @@ a.btn-container img:hover {
         width: 42px;
         height: 42px;
         font-size: 18px;
+    }
+
+    .theme-toggle-tooltip {
+        bottom: 68px;
+        right: 16px;
     }
 }
 

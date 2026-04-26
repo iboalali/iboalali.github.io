@@ -21,7 +21,7 @@ There are no test or lint scripts configured.
 - **Static site generator:** Eleventy with Nunjucks templates and Markdown content
 - **Layouts:** `_includes/main_layout.njk` is the base HTML template with nav. `_includes/app_layout.njk` chains onto it for app detail pages, rendering a hero (icon, name, tagline, Play Store CTA) from frontmatter before the markdown body.
 - **Content pages:** Top-level `.md` files (`index.md`, `about.md`, `contact.md`, `404.md`)
-- **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View it on GitHub" badge in the hero. Body holds the What's New callout, changelog, and privacy policy.
+- **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View source on GitHub" badge in the hero. Body holds the What's New callout, changelog, and privacy policy.
 - **Styling:** Single stylesheet at `media/styles.css`
 - **Client JS:** `main.js` — opens external links in new tabs, handles dark/light theme toggle with localStorage persistence
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)
@@ -43,7 +43,7 @@ Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Ligh
 - `{% socials name, link, icon %}` — social media link with icon
 - `{% heading text, id, level %}` — heading with an explicit id for deep-linking (level defaults to 2)
 - `{% whatsNew label %}...{% endwhatsNew %}` — paired shortcode that renders its markdown body inside an accent-bordered "What's New" callout card (label defaults to "What's New")
-- `{% github url %}aria label{% endgithub %}` — paired shortcode that renders a black "View it on GitHub" badge styled to match the Play Store badge; body becomes the screen-reader label
+- `{% github url %}aria label{% endgithub %}` — paired shortcode that renders a black "View source on GitHub" badge styled to match the Play Store badge; body becomes the screen-reader label
 
 ## Deployment
 
