@@ -37,3 +37,4 @@ Pushing to `main` automatically builds and deploys to GitHub Pages via the GitHu
 ## TODO
 
 - Auto-updating changelogs
+- Language switcher
