@@ -38,3 +38,4 @@ Pushing to `main` automatically builds and deploys to GitHub Pages via the GitHu
 
 - Auto-updating changelogs
 - Language switcher
+- Hosting changelog per version for retrieval per app + language
