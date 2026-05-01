@@ -88,3 +88,47 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         if (getMode() === 'auto') updateIcon();
     });
 })();
+
+// Android-app referral: persist UTM-tagged entries in sessionStorage and fire
+// an App.Referral TelemetryDeck signal on every pageview within that session.
+;(function () {
+    var KEY = 'td_referral';
+    var params = new URLSearchParams(window.location.search);
+
+    if (params.get('utm_source') === 'android_app') {
+        try {
+            sessionStorage.setItem(KEY, JSON.stringify({
+                campaign: params.get('utm_campaign') || '',
+                content:  params.get('utm_content')  || '',
+                landing:  window.location.pathname,
+            }));
+        } catch (e) { /* sessionStorage disabled, silently ignore */ }
+    }
+
+    var raw;
+    try { raw = sessionStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) return;
+
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+
+    if (window.__tdReferralFired) return;
+    window.__tdReferralFired = true;
+
+    function fire() {
+        if (!window.td || typeof window.td.signal !== 'function') return false;
+        window.td.signal('App.Referral', {
+            'App.Referral.campaign': data.campaign,
+            'App.Referral.content':  data.content,
+            'App.Referral.landing':  data.landing,
+        });
+        return true;
+    }
+
+    if (!fire()) {
+        var tries = 0;
+        var iv = setInterval(function () {
+            if (fire() || ++tries > 20) clearInterval(iv);
+        }, 100);
+    }
+})();
