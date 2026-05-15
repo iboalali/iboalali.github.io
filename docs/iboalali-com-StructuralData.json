@@ -1,0 +1,35 @@
+{
+  "description": "Structural data for TelemetryDeck app \"iboalali.com\". Contains all event types and parameters tracked by this app. Use this with the TQL Guideline to write queries and create charts. Note: Parameters may be event-specific, globally available, or a mix - not all parameters are available on all events.",
+  "exportDate": "2026-05-15T10:25:55.251Z",
+  "appId": "2D083718-D442-4A8E-B797-68F24ADD0C7E",
+  "appName": "iboalali.com",
+  "events": [
+    "pageview"
+  ],
+  "parameters": [
+    "browser",
+    "browserVersion",
+    "combinedSource",
+    "continent.code",
+    "country.isInEuropeanUnion",
+    "country.isoCode",
+    "device",
+    "host",
+    "isBot",
+    "isDesktop",
+    "isMobile",
+    "isTablet",
+    "isTouchCapable",
+    "path",
+    "referrer",
+    "scheme",
+    "telemetryAPIVersion",
+    "TelemetryDeck.API.Ingest.version",
+    "TelemetryDeck.Navigation.identifier",
+    "TelemetryDeck.SDK.nameAndVersion",
+    "url",
+    "utm_campaign",
+    "utm_content",
+    "utm_source"
+  ]
+}
