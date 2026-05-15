@@ -23,9 +23,9 @@ There are no test or lint scripts configured.
 - **Content pages:** Top-level `.md` files (`index.md`, `about.md`, `contact.md`, `privacy.md`, `404.md`)
 - **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View source on GitHub" badge in the hero. Body holds the What's New callout, changelog, and privacy policy.
 - **Styling:** Single stylesheet at `media/styles.css`
-- **Client JS:** `main.js` — opens external links in new tabs, handles a three-mode (light → dark → auto) theme toggle with tooltip and localStorage persistence
+- **Client JS:** `main.js` — opens external links in new tabs, handles a three-mode (light → dark → auto) theme toggle with tooltip and localStorage persistence, and fires the `App.Referral` TelemetryDeck signal for sessions that landed via `?utm_source=android_app`
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)
-- **Analytics:** TelemetryDeck Web SDK loaded in `_includes/main_layout.njk` (auto-pageview only)
+- **Analytics:** TelemetryDeck Web SDK loaded in `_includes/main_layout.njk`. App ID `2D083718-D442-4A8E-B797-68F24ADD0C7E`. Auto-pageview plus the custom `App.Referral` signal (see `main.js` and `docs/track-app-referrals-plan.md`). Dashboard query recipes live in `docs/telemetrydeck-queries.md`; current signal schema is exported to `docs/iboalali-com-StructuralData.json` and reference TQL syntax is at `docs/TQL-Guideline-v0.1.0.md`
 - **Site footer:** `_includes/main_layout.njk` renders a "View this site's source on GitHub" link below `<main>`
 - **Ignored by Eleventy:** `.eleventyignore` lists `CLAUDE.md` (to prevent template processing of `{% %}` examples), `docs/` (in-repo planning docs), and `DOMAIN_SETUP.md` (setup notes, not a published page)
 
