@@ -16,16 +16,26 @@ This app does **NOT** collect any data or personal information.
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 {% whatsNew %}
-Complete rewrite with modern technologies
+- Detects which root provider (Magisk, KernelSU, APatch) granted root, with Magisk version
+- "Request Root access" button when a provider is present but not yet granted
+- Support for Android 17
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 2.1:
+* ➕ Root provider detection: Magisk (with version), KernelSU, or APatch
+* ➕ "Request Root access" button when a provider is present but not yet granted
+* ➕ Support for Android 17
+* 🛠️ New "Not granted" state when a root provider is detected but access isn't given yet
+* 🔨 Fixed rooted devices being reported as not rooted on the first check
+
 ### Version 2.0:
-* ➕ Complete rewrite with Jetpack Compose
-* ➕ Added support for changing the apps language independent of the systems (Android 15 and up)
-* 🛠️ Dropped support for Android 5.0 and 5.1, new minimum is 6.0
-* 🛠️ Dependency updates
+* ➕ Complete rewrite with Jetpack Compose, Material 3, and dynamic colors
+* ➕ TelemetryDeck analytics with an opt-out toggle in settings
+* ➕ In-app update flow on the Google Play build
+* 🛠️ Split into Google Play and FOSS flavors
+* 🛠️ Minimum version raised to Android 6.0
 
 ### Version 1.13:
 * ➕ Android 16 support
@@ -73,14 +83,6 @@ Complete rewrite with modern technologies
 ### Version 1.0:
 * ➕ Basic Root Checker comes in 3 languages: English, German and Arabic
 
-{% heading "Privacy Policy", "privacy-policy" %}
+## Privacy Policy
 
-The app _Basic Root Checker_ does **not** collect any personal information. The app itself works fully offline; anonymous usage telemetry is sent when a connection is available.
-
-A small amount of analytics is included in the app. **No personal information** (PII) is included in this telemetry. See [What data is collected by TelemetryDeck SDK for apps?](https://telemetrydeck.com/docs/guides/privacy-faq/#what-data-is-collected-by-telemetrydeck-sdk-for-apps%3F) for the defaults. In addition, the developer records:
-
-* Screen navigation within the app
-* Root check started
-* Root check completed (with result)
-* Privacy policy opened
-* Other Apps section opened
+See the [Basic Root Checker privacy policy](/app/basic_root_checker/privacy/).
