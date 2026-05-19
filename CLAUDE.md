@@ -21,7 +21,8 @@ There are no test or lint scripts configured.
 - **Static site generator:** Eleventy with Nunjucks templates and Markdown content
 - **Layouts:** `_includes/main_layout.njk` is the base HTML template with nav. `_includes/app_layout.njk` chains onto it for app detail pages, rendering a hero (icon, name, tagline, Play Store CTA) from frontmatter before the markdown body.
 - **Content pages:** Top-level `.md` files (`index.md`, `about.md`, `contact.md`, `privacy.md`, `404.md`)
-- **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View source on GitHub" badge in the hero. Body holds the What's New callout, changelog, and privacy policy.
+- **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View source on GitHub" badge in the hero. Body holds the What's New callout, changelog, and a short "Privacy Policy" section that links to the per-app privacy page.
+- **Per-app privacy pages:** `app/<slug>/privacy.md` — each app has its own privacy policy at a dedicated URL (e.g. `/app/hide_persistent_notification/privacy/`). They use `main_layout.njk` with a `contact-hero` header and an `app-back-link` to the app page. Required because Google Play Console rejects a privacy URL that shares its path with the store listing URL (a `#fragment` on the app page resolves server-side to the same URL and is rejected).
 - **Styling:** Single stylesheet at `media/styles.css`
 - **Client JS:** `main.js` — opens external links in new tabs, handles a three-mode (light → dark → auto) theme toggle with tooltip and localStorage persistence, and fires the `App.Referral` TelemetryDeck signal for sessions that landed via `?utm_source=android_app`
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)

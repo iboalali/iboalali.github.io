@@ -14,6 +14,6 @@ Track your book collection
 ### Version 0.1
 Initial test release
 
-{% heading "Privacy Policy", "privacy-policy" %}
+## Privacy Policy
 
-The app _Book Keeper_ does **not** collect any personal information, and does need an internet connection to function, and it does not contain any analytic code.
+See the [Book Keeper privacy policy](/app/book_keeper/privacy/).
