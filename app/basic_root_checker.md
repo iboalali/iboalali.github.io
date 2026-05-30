@@ -19,10 +19,20 @@ This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 - Detects which root provider (Magisk, KernelSU, APatch) granted root, with Magisk version
 - "Request Root access" button when a provider is present but not yet granted
 - Support for Android 17
+- Now available in Russian and Spanish
+- App settings now included in Android's automatic backup, restored on reinstall
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 2.2:
+* ➕ Haptic feedback for the root check, with a new toggle in Settings
+* ➕ Now available in Russian and Spanish
+* ➕ Email, Mastodon, and Bluesky links on the About screen
+* 🛠️ App settings now included in Android's automatic backup, so they're restored when you reinstall
+* 🛠️ Refreshed About screen contact links and overflow menu icons
+* 🔨 Fixed untranslated toast and accessibility labels in German and Arabic
+
 ### Version 2.1:
 * ➕ Root provider detection: Magisk (with version), KernelSU, or APatch
 * ➕ "Request Root access" button when a provider is present but not yet granted
