@@ -19,8 +19,11 @@ A small amount of analytics is included in the app. **No personal information** 
 * Root check completed (with the resulting status)
 * Root access requested via the "Request Root access" button
 * Root provider detected (Magisk, KernelSU, APatch, or unknown) and its version when available
+* Device haptic (vibration) capabilities, such as whether amplitude control and envelope effects are supported, plus the Android version
+* App display language changed (the language you selected)
 * Privacy policy opened
 * Website link opened
+* Social media link opened (which platform was tapped, such as email, Mastodon, or Bluesky)
 * Other Apps entry tapped (with the package name of the app that was tapped)
 * In-app update events (update available, started, downloaded, failed) on the Google Play build
 * Errors and unhandled exceptions (an internal error id, the error message, and a category such as thrown-exception, user-input, or app-state)
