@@ -8,12 +8,22 @@ tagline: Pick a persistent notification and keep it hidden for as long as the ap
 ---
 
 {% whatsNew %}
-- See the history of hidden notification
-- Completely new design
+- Completely rewritten with modern technologies
+- In-app updates: install the latest version right from the app
+- Support for Android 17
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 2.0:
+* ✨ Completely rewritten with modern technologies
+* ➕ In-app updates: install the latest version right from the app
+* ➕ Privacy setting to opt out of anonymous analytics
+* ➕ Better layouts for tablets and large screens
+* ➕ Support for Android 17
+* 🔨 Fixed a startup crash
+* 🔨 Fixed permission status not refreshing after leaving settings
+
 ### Version 1.8.1:
 * ➕ Support for Android 16
 * ➕ Added German translation
