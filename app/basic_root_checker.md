@@ -11,7 +11,7 @@ tagline: Check whether your device has root access - quick, simple, no-frills.
 _Basic Root Checker_ does **NOT** root your device. It will only show you if your device has root access (or is rooted).
 
 This app *requires* ROOT, use it at your own risk.
-This app does **NOT** collect any data or personal information.
+This app does **NOT** collect any personal information. It works fully offline; anonymous, opt-out usage analytics are sent only when a connection is available (see the privacy policy below).
 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
