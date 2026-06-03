@@ -1,5 +1,22 @@
 /* Animations */
 
+/* Cross-document view transitions: morph the app icon between the home list
+   and the app detail hero on same-origin navigations. Browsers without support
+   ignore this at-rule and the view-transition-name property below and navigate
+   normally — pure progressive enhancement. */
+@view-transition {
+    navigation: auto;
+}
+
+/* Respect users who prefer reduced motion: make the transition instant. */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
 @keyframes fadein {
 	from {
 		transform: translateY(-10px);
@@ -572,6 +589,10 @@ a.btn-container img:hover {
 }
 
 .app-hero-icon {
+    /* Shared element for the cross-document view transition (paired with the
+       matching .app-icon on the home page, tagged at navigation time in main.js).
+       Only one hero icon exists per detail page, so a static name is safe. */
+    view-transition-name: app-icon;
     width: 140px;
     height: 140px;
     border-radius: 28%;
