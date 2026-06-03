@@ -973,29 +973,20 @@ a.btn-container img:hover {
 
 /* Disable animations on user request */
 
+/* Honor the OS-level reduced-motion preference across every animation and
+   interaction transition (entry reveals, hover lifts, button/link transitions).
+   Near-instant durations rather than 0 so animationend/transitionend listeners
+   still fire. The view-transition morphs are handled separately near the top of
+   this file, since ::view-transition-* pseudo-elements aren't matched by *. */
 @media (prefers-reduced-motion: reduce) {
 
-    main {
-        animation: none !important;
-    }
-
-    a {
-        transition: 0ms !important;
-    }
-
-    .home-hero,
-    .home-section-title,
-    .app-item,
-    .about-hero,
-    .about-bio,
-    .about-actions,
-    .contact-hero,
-    .contact-links,
-    .app-back-link,
-    .app-hero,
-    .app-content,
-    .whats-new {
-        animation: none !important;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
 }
