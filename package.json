@@ -10,6 +10,6 @@
   "author": "Ibrahim Al-Alali",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5"
+    "@11ty/eleventy": "^3.1.6"
   }
 }
