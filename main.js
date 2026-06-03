@@ -7,27 +7,30 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     }
 })
 
-// Theme toggle: cycles light -> dark -> auto
+// Theme toggle: cycles light -> dark -> paper -> auto
 ;(function () {
     var btn = document.getElementById('theme-toggle');
     if (!btn) return;
     var tooltip = document.getElementById('theme-toggle-tooltip');
     var tooltipTimer;
 
-    var modes = ['light', 'dark', 'auto'];
+    var modes = ['light', 'dark', 'paper', 'auto'];
     var icons = {
         light: '☀️',                  // sun
         dark: '🌙',                   // crescent moon
+        paper: '📖',                  // open book
         auto: '🖥️'              // desktop computer
     };
     var labels = {
         light: 'Theme: light. Click to switch to dark.',
-        dark: 'Theme: dark. Click to switch to auto.',
+        dark: 'Theme: dark. Click to switch to paper.',
+        paper: 'Theme: paper. Click to switch to auto.',
         auto: 'Theme: auto (matches system). Click to switch to light.'
     };
     var tooltipText = {
         light: 'Light',
         dark: 'Dark',
+        paper: 'Paper',
         auto: 'Auto (matches system)'
     };
 
