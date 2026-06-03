@@ -1,5 +1,43 @@
 /* Animations */
 
+/* Cross-document view transitions: morph the app icon between the home list
+   and the app detail hero on same-origin navigations. Browsers without support
+   ignore this at-rule and the view-transition-name property below and navigate
+   normally — pure progressive enhancement. */
+@view-transition {
+    navigation: auto;
+}
+
+/* Respect users who prefer reduced motion: make the transition instant. */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+/* When the page is revealed via a view transition, the morph/crossfade IS the
+   entry animation — suppress the load-in reveals (fadein on main, about-reveal
+   on heroes/cards) so shared elements don't fade/slide while they morph.
+   main.js toggles .via-vt on <html> from the pagereveal event; browsers without
+   cross-document view transitions never set it and animate normally. */
+html.via-vt main,
+html.via-vt .home-hero,
+html.via-vt .home-section-title,
+html.via-vt .app-item,
+html.via-vt .contact-hero,
+html.via-vt .contact-links,
+html.via-vt .about-hero,
+html.via-vt .about-bio,
+html.via-vt .about-actions,
+html.via-vt .app-back-link,
+html.via-vt .app-hero,
+html.via-vt .app-content,
+html.via-vt .whats-new {
+    animation: none;
+}
+
 @keyframes fadein {
 	from {
 		transform: translateY(-10px);
@@ -205,6 +243,10 @@ a.btn-container img:hover {
 }
 
 .profile-photo {
+    /* Shared element for the cross-document view transition: morphs between the
+       home hero and the about hero. The photo appears exactly once per page, so
+       a static name is safe (no JS coordination needed, unlike .app-icon). */
+    view-transition-name: profile-photo;
     float: right;
     border-radius: 50%;
     width: 25%;
@@ -572,6 +614,10 @@ a.btn-container img:hover {
 }
 
 .app-hero-icon {
+    /* Shared element for the cross-document view transition (paired with the
+       matching .app-icon on the home page, tagged at navigation time in main.js).
+       Only one hero icon exists per detail page, so a static name is safe. */
+    view-transition-name: app-icon;
     width: 140px;
     height: 140px;
     border-radius: 28%;
@@ -946,31 +992,34 @@ a.btn-container img:hover {
     filter: grayscale(1);
 }
 
+/* The * rules above don't reach ::view-transition-* pseudo-elements (same
+   caveat as the reduced-motion block at the top of this file), so silence the
+   cross-document morph/crossfade separately: with no animations the view
+   transition finishes instantly. The new page applies data-theme from
+   localStorage in a pre-render inline head script, so the attribute is in
+   place before the transition's pseudo-elements animate. */
+:root[data-theme="paper"]::view-transition-group(*),
+:root[data-theme="paper"]::view-transition-old(*),
+:root[data-theme="paper"]::view-transition-new(*) {
+    animation: none !important;
+}
+
 /* Disable animations on user request */
 
+/* Honor the OS-level reduced-motion preference across every animation and
+   interaction transition (entry reveals, hover lifts, button/link transitions).
+   Near-instant durations rather than 0 so animationend/transitionend listeners
+   still fire. The view-transition morphs are handled separately near the top of
+   this file, since ::view-transition-* pseudo-elements aren't matched by *. */
 @media (prefers-reduced-motion: reduce) {
 
-    main {
-        animation: none !important;
-    }
-
-    a {
-        transition: 0ms !important;
-    }
-
-    .home-hero,
-    .home-section-title,
-    .app-item,
-    .about-hero,
-    .about-bio,
-    .about-actions,
-    .contact-hero,
-    .contact-links,
-    .app-back-link,
-    .app-hero,
-    .app-content,
-    .whats-new {
-        animation: none !important;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
 }

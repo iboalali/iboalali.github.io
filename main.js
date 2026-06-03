@@ -135,3 +135,52 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         }, 100);
     }
 })();
+
+// Shared-element view transition for the app icon. On the home page each app
+// card has a .app-icon; the detail page's single .app-hero-icon statically owns
+// the shared name "app-icon" (see styles.css). Here we assign that same name to
+// the *one* home-page icon involved in the current navigation so the browser
+// morphs it into / out of the hero. No-ops when the browser lacks support.
+;(function () {
+    function normalize(path) {
+        return path.replace(/\/+$/, '');
+    }
+
+    function clearIcons() {
+        document.querySelectorAll('.app-item .app-icon').forEach(function (icon) {
+            icon.style.viewTransitionName = '';
+        });
+    }
+
+    // Tag the home-page icon whose card links to the given URL.
+    function tagIcon(urlStr) {
+        if (!urlStr) return;
+        var targetPath = normalize(new URL(urlStr, location.href).pathname);
+        document.querySelectorAll('.app-item').forEach(function (item) {
+            var link = item.querySelector('a[href]');
+            var icon = item.querySelector('.app-icon');
+            if (!link || !icon) return;
+            if (normalize(new URL(link.href).pathname) === targetPath) {
+                icon.style.viewTransitionName = 'app-icon';
+            }
+        });
+    }
+
+    // Forward navigation (home -> detail): tag the icon for the destination.
+    window.addEventListener('pageswap', function (e) {
+        if (!e.viewTransition) return;
+        clearIcons();
+        if (e.activation && e.activation.entry) tagIcon(e.activation.entry.url);
+    });
+
+    // Back navigation (detail -> home): tag the icon for where we came from.
+    // (The html.via-vt reveal-suppression toggle lives in the inline head
+    // script in main_layout.njk — it must register before first render.)
+    window.addEventListener('pagereveal', function (e) {
+        if (!e.viewTransition) return;
+        clearIcons();
+        if (window.navigation && navigation.activation && navigation.activation.from) {
+            tagIcon(navigation.activation.from.url);
+        }
+    });
+})();

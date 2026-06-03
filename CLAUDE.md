@@ -26,7 +26,7 @@ There are no test or lint scripts configured.
 - **App detail pages:** `app/*.md` — use `app_layout.njk` and declare `appName`, `icon`, `packageName`, `tagline`, and `title` in frontmatter. Optional `repoUrl` adds a "View source on GitHub" badge in the hero. Body holds the What's New callout, changelog, and a short "Privacy Policy" section that links to the per-app privacy page.
 - **Per-app privacy pages:** `app/<slug>/privacy.md` — each app has its own privacy policy at a dedicated URL (e.g. `/app/hide_persistent_notification/privacy/`). They use `main_layout.njk` with a `contact-hero` header and an `app-back-link` to the app page. Required because Google Play Console rejects a privacy URL that shares its path with the store listing URL (a `#fragment` on the app page resolves server-side to the same URL and is rejected).
 - **Styling:** Single stylesheet at `media/styles.css`
-- **Client JS:** `main.js` — opens external links in new tabs, handles a three-mode (light → dark → auto) theme toggle with tooltip and localStorage persistence, and fires the `App.Referral` TelemetryDeck signal for sessions that landed via `?utm_source=android_app`
+- **Client JS:** `main.js` — opens external links in new tabs, handles a four-mode (light → dark → paper → auto) theme toggle with tooltip and localStorage persistence, fires the `App.Referral` TelemetryDeck signal for sessions that landed via `?utm_source=android_app`, and tags the navigating home-page app icon for the shared-element view transition (see below)
 - **Static assets:** `media/` — images, icons, CSS (passed through via Eleventy config)
 - **Analytics:** TelemetryDeck Web SDK loaded in `_includes/main_layout.njk`. App ID `2D083718-D442-4A8E-B797-68F24ADD0C7E`. Auto-pageview plus the custom `App.Referral` signal (see `main.js` and `docs/track-app-referrals-plan.md`). Dashboard query recipes live in `docs/telemetrydeck-queries.md`; current signal schema is exported to `docs/iboalali-com-StructuralData.json` and reference TQL syntax is at `docs/TQL-Guideline-v0.1.0.md`
 - **Site footer:** `_includes/main_layout.njk` renders a "View this site's source on GitHub" link below `<main>`
@@ -34,12 +34,20 @@ There are no test or lint scripts configured.
 
 ## Theming
 
-CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. The toggle button cycles through three modes — **light → dark → auto** — and theming works via:
+CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. The toggle button cycles through four modes — **light → dark → paper → auto** — and theming works via:
 1. **OS preference** — `@media (prefers-color-scheme: dark)` overrides variables when no user choice is stored (auto mode)
-2. **Explicit toggle** — `[data-theme="dark"]` / `[data-theme="light"]` on `<html>` for light/dark; in auto mode the attribute is *removed* so OS preference takes over
+2. **Explicit toggle** — `[data-theme="dark"]` / `[data-theme="light"]` / `[data-theme="paper"]` on `<html>`; in auto mode the attribute is *removed* so OS preference takes over
 3. **Persistence** — `localStorage.getItem('theme')` is applied in an inline `<script>` in `<head>` before paint to prevent flash; auto mode clears the key
 
 Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Light accent is `#B37FDF` (purple), dark accent is `#9adefe` (blue). When adding new themed elements, use these variables rather than hardcoded colors.
+
+**Paper** is an e-ink-friendly mode: warm paper background, ink-colored accent, grayscale images, and *all* motion flattened — `* { animation/transition: none !important }` rules at the bottom of `styles.css`, plus separate `::view-transition-*` overrides (the `*` selector doesn't match those pseudo-elements) so navigations are instant page swaps.
+
+## View Transitions & Motion
+
+- **Cross-document view transitions** (`@view-transition { navigation: auto }` in `styles.css`) morph shared elements between pages as progressive enhancement — unsupported browsers navigate normally. Two shared elements: the **profile photo** (home ↔ about; appears once per page, so a static `view-transition-name` in CSS suffices) and the **app icon** (home ↔ app detail; the home page has several icons, so `main.js` tags the one involved in the current navigation from `pageswap`/`pagereveal`)
+- **Entry reveals are suppressed during transitions:** the `fadein`/`about-reveal` load-in animations double as loading animations and must not replay while shared elements morph. An inline head script in `main_layout.njk` toggles `html.via-vt` from `pagereveal`; `styles.css` disables the reveals under that class. The listener must live in the inline head script (not `main.js`, which loads at end of body) because `pagereveal` fires before first render on fresh loads
+- **Reduced motion:** `@media (prefers-reduced-motion: reduce)` makes interaction animations near-instant (tiny durations so `animationend`/`transitionend` still fire) and silences `::view-transition-*` separately, same caveat as Paper
 
 ## Custom Shortcodes (defined in .eleventy.js)
 

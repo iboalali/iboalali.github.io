@@ -18,6 +18,15 @@ title: Ibrahim Al-Alali
             (function() {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark' || t === 'paper') document.documentElement.setAttribute('data-theme', t);
+
+                // Must be registered before first render: pagereveal fires before
+                // main.js (end of body) runs on fresh loads. When the page is
+                // revealed via a view transition, the morph/crossfade is the entry
+                // animation — html.via-vt (styles.css) suppresses the load-in
+                // reveals so shared elements don't fade while they morph.
+                window.addEventListener('pagereveal', function (e) {
+                    document.documentElement.classList.toggle('via-vt', !!e.viewTransition);
+                });
             })();
         </script>
         <link rel="icon" type="image/png" href="/media/icon_x32.png" sizes="32x32">
