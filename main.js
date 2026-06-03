@@ -174,6 +174,8 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     });
 
     // Back navigation (detail -> home): tag the icon for where we came from.
+    // (The html.via-vt reveal-suppression toggle lives in the inline head
+    // script in main_layout.njk — it must register before first render.)
     window.addEventListener('pagereveal', function (e) {
         if (!e.viewTransition) return;
         clearIcons();

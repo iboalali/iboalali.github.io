@@ -17,6 +17,27 @@
     }
 }
 
+/* When the page is revealed via a view transition, the morph/crossfade IS the
+   entry animation — suppress the load-in reveals (fadein on main, about-reveal
+   on heroes/cards) so shared elements don't fade/slide while they morph.
+   main.js toggles .via-vt on <html> from the pagereveal event; browsers without
+   cross-document view transitions never set it and animate normally. */
+html.via-vt main,
+html.via-vt .home-hero,
+html.via-vt .home-section-title,
+html.via-vt .app-item,
+html.via-vt .contact-hero,
+html.via-vt .contact-links,
+html.via-vt .about-hero,
+html.via-vt .about-bio,
+html.via-vt .about-actions,
+html.via-vt .app-back-link,
+html.via-vt .app-hero,
+html.via-vt .app-content,
+html.via-vt .whats-new {
+    animation: none;
+}
+
 @keyframes fadein {
 	from {
 		transform: translateY(-10px);
