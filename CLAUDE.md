@@ -16,6 +16,8 @@ npx @11ty/eleventy --serve   # Local dev server with hot reload
 
 There are no test or lint scripts configured.
 
+**Termux quirk:** `npx @11ty/eleventy` fails with `eleventy: not found` because the `node_modules/.bin` wrappers use a `#!/usr/bin/env` shebang, and `/usr/bin/env` doesn't exist on Termux. Workarounds: invoke via node directly (`node ./node_modules/.bin/eleventy --serve`) or run `termux-fix-shebang node_modules/.bin/*` once after `npm install`.
+
 ## Architecture
 
 - **Static site generator:** Eleventy with Nunjucks templates and Markdown content
