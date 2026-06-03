@@ -992,6 +992,18 @@ a.btn-container img:hover {
     filter: grayscale(1);
 }
 
+/* The * rules above don't reach ::view-transition-* pseudo-elements (same
+   caveat as the reduced-motion block at the top of this file), so silence the
+   cross-document morph/crossfade separately: with no animations the view
+   transition finishes instantly. The new page applies data-theme from
+   localStorage in a pre-render inline head script, so the attribute is in
+   place before the transition's pseudo-elements animate. */
+:root[data-theme="paper"]::view-transition-group(*),
+:root[data-theme="paper"]::view-transition-old(*),
+:root[data-theme="paper"]::view-transition-new(*) {
+    animation: none !important;
+}
+
 /* Disable animations on user request */
 
 /* Honor the OS-level reduced-motion preference across every animation and
