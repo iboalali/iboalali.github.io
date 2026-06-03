@@ -222,6 +222,10 @@ a.btn-container img:hover {
 }
 
 .profile-photo {
+    /* Shared element for the cross-document view transition: morphs between the
+       home hero and the about hero. The photo appears exactly once per page, so
+       a static name is safe (no JS coordination needed, unlike .app-icon). */
+    view-transition-name: profile-photo;
     float: right;
     border-radius: 50%;
     width: 25%;
