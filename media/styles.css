@@ -992,6 +992,16 @@ a.btn-container img:hover {
     filter: grayscale(1);
 }
 
+/* The nav buttons are a hardcoded dark grey in every theme, and the default
+   hover recolors the label to var(--accent). In paper that accent is dark ink,
+   so the text would all but vanish into the button. Keep the label light and
+   signal hover by lightening the button instead. */
+:root[data-theme="paper"] nav ul li a:hover {
+    color: #FFF;
+    background: #5A5A5A;
+    filter: none;
+}
+
 /* The * rules above don't reach ::view-transition-* pseudo-elements (same
    caveat as the reduced-motion block at the top of this file), so silence the
    cross-document morph/crossfade separately: with no animations the view
