@@ -4,6 +4,16 @@ const md = markdownIt({ html: true });
 // Eleventy configuration
 module.exports = function (eleventyConfig) {
 
+    // Build timestamp for the footer's "last updated" line. Resolved once per
+    // build, so it tracks deploys (every push to main rebuilds the site).
+    eleventyConfig.addGlobalData("buildDate", () =>
+        new Date().toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        })
+    );
+
     // Add robots.txt to site
     eleventyConfig.addPassthroughCopy("robots.txt");
 
