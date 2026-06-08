@@ -101,7 +101,11 @@ html.via-vt .whats-new {
     --muted: #999;
 }
 
-:root[data-theme="paper"] {
+/* Paper variables also apply automatically on e-ink readers in auto mode,
+   where the head script tags <html> with .eink-paper. The :not([data-theme])
+   guard means any explicit toggle choice (including paper itself) still wins. */
+:root[data-theme="paper"],
+:root.eink-paper:not([data-theme]) {
     --bg: #F4F1EA;            /* warm paper */
     --text: #1A1A1A;          /* near-black ink */
     --text-on-accent: #F4F1EA;
@@ -987,14 +991,18 @@ a.btn-container img:hover {
 
 :root[data-theme="paper"] *,
 :root[data-theme="paper"] *::before,
-:root[data-theme="paper"] *::after {
+:root[data-theme="paper"] *::after,
+:root.eink-paper:not([data-theme]) *,
+:root.eink-paper:not([data-theme]) *::before,
+:root.eink-paper:not([data-theme]) *::after {
     box-shadow: none !important;
     text-shadow: none !important;
     animation: none !important;
     transition: none !important;
 }
 
-:root[data-theme="paper"] img {
+:root[data-theme="paper"] img,
+:root.eink-paper:not([data-theme]) img {
     filter: grayscale(1);
 }
 
@@ -1002,7 +1010,8 @@ a.btn-container img:hover {
    hover recolors the label to var(--accent). In paper that accent is dark ink,
    so the text would all but vanish into the button. Keep the label light and
    signal hover by lightening the button instead. */
-:root[data-theme="paper"] nav ul li a:hover {
+:root[data-theme="paper"] nav ul li a:hover,
+:root.eink-paper:not([data-theme]) nav ul li a:hover {
     color: #FFF;
     background: #5A5A5A;
     filter: none;
@@ -1016,7 +1025,10 @@ a.btn-container img:hover {
    place before the transition's pseudo-elements animate. */
 :root[data-theme="paper"]::view-transition-group(*),
 :root[data-theme="paper"]::view-transition-old(*),
-:root[data-theme="paper"]::view-transition-new(*) {
+:root[data-theme="paper"]::view-transition-new(*),
+:root.eink-paper:not([data-theme])::view-transition-group(*),
+:root.eink-paper:not([data-theme])::view-transition-old(*),
+:root.eink-paper:not([data-theme])::view-transition-new(*) {
     animation: none !important;
 }
 

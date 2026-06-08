@@ -44,6 +44,8 @@ Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Ligh
 
 **Paper** is an e-ink-friendly mode: warm paper background, ink-colored accent, grayscale images, and *all* motion flattened — `* { animation/transition: none !important }` rules at the bottom of `styles.css`, plus separate `::view-transition-*` overrides (the `*` selector doesn't match those pseudo-elements) so navigations are instant page swaps.
 
+**E-ink auto-detection:** in auto mode (no stored preference), e-ink readers automatically get the Paper theme. The pre-paint head script in `main_layout.njk` detects them via `matchMedia('(update: slow)')` (the standards signal for e-ink's slow refresh) plus a UA allowlist of dedicated reader brands (Kindle, Kobo, PocketBook, Tolino, Bookeen, BOOX, reMarkable, NOOK) for browsers predating that media feature. On a match it adds `html.eink-paper` — *not* `data-theme`, so the mode stays "auto" (the toggle keeps working and cycling back to auto re-applies paper). Each Paper rule in `styles.css` carries a parallel `:root.eink-paper:not([data-theme])` selector; the `:not([data-theme])` guard means any explicit toggle choice still overrides the auto-detected paper.
+
 ## View Transitions & Motion
 
 - **Cross-document view transitions** (`@view-transition { navigation: auto }` in `styles.css`) morph shared elements between pages as progressive enhancement — unsupported browsers navigate normally. Two shared elements: the **profile photo** (home ↔ about; appears once per page, so a static `view-transition-name` in CSS suffices) and the **app icon** (home ↔ app detail; the home page has several icons, so `main.js` tags the one involved in the current navigation from `pageswap`/`pagereveal`)
