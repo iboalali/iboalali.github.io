@@ -36,7 +36,22 @@ title: Ibrahim Al-Alali
         <script>
             (function() {
                 var t = localStorage.getItem('theme');
-                if (t === 'light' || t === 'dark' || t === 'paper') document.documentElement.setAttribute('data-theme', t);
+                if (t === 'light' || t === 'dark' || t === 'paper') {
+                    document.documentElement.setAttribute('data-theme', t);
+                } else {
+                    // No explicit choice (auto mode): adopt the Paper theme on
+                    // e-ink readers. `update: slow` is the standards signal for
+                    // e-ink's slow refresh; the UA list catches dedicated readers
+                    // whose browsers predate it. We set a class rather than
+                    // data-theme so the mode stays "auto" — the toggle keeps
+                    // working, and styles.css applies paper via
+                    // .eink-paper:not([data-theme]) (so any explicit choice wins).
+                    try {
+                        var eink = (window.matchMedia && window.matchMedia('(update: slow)').matches)
+                            || /Kindle|Kobo|PocketBook|Tolino|Bookeen|BOOX|reMarkable|\bNOOK\b|BNRV/i.test(navigator.userAgent || '');
+                        if (eink) document.documentElement.classList.add('eink-paper');
+                    } catch (e) { /* matchMedia/UA unavailable — skip detection */ }
+                }
 
                 // Must be registered before first render: pagereveal fires before
                 // main.js (end of body) runs on fresh loads. When the page is
