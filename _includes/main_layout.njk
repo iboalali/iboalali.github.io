@@ -2,13 +2,32 @@
 title: Ibrahim Al-Alali
 ---
 
+{#
+  Social graph (Open Graph + Twitter Card) values.
+  - Generic defaults apply to every page.
+  - App detail pages carry an `icon` (and `tagline`/`appName`) in their
+    frontmatter, so the card automatically uses the app icon and tagline.
+  - Any page may override `description` in its frontmatter.
+#}
+{%- set ogDescription = description or tagline or "Ibrahim Al-Alali is an Android app software developer" -%}
+{%- set ogUrl = siteUrl + page.url -%}
+{%- if icon -%}
+    {%- set ogImage = siteUrl + "/media/" + icon -%}
+    {%- set ogImageAlt = appName + " app icon" -%}
+    {%- set ogImageSize = "256" -%}
+{%- else -%}
+    {%- set ogImage = "https://gravatar.com/avatar/c986ffd7d07a2ae1336d5321ae0c6392?size=500" -%}
+    {%- set ogImageAlt = "Ibrahim's profile photo" -%}
+    {%- set ogImageSize = "500" -%}
+{%- endif -%}
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ title }}</title>
-        <meta name="description" content="Ibrahim Al-Alali is an Android app software developer">
+        <meta name="description" content="{{ ogDescription }}">
+        <link rel="canonical" href="{{ ogUrl }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <meta name="keywords" content="ibrahim, al-alali, ibrahim al-alali, alali, ibo, apps, app, play store, notification, java, kotlin">
         <meta name="language" content="English">
@@ -43,14 +62,22 @@ title: Ibrahim Al-Alali
             src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
             data-app-id="2D083718-D442-4A8E-B797-68F24ADD0C7E"
         ></script>
-        <!-- Open Graph card -->
+        <!-- Open Graph / social graph card -->
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Ibrahim Al-Alali" />
         <meta property="og:title" content="{{ title }}" />
-        <meta property="og:description" content="Ibrahim Al-Alali is an Android app software developer" />
-        <meta property="og:image" content="https://gravatar.com/avatar/c986ffd7d07a2ae1336d5321ae0c6392?size=500" />
-        <meta property="og:image:width" content="400" />
-        <meta property="og:image:height" content="400" />
-        <meta name="og:image:alt" content="Ibrahim's profile photo" />
+        <meta property="og:description" content="{{ ogDescription }}" />
+        <meta property="og:url" content="{{ ogUrl }}" />
+        <meta property="og:image" content="{{ ogImage }}" />
+        <meta property="og:image:width" content="{{ ogImageSize }}" />
+        <meta property="og:image:height" content="{{ ogImageSize }}" />
+        <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{{ title }}" />
+        <meta name="twitter:description" content="{{ ogDescription }}" />
+        <meta name="twitter:image" content="{{ ogImage }}" />
+        <meta name="twitter:image:alt" content="{{ ogImageAlt }}" />
     </head>
 
     <body>
