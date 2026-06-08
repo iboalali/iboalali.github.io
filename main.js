@@ -79,10 +79,43 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         }, 1800);
     }
 
+    // Theme-toggle telemetry. Cycling can produce a burst of clicks, so debounce
+    // and report only the visitor's final resting mode: `from` is where the burst
+    // started, `to` is where they settled. Follows the Scope.SubScope.key naming
+    // convention. Clicks happen well after page load, so the SDK is ready; guard
+    // defensively anyway.
+    var toggleTimer;
+    var burstFrom = null;
+
+    function flushToggle() {
+        if (burstFrom === null) return;
+        clearTimeout(toggleTimer);
+        var from = burstFrom;
+        var to = getMode();
+        burstFrom = null;
+        if (from === to) return;  // cycled back to the start — no net change
+        if (!window.td || typeof window.td.signal !== 'function') return;
+        window.td.signal('Theme.Toggle', {
+            'Theme.Toggle.from': from,
+            'Theme.Toggle.to':   to,
+        });
+    }
+
     btn.addEventListener('click', function () {
-        var next = modes[(modes.indexOf(getMode()) + 1) % modes.length];
+        var from = getMode();
+        if (burstFrom === null) burstFrom = from;  // remember where the burst began
+        var next = modes[(modes.indexOf(from) + 1) % modes.length];
         applyMode(next);
         showTooltip();
+        clearTimeout(toggleTimer);
+        toggleTimer = setTimeout(flushToggle, 1500);
+    });
+
+    // Don't lose a pending signal if the visitor navigates away or hides the tab
+    // mid-burst before the debounce elapses.
+    window.addEventListener('pagehide', flushToggle);
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flushToggle();
     });
 
     updateIcon();
