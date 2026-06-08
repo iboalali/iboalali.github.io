@@ -14,6 +14,11 @@ module.exports = function (eleventyConfig) {
         })
     );
 
+    // Canonical site origin (no trailing slash). Used to build absolute URLs
+    // for the social graph / Open Graph tags, which require fully-qualified
+    // image and page URLs.
+    eleventyConfig.addGlobalData("siteUrl", "https://iboalali.com");
+
     // Add robots.txt to site
     eleventyConfig.addPassthroughCopy("robots.txt");
 
