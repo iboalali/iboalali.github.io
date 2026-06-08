@@ -6,6 +6,7 @@ Paste-ready TQL queries for the TelemetryDeck dashboard.
 - **App name:** iboalali.com
 - **Signal types tracked:** `pageview` only (Web SDK auto-pageview)
 - **Custom signal (planned):** `App.Referral` (fires only when `utm_source=android_app`; not yet present in the structural data export)
+- **Custom signal (planned):** `Theme.Toggle` (fires once per burst of toggle clicks, debounced ~1.5s; payload `Theme.Toggle.from` is the mode the burst started from and `Theme.Toggle.to` is the resting mode they settled on — `light`, `dark`, `paper`, or `auto`. Bursts that cycle back to the starting mode emit nothing)
 
 ## How to use
 
@@ -236,3 +237,67 @@ The custom signal in `main.js` fires on every pageview within a session that sta
 And change the signal filter from `utm_source = android_app` to `type = App.Referral`.
 
 Re-export structural data from the dashboard to confirm the signal type and payload keys before swapping.
+
+## Once `Theme.Toggle` starts arriving
+
+`Theme.Toggle` fires from `main.js` once per burst of toggle clicks (debounced
+~1.5s), carrying the mode the visitor started from and the mode they settled on.
+Because the toggle cycles through four modes, debouncing keeps a single
+`light → paper` choice from looking like two intermediate clicks; bursts that
+return to the starting mode emit nothing. Use it to see which themes people
+actually prefer once they engage the toggle. These queries assume the signal
+type and payload keys have appeared in the structural data export.
+
+### 9. Most-chosen theme modes
+
+Ranks the resting mode visitors settle on, by number of toggle bursts.
+
+```json
+{
+  "queryType": "topN",
+  "granularity": "all",
+  "threshold": 10,
+  "dimension": { "type": "default", "dimension": "Theme.Toggle.to", "outputName": "Mode" },
+  "metric": { "type": "numeric", "metric": "clicks" },
+  "aggregations": [{ "type": "eventCount", "name": "clicks" }],
+  "filter": {
+    "type": "and",
+    "fields": [
+      { "type": "selector", "dimension": "type", "value": "Theme.Toggle" },
+      { "type": "selector", "dimension": "isBot", "value": "False" }
+    ]
+  },
+  "baseFilters": "thisApp",
+  "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
+}
+```
+
+### 10. Theme transition matrix
+
+Cross-tab of `from` → `to` mode (burst start → resting mode). Shows the net
+moves visitors make through the toggle (e.g. how many leave `auto` for `paper`).
+
+```json
+{
+  "queryType": "groupBy",
+  "granularity": "all",
+  "dimensions": ["Theme.Toggle.from", "Theme.Toggle.to"],
+  "aggregations": [{ "type": "eventCount", "name": "Clicks" }],
+  "filter": {
+    "type": "and",
+    "fields": [
+      { "type": "selector", "dimension": "type", "value": "Theme.Toggle" },
+      { "type": "selector", "dimension": "isBot", "value": "False" }
+    ]
+  },
+  "limitSpec": {
+    "type": "default",
+    "columns": [{ "dimension": "Clicks", "direction": "descending" }],
+    "limit": 100
+  },
+  "baseFilters": "thisApp",
+  "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
+}
+```
+
+Re-export structural data from the dashboard to confirm the signal type and payload keys before relying on these.
