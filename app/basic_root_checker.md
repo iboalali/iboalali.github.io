@@ -16,15 +16,20 @@ This app does **NOT** collect any personal information. It works fully offline; 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 {% whatsNew %}
-- Detects which root provider (Magisk, KernelSU, APatch) granted root, with Magisk version
-- "Request Root access" button when a provider is present but not yet granted
-- Support for Android 17
-- Now available in Russian and Spanish
-- App settings now included in Android's automatic backup, restored on reinstall
+- In-app language picker in Settings: switch languages without leaving the app (Android 13+)
+- Faster app startup, especially on slower devices
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 2.3:
+* ➕ Tip jar in Settings to support development with an optional tip, and tip again any time
+* ➕ In-app language picker in Settings: switch languages without leaving the app (Android 13+)
+* 🛠️ Faster app startup, especially on slower devices
+* 🛠️ The back-swipe animation now follows the edge you swipe from
+* 🔨 The current screen is kept when the app is recreated (e.g. after rotating or switching language)
+* 🔨 Fixed a startup crash on Android 7.x and older
+
 ### Version 2.2:
 * ➕ Haptic feedback for the root check, with a new toggle in Settings
 * ➕ Now available in Russian and Spanish
