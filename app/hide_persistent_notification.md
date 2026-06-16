@@ -8,6 +8,7 @@ tagline: Pick a persistent notification and keep it hidden for as long as the ap
 ---
 
 {% whatsNew %}
+- **Heads up: the app is going free with an optional in-app purchase.** If you already bought it, open the Settings screen and sign in so your purchase carries over and you keep every premium feature for free, no second purchase needed.
 - Completely rewritten with modern technologies
 - In-app updates: install the latest version right from the app
 - Support for Android 17
