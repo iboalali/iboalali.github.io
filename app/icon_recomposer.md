@@ -13,12 +13,30 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
 {% whatsNew %}
-- Per-layer shadow distance: control how far each layer lifts off the surface
-- The app now opens on a default project and shows its icon in the top bar and as the favicon
+- True per-layer gradient fills (linear or radial), with import from SVG and VectorDrawable
+- Emboss is now opt-in: new layers start as flat Solid fills
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 1.5.1:
+* 🛠️ Point (radial) light: Intensity now controls how far the shadow reaches, with a softer falloff. Turning it up pulls the shadow inward (at the maximum it passes the canvas center, darkening the center and far side); lower intensity keeps the center lit
+* 🔨 Distant (directional) light now embosses as strongly as the point light, and its Intensity slider has a clear effect. The bevel is built per shape along the light direction and concentrated in the shape interior, so distant-light icons read as 3D and look noticeably more embossed than before
+
+### Version 1.5.0:
+* ➕ True per-layer gradient fills: a new Gradient fill mode (alongside Solid and Embossed) with a linear or radial type, an editable multi-stop list (color, per-stop alpha, and offset), and numeric geometry. Gradients import from SVG and Android VectorDrawable instead of being flattened to one color, round-trip in the project file, and track the layer's move, scale, and flip. A "duplicate as gradient overlay" action stacks an embossed base and a gradient layer so one shape can have both
+* ➕ Link previews and search metadata: sharing the live URL now shows a title, summary, and the app icon (Open Graph and Twitter card tags) instead of a bare link
+* 🛠️ Emboss is now opt-in: new layers and imported art arrive as flat Solid fills in the source color rather than auto-embossed. Apply Embossed per layer for the 3D look, and the built-in sample stays embossed to show it off
+* 🔨 Stroke width now scales with the layer, so scaling a stroked shape keeps its outline proportional across the preview, PNG, and VectorDrawable export
+
+### Version 1.4.0:
+* ➕ Per-layer scale: a Scale control resizes the selected layer(s) by a percentage (100 = original). One layer scales about its own center; several selected layers scale together about their common center. Non-destructive (stored as a layer transform), with a link toggle for independent X and Y scaling
+* ➕ Flip layers: Flip H and Flip V mirror the selected layer(s); multiple layers flip together about their common center, and the flip is non-destructive
+* ➕ More anonymous usage and error events sent to TelemetryDeck (export, open, import, new, save, undo, redo, and errors), alongside the existing pageview (see the privacy policy)
+* ➕ A Privacy link in the app's top bar that opens its privacy policy
+* 🔨 Imported gradient fills now seed a representative base color from the gradient's stops instead of a flat gray
+* 🔨 Fixed duplicate layer ids when importing into a loaded project, which could make selecting one layer also select another; ids now de-duplicate on load
+
 ### Version 1.3.0:
 * ➕ Per-layer shadow distance: a Distance control in the Cast shadow section sets how far each layer throws its shadow (its apparent height above the surface). It multiplies the automatic length from the light, so 1× keeps the previous look and higher values lift the layer further off the surface
 * ➕ The app now opens on a bundled default project (the app icon) instead of the built-in sample, and shows that icon next to the title in the top bar and as the browser favicon
