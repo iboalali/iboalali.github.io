@@ -13,12 +13,21 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
 {% whatsNew %}
-- Move layers by dragging them on the canvas or setting exact X/Y positions
-- Click a layer's shape on the canvas to select it
+- Per-layer shadow distance: control how far each layer lifts off the surface
+- The app now opens on a default project and shows its icon in the top bar and as the favicon
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 1.3.0:
+* ➕ Per-layer shadow distance: a Distance control in the Cast shadow section sets how far each layer throws its shadow (its apparent height above the surface). It multiplies the automatic length from the light, so 1× keeps the previous look and higher values lift the layer further off the surface
+* ➕ The app now opens on a bundled default project (the app icon) instead of the built-in sample, and shows that icon next to the title in the top bar and as the browser favicon
+* ➕ Anonymous usage analytics via the privacy-friendly TelemetryDeck Web SDK: one pageview per load, no cookies (see the privacy policy)
+* 🔨 Clicking the canvas now switches the selection between overlapping layers; it hit-tests the actual layer geometry, so a layer's invisible drag target no longer intercepts clicks meant for a shape above or below it
+
+### Version 1.2.1:
+* 🔨 With Link W/H on, editing one canvas dimension now updates the other field's value too (the canvas already resized correctly; only the displayed value lagged)
+
 ### Version 1.2.0:
 * ➕ Move layers: drag a selected layer (or several at once) on the canvas, or set an exact position with the layer's X/Y fields
 * ➕ Click a layer's shape on the canvas to select it. Ctrl/⌘ and Shift-click extend the selection, and clicking an empty area deselects
