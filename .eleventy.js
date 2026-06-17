@@ -38,11 +38,13 @@ module.exports = function (eleventyConfig) {
     });
 
     // App listing paired shortcode to display an app with its details
-    eleventyConfig.addPairedShortcode("app", function (description, name, icon, link, packageName, repoUrl) {
+    eleventyConfig.addPairedShortcode("app", function (description, name, icon, link, packageName, repoUrl, appUrl) {
         // Create a link for the title if a URL is provided
         const title = link ? `<a href="${link}">${name}</a>` : name;
         // Create the Play Store button if a package name is provided
         const playStoreButton = packageName ? `<a href="https://play.google.com/store/apps/details?id=${packageName}&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1" target="_blank" class="btn-container"><img src="/media/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Download ${name} from the Play Store" /></a>` : '';
+        // Web apps link straight to the live URL instead of a store listing
+        const openAppButton = appUrl ? `<a href="${appUrl}" rel="noopener" class="btn-container"><img src="/media/open_app_badge.svg" alt="Open ${name} in your browser" /></a>` : '';
         // Create the GitHub button if a repo URL is provided
         const githubButton = repoUrl ? `<a href="${repoUrl}" target="_blank" rel="noopener" class="btn-container"><img src="/media/github_badge.svg" alt="View ${name} source on GitHub" /></a>` : '';
 
@@ -52,7 +54,7 @@ module.exports = function (eleventyConfig) {
             <div class="app-item-details">
                 <h3>${title}</h3>
                 <p>${description.trim()}</p>
-                <div class="app-item-ctas">${playStoreButton}${githubButton}</div>
+                <div class="app-item-ctas">${playStoreButton}${openAppButton}${githubButton}</div>
             </div>
         </div>`;
     });

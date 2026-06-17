@@ -27,6 +27,10 @@ This app will help you to show large text on the screen, and makes it as big as 
 You're not sure that your device is rooted (has root access)? use Basic Root Checker to find out
 {% endapp %}
 
+{% app "Icon Recomposer", "icon_recomposer.png", "/app/icon_recomposer", "", "https://github.com/iboalali/Icon-Recomposer", "https://iboalali.com/Icon-Recomposer/" %}
+Load vector artwork, light it with a movable 3D emboss, and export to PNG, SVG, or Android VectorDrawable. Runs entirely in your browser.
+{% endapp %}
+
 {% app "Book Keeper (⚒ Work in Progress)", "book+keeper+icon.png", "/app/book_keeper", "com.iboalali.bookkeeper" %}
 Track your book collection
 {% endapp %}

@@ -15,6 +15,11 @@ layout: main_layout.njk
         <img src="/media/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Download {{ appName }} from the Play Store" />
     </a>
     {% endif %}
+    {% if appUrl %}
+    <a href="{{ appUrl }}" rel="noopener" class="btn-container app-hero-cta">
+        <img src="/media/open_app_badge.svg" alt="Open {{ appName }} in your browser" />
+    </a>
+    {% endif %}
     {% if repoUrl %}
     <a href="{{ repoUrl }}" target="_blank" rel="noopener" class="btn-container app-hero-cta">
         <img src="/media/github_badge.svg" alt="View {{ appName }} source on GitHub" />
