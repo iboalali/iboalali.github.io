@@ -31,6 +31,6 @@ It runs entirely in your browser. There's nothing to install, and your artwork n
 * ➕ Export to PNG (transparent or with a background), Android VectorDrawable XML, SVG, and re-editable project JSON
 * ➕ Open and save projects, share by link, and undo/redo (Ctrl/⌘+Z)
 
-## Privacy
+## Privacy Policy
 
-Icon Recomposer runs entirely in your browser. It does not collect personal information, and your artwork is never uploaded. Files are opened and saved locally on your device.
+See the [Icon Recomposer privacy policy](/app/icon_recomposer/privacy/).
