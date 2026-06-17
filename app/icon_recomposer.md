@@ -19,6 +19,10 @@ It runs entirely in your browser. There's nothing to install, and your artwork n
 
 
 ## Changelog
+### Version 1.5.1:
+* 🛠️ Point (radial) light: Intensity now controls how far the shadow reaches, with a softer falloff. Turning it up pulls the shadow inward (at the maximum it passes the canvas center, darkening the center and far side); lower intensity keeps the center lit
+* 🔨 Distant (directional) light now embosses as strongly as the point light, and its Intensity slider has a clear effect. The bevel is built per shape along the light direction and concentrated in the shape interior, so distant-light icons read as 3D and look noticeably more embossed than before
+
 ### Version 1.5.0:
 * ➕ True per-layer gradient fills: a new Gradient fill mode (alongside Solid and Embossed) with a linear or radial type, an editable multi-stop list (color, per-stop alpha, and offset), and numeric geometry. Gradients import from SVG and Android VectorDrawable instead of being flattened to one color, round-trip in the project file, and track the layer's move, scale, and flip. A "duplicate as gradient overlay" action stacks an embossed base and a gradient layer so one shape can have both
 * ➕ Link previews and search metadata: sharing the live URL now shows a title, summary, and the app icon (Open Graph and Twitter card tags) instead of a bare link
