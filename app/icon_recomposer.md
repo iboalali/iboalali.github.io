@@ -13,12 +13,20 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
 {% whatsNew %}
-- Duplicate layers with a per-row button or Ctrl/⌘+D
-- Resize the project canvas, with size presets and optional content scaling
+- Move layers by dragging them on the canvas or setting exact X/Y positions
+- Click a layer's shape on the canvas to select it
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 1.2.0:
+* ➕ Move layers: drag a selected layer (or several at once) on the canvas, or set an exact position with the layer's X/Y fields
+* ➕ Click a layer's shape on the canvas to select it. Ctrl/⌘ and Shift-click extend the selection, and clicking an empty area deselects
+* ➕ Numeric Position X/Y fields for precise point-light placement, alongside the draggable handle
+* 🛠️ The light now moves only by dragging its handle; clicking elsewhere on the canvas no longer repositions it
+* 🔨 Fixed canvas size presets that could render partially off-screen in the inspector
+* 🔨 Fixed number inputs (canvas size, light position, PNG size, stroke width) overflowing the right edge of their panel
+
 ### Version 1.1.0:
 * ➕ Duplicate layer: a per-row button and Ctrl/⌘+D copy the selected layer(s), placing each copy directly above its original
 * ➕ Resize the project canvas via Width/Height fields or presets (24, 108, 512, 1024), with a linked aspect ratio and an optional "Scale contents"
