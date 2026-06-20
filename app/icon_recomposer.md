@@ -19,6 +19,13 @@ It runs entirely in your browser. There's nothing to install, and your artwork n
 
 
 ## Changelog
+### Version 1.5.4:
+* ➕ Press Esc to clear the layer selection. If a control is focused, the first Esc leaves the field and a second clears the selection; an open color picker or dialog closes on Esc first
+* 🛠️ The "Start a new document?" prompt is now an in-app dialog that matches the dark theme instead of the browser's native confirm box (Esc cancels, Enter confirms)
+
+### Version 1.5.3:
+* ➕ A Changelog link in the top bar (next to Privacy) that opens the app's "What's new" page
+
 ### Version 1.5.2:
 * ➕ A simpler way to make gradients: choosing the Gradient fill now leads with one-click Quick looks (Top light, Glow, Sheen, Diagonal, Fade out), a From/To color pair with a Fade toggle, and a direction pad (arrows set a linear direction, the center dot makes it radial). The full multi-stop editor (offsets, per-stop alpha, exact coordinates) moves under an Advanced disclosure and stays in sync. The simple controls restyle every selected gradient layer at once
 * 🔨 The Gradient fill option is now always visible: the Solid / Embossed / Gradient control moved onto its own full-width line, so "Gradient" is no longer clipped off the right edge of the inspector
