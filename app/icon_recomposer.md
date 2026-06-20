@@ -13,12 +13,26 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
 {% whatsNew %}
-- Installable and works offline
-- Zoom and pan the canvas
+- Your work is saved automatically and restored when you return
+- Installable and works offline, now on Android too
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 1.7.2:
+* 🛠️ The Install button now appears on Android phones too (Chrome and Edge) and installs the app on tap, with the browser's own install banner suppressed so there is a single, consistent button. On iPhone and iPad, install is still via Safari's Share menu and "Add to Home Screen"
+
+### Version 1.7.1:
+* 🛠️ Anonymous usage analytics now record the app version so I can tell which versions are in use. No new personal data; the version is already shown in the app
+
+### Version 1.7.0:
+* ➕ Your work is saved automatically: the current project is stored in your browser and restored when you reopen the page, so you pick up where you left off. Opening a shared link still shows that shared design
+
+### Version 1.6.1:
+* ➕ An Install button in the top bar: on desktop browsers that support it, an Install button appears to the right of Export and installs the app on click, with no automatic prompt or banner
+* 🛠️ When running as an installed desktop app, the redundant app icon and name are dropped from the top bar (the window title bar already shows them); the version stays
+* 🔨 All top-bar buttons now share a uniform height (the "⋯" overflow button was slightly shorter)
+
 ### Version 1.6.0:
 * ➕ Installable and works offline (PWA): add Icon Recomposer to your home screen or desktop and it runs fully offline. Once loaded, the whole app and your last-used default are cached, so it opens with no network, and new versions offer a one-tap reload
 
