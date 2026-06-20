@@ -13,12 +13,29 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
 {% whatsNew %}
-- True per-layer gradient fills (linear or radial), with import from SVG and VectorDrawable
-- Emboss is now opt-in: new layers start as flat Solid fills
+- Installable and works offline
+- Zoom and pan the canvas
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 1.6.0:
+* ➕ Installable and works offline (PWA): add Icon Recomposer to your home screen or desktop and it runs fully offline. Once loaded, the whole app and your last-used default are cached, so it opens with no network, and new versions offer a one-tap reload
+
+### Version 1.5.8:
+* 🛠️ When the window is narrow, the top bar now stays on one line and moves the items that do not fit into a "⋯" overflow menu (Privacy and Changelog first, then Import, and so on) instead of wrapping into a jumble
+* 🔨 The whole canvas is always visible: on short or wide windows it now scales to fit the stage in both dimensions, so the top and bottom are no longer clipped
+
+### Version 1.5.7:
+* 🔨 Phone layout no longer hides the canvas: the phone view is now a normally-scrolling page with the canvas pinned at the top (always visible) and Layers and the inspector below, plus a sticky toolbar whose buttons wrap
+
+### Version 1.5.6:
+* ➕ Keyboard shortcuts for Save and Open: Ctrl+S / ⌘S saves the project, and Ctrl+O / ⌘O opens a project or imports a vector
+* 🛠️ Wider side panels (Layers 240 to 280px, inspector 300 to 360px) for more breathing room
+
+### Version 1.5.5:
+* ➕ Zoom and pan the canvas: zoom with the mouse wheel or a two-finger pinch (toward the pointer, up to 8×, never below the fit size), and pan by dragging empty canvas when zoomed in, with a two-finger drag, or with a middle-mouse drag. It is view-only, so every export and the project file are unaffected
+
 ### Version 1.5.4:
 * ➕ Press Esc to clear the layer selection. If a control is focused, the first Esc leaves the field and a second clears the selection; an open color picker or dialog closes on Esc first
 * 🛠️ The "Start a new document?" prompt is now an in-app dialog that matches the dark theme instead of the browser's native confirm box (Esc cancels, Enter confirms)
