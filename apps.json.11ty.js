@@ -14,7 +14,7 @@ module.exports = class {
 
     render({ collections, siteUrl }) {
         const apps = collections.all
-            .filter((item) => item.data.appName)
+            .filter((item) => item.data.appName && !item.data.excludeFromAppsJson)
             .map((item) => {
                 const { appName, packageName, tagline, icon, appUrl } = item.data;
                 return {
