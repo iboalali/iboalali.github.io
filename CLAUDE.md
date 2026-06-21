@@ -33,6 +33,20 @@ There are no test or lint scripts configured.
 - **Site footer:** `_includes/main_layout.njk` renders a "View this site's source on GitHub" link below `<main>`
 - **Ignored by Eleventy:** `.eleventyignore` lists `CLAUDE.md` (to prevent template processing of `{% %}` examples), `docs/` (in-repo planning docs), and `DOMAIN_SETUP.md` (setup notes, not a published page)
 
+## Source Project Paths (local)
+
+Local checkouts of the apps showcased on this site, recorded for fast access when updating an app page's changelog/version (e.g. `app/<slug>.md`) from its source project's `CHANGELOG.md`. Each app page is updated from the corresponding source project — these paths avoid having to search for the project each time.
+
+| App (website) | App page | Source project path |
+| --- | --- | --- |
+| Icon Recomposer | `app/icon_recomposer.md` | `/home/iboalali/Documents/Icon Recomposer` |
+| Hide Persistent Notification | `app/hide_persistent_notification.md` | `/home/iboalali/AndroidStudioProjects/Hide-Persistent-Notification` |
+| Book Keeper | `app/book_keeper.md` | `/home/iboalali/StudioProjects/book-keeper` |
+| Billboard | `app/billboard.md` | `/home/iboalali/AndroidStudioProjects/Billboard` |
+| Basic Root Checker | `app/basic_root_checker.md` | `/home/iboalali/StudioProjects/Basic-Root-Checker` |
+
+Maintenance: these paths cover only apps already on the site. When a project moves or a new app is added to the site, re-scan the project roots (`/home/iboalali/Documents/`, `/home/iboalali/StudioProjects/`, `/home/iboalali/AndroidStudioProjects/`) and update the path here. Don't add a project that isn't on the site unless explicitly asked.
+
 ## Theming
 
 CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. The toggle button cycles through four modes — **light → dark → paper → auto** — and theming works via:
