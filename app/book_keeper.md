@@ -5,6 +5,7 @@ appName: Book Keeper
 icon: book+keeper+icon.png
 packageName: com.iboalali.bookkeeper
 tagline: Track your book collection. Currently a work in progress.
+excludeFromAppsJson: true # work in progress; keep out of /apps.json
 ---
 
 Track your book collection
