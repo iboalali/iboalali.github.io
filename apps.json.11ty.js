@@ -1,13 +1,15 @@
-// Generates /apps.json — a static manifest of the apps showcased on this site,
-// built from the same app/*.md frontmatter and body that drive the app detail
-// pages so the two never drift. Fetched by the Android apps to list sibling
-// apps; each entry's packageName lets a client open the Play Store listing or
-// launch the app on device, and `website` points to the web app (when there is
-// one) or the app's page on iboalali.com.
+// Generates the localized app manifests: /apps.json (English default) plus one
+// /apps.<locale>.json per extra locale in _data/locales.json. Built from the
+// same app/*.md frontmatter and body that drive the detail pages, so the feed
+// never drifts. Fetched by the Android apps to list sibling apps; packageName
+// lets a client open the Play Store listing or launch the app on device, and
+// `website` points to the web app (when there is one) or the iboalali.com page.
 //
-// `whatsNew` and `changelog` are parsed straight out of each page's markdown
-// body — the same `{% whatsNew %}` callout and `## Changelog` section the page
-// renders — so the feed mirrors what a visitor sees.
+// Localization: per-locale overrides live in _data/appsI18n.js, keyed by app
+// slug then locale. Each field falls back to English when no translation
+// exists, so every locale file is always complete. `changelog` is always
+// English (no translated history exists). Android clients request the file for
+// the device language and fall back to /apps.json on 404.
 const fs = require("fs");
 
 // Drop the leading YAML frontmatter block so we parse only the markdown body.
@@ -63,32 +65,53 @@ function extractChangelog(body) {
     return entries;
 }
 
+// Overlay localized changes onto the English changelog, per version. A version
+// with no translation keeps its English entry, so the changelog is always
+// complete and stays in the page's version order.
+function localizeChangelog(enChangelog, locMap) {
+    if (!locMap) return enChangelog;
+    return enChangelog.map((entry) =>
+        locMap[entry.version]
+            ? { version: entry.version, changes: locMap[entry.version] }
+            : entry
+    );
+}
+
 module.exports = class {
     data() {
         return {
-            permalink: "/apps.json",
+            // One output file per locale; English keeps the bare /apps.json name.
+            pagination: { data: "locales", size: 1, alias: "locale" },
+            permalink: (data) =>
+                data.locale === "en"
+                    ? "/apps.json"
+                    : `/apps.${data.locale}.json`,
             eleventyExcludeFromCollections: true,
         };
     }
 
-    render({ collections, siteUrl }) {
+    render(data) {
+        const { collections, siteUrl, locale, appsI18n = {} } = data;
+
         const apps = collections.all
             .filter((item) => item.data.appName && !item.data.excludeFromAppsJson)
+            // Stable order across every locale file: sort by the English name.
+            .sort((a, b) => a.data.appName.localeCompare(b.data.appName))
             .map((item) => {
                 const { appName, packageName, tagline, icon, appUrl } = item.data;
                 const body = stripFrontMatter(fs.readFileSync(item.inputPath, "utf8"));
+                const t = (appsI18n[item.fileSlug] || {})[locale] || {};
                 return {
-                    name: appName,
+                    name: t.name || appName,
                     packageName: packageName || null,
-                    description: tagline || null,
+                    description: t.description || tagline || null,
                     icon: `${siteUrl}/media/${icon}`,
                     website: appUrl || `${siteUrl}${item.url}`,
-                    whatsNew: extractWhatsNew(body),
-                    changelog: extractChangelog(body),
+                    whatsNew: t.whatsNew || extractWhatsNew(body),
+                    changelog: localizeChangelog(extractChangelog(body), t.changelog),
                 };
-            })
-            .sort((a, b) => a.name.localeCompare(b.name));
+            });
 
-        return JSON.stringify({ apps }, null, 2) + "\n";
+        return JSON.stringify({ locale, apps }, null, 2) + "\n";
     }
 };
