@@ -16,12 +16,20 @@ This app does **NOT** collect any personal information. It works fully offline; 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 {% whatsNew %}
-- In-app language picker in Settings: switch languages without leaving the app (Android 13+)
-- Faster app startup, especially on slower devices
+- New Theme option in Settings: light, dark, or system
+- Detect more root managers (Kitsune Mask, SukiSU, KernelSU Next, SuperSU and more), each shown by name
 {% endwhatsNew %}
 
 
 ## Changelog
+### Version 2.4:
+* ➕ Subtle haptic feedback across the app: taps, switches, and selections give a gentle tick
+* ➕ Check this device's root status from assistants and other apps, without opening it (Android 16+)
+* ➕ New Theme option in Settings: light, dark, or system
+* 🛠️ Redesigned Settings, with the tip jar moved to the top
+* 🔨 Detect more root managers (Kitsune Mask, SukiSU, KernelSU Next, SuperSU and more), each shown by name
+* 🔨 Accessibility and back-navigation fixes
+
 ### Version 2.3:
 * ➕ Tip jar in Settings to support development with an optional tip, and tip again any time
 * ➕ In-app language picker in Settings: switch languages without leaving the app (Android 13+)
