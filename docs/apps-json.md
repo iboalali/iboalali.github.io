@@ -188,6 +188,60 @@ fun openIntent(app: App): Intent = when (val pkg = app.packageName) {
 }
 ```
 
+### Rendering `whatsNew` Markdown
+
+`whatsNew` bullets may contain **inline Markdown** — in practice just `**bold**`
+(e.g. Hide Persistent Notification's "**Heads up: …**"), and occasionally
+`*italic*`. `description` and `changelog` bullets are plain text plus a leading
+status emoji; the emoji are ordinary Unicode and need no special handling.
+
+For this limited inline subset, do **not** pull in a Markdown library — build a
+Compose `AnnotatedString`. `Text` accepts one directly, so there's no extra
+rendering layer:
+
+```kotlin
+import androidx.compose.ui.text.*
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+
+/** Handles inline **bold** and *italic*. Non-nested; unknown markup stays literal. */
+fun parseInlineMarkdown(input: String): AnnotatedString = buildAnnotatedString {
+    var i = 0
+    while (i < input.length) {
+        when {
+            input.startsWith("**", i) -> {
+                val end = input.indexOf("**", i + 2)
+                if (end != -1) {
+                    withStyle(SpanStyle(fontWeight = FontWeight.Bold)) { append(input.substring(i + 2, end)) }
+                    i = end + 2
+                } else { append("**"); i += 2 }
+            }
+            input[i] == '*' -> {
+                val end = input.indexOf('*', i + 1)
+                if (end != -1) {
+                    withStyle(SpanStyle(fontStyle = FontStyle.Italic)) { append(input.substring(i + 1, end)) }
+                    i = end + 1
+                } else { append('*'); i++ }
+            }
+            else -> { append(input[i]); i++ }
+        }
+    }
+}
+
+// Text(text = parseInlineMarkdown(app.whatsNew.first()))
+```
+
+Notes:
+
+- It degrades gracefully — an unbalanced `*`/`**` is left as literal text. If you
+  prefer to show nothing fancy, strip the markers instead: `text.replace("**", "")`.
+- The feed emits no links, headings, lists, or code spans today, so block-level
+  Markdown rendering is unnecessary. If that changes, use a built-in route
+  (`AnnotatedString.fromHtml(html)`, Compose UI 1.7+, after a Markdown→HTML step)
+  or a Compose-native renderer (e.g. `com.halilibo.compose-richtext:richtext-commonmark`
+  or `com.mikepenz:multiplatform-markdown-renderer`) rather than a Markwon-based
+  wrapper. Confirm latest coordinates before adding.
+
 ### Compression
 
 Responses are gzip-compressed by the CDN. `HttpURLConnection` and `OkHttp`
