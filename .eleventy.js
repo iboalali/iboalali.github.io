@@ -79,8 +79,10 @@ module.exports = function (eleventyConfig) {
         return `<a href="${link}" class="btn-container" target="_blank" rel="noopener"><img src="/media/github_badge.svg" alt="${alt}" /></a>`;
     });
 
+    // `data-contact` carries the platform name so the click telemetry in main.js
+    // identifies the card without parsing its (potentially localized) link text.
     eleventyConfig.addShortcode("socials", function (name, link, icon) {
-        return `<a href="${link}" class="icon-link">
+        return `<a href="${link}" class="icon-link" data-contact="${name.trim()}">
                   <img src="/media/${icon}" alt="${name}" class="small-icon">
                   <span>${name.trim()}</span>
                 </a>`;

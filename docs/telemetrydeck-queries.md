@@ -7,6 +7,7 @@ Paste-ready TQL queries for the TelemetryDeck dashboard.
 - **Signal types tracked:** `pageview` only (Web SDK auto-pageview)
 - **Custom signal (planned):** `App.Referral` (fires only when `utm_source=android_app`; not yet present in the structural data export)
 - **Custom signal (planned):** `Theme.Toggle` (fires once per burst of toggle clicks, debounced ~1.5s; payload `Theme.Toggle.from` is the mode the burst started from and `Theme.Toggle.to` is the resting mode they settled on — `light`, `dark`, `paper`, or `auto`. Bursts that cycle back to the starting mode emit nothing)
+- **Custom signal (planned):** `Contact.Click` (fires when a visitor opens one of the contact-page social cards; payload `Contact.Click.platform` names the platform — `Mastodon`, `Github`, `LinkedIn`, or `Bluesky`)
 
 ## How to use
 
@@ -301,3 +302,38 @@ moves visitors make through the toggle (e.g. how many leave `auto` for `paper`).
 ```
 
 Re-export structural data from the dashboard to confirm the signal type and payload keys before relying on these.
+
+## Once `Contact.Click` starts arriving
+
+`Contact.Click` fires from `main.js` when a visitor opens one of the social cards
+on the contact page (left- or middle-click). `Contact.Click.platform` names the
+destination — `Mastodon`, `Github`, `LinkedIn`, or `Bluesky` — taken from the
+card's `data-contact` attribute. Use it to see which platforms visitors actually
+reach out through. Assumes the signal type and payload key have appeared in the
+structural data export.
+
+### 11. Most-clicked contact platforms
+
+Ranks the contact cards by number of clicks.
+
+```json
+{
+  "queryType": "topN",
+  "granularity": "all",
+  "threshold": 10,
+  "dimension": { "type": "default", "dimension": "Contact.Click.platform", "outputName": "Platform" },
+  "metric": { "type": "numeric", "metric": "clicks" },
+  "aggregations": [{ "type": "eventCount", "name": "clicks" }],
+  "filter": {
+    "type": "and",
+    "fields": [
+      { "type": "selector", "dimension": "type", "value": "Contact.Click" },
+      { "type": "selector", "dimension": "isBot", "value": "False" }
+    ]
+  },
+  "baseFilters": "thisApp",
+  "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
+}
+```
+
+Re-export structural data from the dashboard to confirm the signal type and payload key before relying on this.

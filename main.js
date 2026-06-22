@@ -169,6 +169,31 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     }
 })();
 
+// Contact-card telemetry: fire a Contact.Click signal naming which platform the
+// visitor opened from the contact page. The cards are external links (opened in
+// a new tab by the handler at the top of this file), so the current page stays
+// alive and the signal sends normally. Follows the Scope.SubScope.key naming
+// convention. Delegated off the container so a single listener covers all cards
+// and also catches middle-click ("open in new tab"). Guards window.td defensively.
+;(function () {
+    var container = document.querySelector('.contact-links');
+    if (!container) return;
+
+    function track(e) {
+        // Count primary (left) and auxiliary (middle) clicks; ignore right-click.
+        if (e.button !== 0 && e.button !== 1) return;
+        var link = e.target.closest('.icon-link[data-contact]');
+        if (!link) return;
+        if (!window.td || typeof window.td.signal !== 'function') return;
+        window.td.signal('Contact.Click', {
+            'Contact.Click.platform': link.getAttribute('data-contact'),
+        });
+    }
+
+    container.addEventListener('click', track);
+    container.addEventListener('auxclick', track);
+})();
+
 // Shared-element view transition for the app icon. On the home page each app
 // card has a .app-icon; the detail page's single .app-hero-icon statically owns
 // the shared name "app-icon" (see styles.css). Here we assign that same name to
