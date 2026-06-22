@@ -32,9 +32,12 @@ module.exports = function (eleventyConfig) {
     // https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.eleventy.js
     // eleventyConfig.addShortcode
 
-    // Profile picture shortcode
+    // Profile picture shortcode. Served from the site itself (media/profile.jpg)
+    // rather than Gravatar: same-origin avoids the slow cross-origin request, and
+    // the optimized JPEG is a fraction of Gravatar's PNG. width/height supply the
+    // intrinsic aspect ratio so the box reserves space before the image loads.
     eleventyConfig.addShortcode("profilePhoto", function (url) {
-        return `<img alt="Photo of Ibrahim" class="profile-photo" src="https://gravatar.com/avatar/c986ffd7d07a2ae1336d5321ae0c6392?size=500">`
+        return `<img alt="Photo of Ibrahim" class="profile-photo" src="/media/profile.jpg" width="500" height="500" decoding="async">`
     });
 
     // App listing paired shortcode to display an app with its details
