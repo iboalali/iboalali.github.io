@@ -12,10 +12,10 @@ _Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _V
 
 It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
 
-{% whatsNew %}
+{% highlights %}
 - Your work is saved automatically and restored when you return
 - Installable and works offline, now on Android too
-{% endwhatsNew %}
+{% endhighlights %}
 
 
 ## Changelog

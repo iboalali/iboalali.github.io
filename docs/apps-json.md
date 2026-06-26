@@ -55,7 +55,7 @@ Each `App`:
 | `description` | `string` | Short tagline, localized. |
 | `icon` | `string` | Absolute URL to a 256×256 PNG. |
 | `website` | `string` | Absolute URL. The app's web app if it has one (Icon Recomposer), otherwise its page on iboalali.com. |
-| `whatsNew` | `string[]` | The latest "What's New" highlights, localized. May be empty (`[]`). Bullets may contain inline Markdown (e.g. `**bold**`). |
+| `highlights` | `string[]` | The latest highlights, localized. May be empty (`[]`). Bullets may contain inline Markdown (e.g. `**bold**`). |
 | `changelog` | `ChangelogEntry[]` | Full version history, newest first, localized. |
 
 Each `ChangelogEntry`:
@@ -70,7 +70,7 @@ across all locale files (so index `i` is the same app in every file). `changelog
 is newest-version-first.
 
 **Stability for consumers:** treat unknown fields as additive (don't fail on
-them). `packageName` can be `null`. `whatsNew` can be `[]`.
+them). `packageName` can be `null`. `highlights` can be `[]`.
 
 ---
 
@@ -88,7 +88,7 @@ them). `packageName` can be `null`. `whatsNew` can be `[]`.
       "description": "Ist Ihr Gerät gerootet? Finden Sie es sofort heraus!",
       "icon": "https://iboalali.com/media/basic+root+checker+icon.png",
       "website": "https://iboalali.com/app/basic_root_checker/",
-      "whatsNew": [
+      "highlights": [
         "Neue Design-Option: hell, dunkel oder System",
         "Mehr Root-Manager erkannt (Kitsune Mask, SukiSU, KernelSU Next, SuperSU u. a.), jeweils mit Namen"
       ],
@@ -103,7 +103,7 @@ them). `packageName` can be `null`. `whatsNew` can be `[]`.
       "description": "Vektor-Icons mit beweglichem 3D-Relief …",
       "icon": "https://iboalali.com/media/icon_recomposer.png",
       "website": "https://iboalali.com/Icon-Recomposer/",
-      "whatsNew": ["…"],
+      "highlights": ["…"],
       "changelog": [ { "version": "1.7.2", "changes": ["…"] } ]
     }
   ]
@@ -170,7 +170,7 @@ data class App(
     val description: String,
     val icon: String,
     val website: String,
-    val whatsNew: List<String> = emptyList(),
+    val highlights: List<String> = emptyList(),
     val changelog: List<ChangelogEntry> = emptyList(),
 )
 
@@ -188,9 +188,9 @@ fun openIntent(app: App): Intent = when (val pkg = app.packageName) {
 }
 ```
 
-### Rendering `whatsNew` Markdown
+### Rendering `highlights` Markdown
 
-`whatsNew` bullets may contain **inline Markdown** — in practice just `**bold**`
+`highlights` bullets may contain **inline Markdown** — in practice just `**bold**`
 (e.g. Hide Persistent Notification's "**Heads up: …**"), and occasionally
 `*italic*`. `description` and `changelog` bullets are plain text plus a leading
 status emoji; the emoji are ordinary Unicode and need no special handling.
@@ -228,7 +228,7 @@ fun parseInlineMarkdown(input: String): AnnotatedString = buildAnnotatedString {
     }
 }
 
-// Text(text = parseInlineMarkdown(app.whatsNew.first()))
+// Text(text = parseInlineMarkdown(app.highlights.first()))
 ```
 
 Notes:
@@ -271,7 +271,7 @@ deployed change may take that long to propagate at the edge.
 
 ```
 app/<slug>.md  ──┐  (frontmatter: appName, icon, packageName, tagline, appUrl?)
-                 │  (body: {% whatsNew %} block + ## Changelog section)
+                 │  (body: {% highlights %} block + ## Changelog section)
 _data/locales.json ──┤
 _data/appsI18n.js  ──┤   apps.json.11ty.js  ──►  _site/apps.json
                  └──────────────────────────►  _site/apps.<locale>.json
@@ -284,7 +284,7 @@ _data/appsI18n.js  ──┤   apps.json.11ty.js  ──►  _site/apps.json
      detail pages) and excludes any with `excludeFromAppsJson: true`.
   3. For each app, reads the page's frontmatter for `name`/`packageName`/
      `description`/`icon`/`website`, and parses the **rendered Markdown body**
-     for `whatsNew` (the `{% whatsNew %}…{% endwhatsNew %}` block) and
+     for `highlights` (the `{% highlights %}…{% endhighlights %}` block) and
      `changelog` (the `## Changelog` section, `### Version X:` headings → bullet
      lists). Parsing the body means the feed mirrors what a visitor sees — there
      is no separate English data source to keep in sync.
@@ -292,7 +292,7 @@ _data/appsI18n.js  ──┤   apps.json.11ty.js  ──►  _site/apps.json
      English fallback, then sorts by English name.
 - **`_data/locales.json`** — the locale list.
 - **`_data/appsI18n.js`** — per-locale, per-app overrides, keyed by **page slug**
-  then locale: `{ <slug>: { <locale>: { name?, description?, whatsNew?, changelog? } } }`.
+  then locale: `{ <slug>: { <locale>: { name?, description?, highlights?, changelog? } } }`.
   `changelog` is a `{ "<version>": string[] }` map merged onto the English
   changelog per version.
 
@@ -337,7 +337,7 @@ Edit `_data/appsI18n.js`. Each field is independent and optional:
 basic_root_checker: {
   de: {
     description: "…",
-    whatsNew: ["…", "…"],
+    highlights: ["…", "…"],
     changelog: { "2.4": ["➕ …", "…"], "2.3": ["…"] }, // version -> bullets
   },
 },
@@ -366,7 +366,7 @@ the app repos).
   linearly with locale count. File-per-locale keeps each fetch to one ~7–9 KB
   gzipped file regardless of how many locales exist. The trade-off is a small bit
   of client glue (locale→URL + a 404 fallback).
-- **Generated from the page source, not hand-authored.** `whatsNew` and
+- **Generated from the page source, not hand-authored.** `highlights` and
   `changelog` are parsed from the same Markdown the detail pages render, so the
   feed can't drift from the website. Only *translations* are a separate data
   source.

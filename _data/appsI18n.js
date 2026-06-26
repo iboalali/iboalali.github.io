@@ -5,21 +5,21 @@
 // English entry (per-version fallback in apps.json.11ty.js).
 //
 // Provenance per app:
-//   basic_root_checker — description + whatsNew + changelog 2.2/2.3/2.4 are the
+//   basic_root_checker — description + highlights + changelog 2.2/2.3/2.4 are the
 //     app's own Play Store metadata (Listing short descriptions + release
 //     notes). changelog 2.1 and older were translated for this site to match
 //     the page's bullets (the repo's 2.1 notes are grouped differently, and
 //     older versions have no release notes). `name` set only where it differs
 //     from English (Arabic).
 //   billboard / hide_persistent_notification / icon_recomposer — no localized
-//     marketing copy exists in those repos, so description and whatsNew were
+//     marketing copy exists in those repos, so description and highlights were
 //     translated for this site. Their changelogs are not yet localized (still
 //     English via fallback). Review welcome, especially ar/ru.
 module.exports = {
     basic_root_checker: {
         de: {
             description: "Ist Ihr Gerät gerootet? Finden Sie es sofort heraus!",
-            whatsNew: [
+            highlights: [
                 "Neue Design-Option: hell, dunkel oder System",
                 "Mehr Root-Manager erkannt (Kitsune Mask, SukiSU, KernelSU Next, SuperSU u. a.), jeweils mit Namen",
             ],
@@ -101,7 +101,7 @@ module.exports = {
         ar: {
             name: "التحقق من الـ Root",
             description: "هل جهازك حاصل على صلاحيات الروت؟ اكتشف ذلك فوراً!",
-            whatsNew: [
+            highlights: [
                 "خيار مظهر جديد في الإعدادات: فاتح أو داكن أو حسب النظام",
                 "اكتشاف مزيد من مديري الروت (Kitsune Mask وSukiSU وKernelSU Next وSuperSU وغيرها) وعرض كلٍّ باسمه",
             ],
@@ -179,7 +179,7 @@ module.exports = {
         },
         es: {
             description: "¿Su dispositivo tiene acceso root? ¡Descúbralo al instante!",
-            whatsNew: [
+            highlights: [
                 "Nueva opción de Tema: claro, oscuro o sistema",
                 "Se detectan más gestores de root (Kitsune Mask, SukiSU, KernelSU Next, SuperSU y más), cada uno por su nombre",
             ],
@@ -260,7 +260,7 @@ module.exports = {
         },
         ru: {
             description: "Есть ли root на вашем устройстве? Узнайте мгновенно!",
-            whatsNew: [
+            highlights: [
                 "Новая опция Тема: светлая, тёмная или как в системе",
                 "Распознаётся больше root-менеджеров (Kitsune Mask, SukiSU, KernelSU Next, SuperSU и др.), каждый под своим именем",
             ],
@@ -516,7 +516,7 @@ module.exports = {
         de: {
             description:
                 "Eine dauerhafte Benachrichtigung auswählen und verborgen halten, solange die App installiert ist.",
-            whatsNew: [
+            highlights: [
                 "**Hinweis: Die App wird mit einem optionalen In-App-Kauf kostenlos.** Wenn Sie sie bereits gekauft haben, öffnen Sie die Einstellungen und melden Sie sich an, damit Ihr Kauf übernommen wird und Sie alle Premium-Funktionen kostenlos behalten, kein zweiter Kauf nötig.",
                 "Komplett mit modernen Technologien neu geschrieben",
                 "In-App-Updates: die neueste Version direkt aus der App installieren",
@@ -592,7 +592,7 @@ module.exports = {
         ar: {
             description:
                 "اختر إشعاراً دائماً وأبقِه مخفياً طوال مدة تثبيت التطبيق.",
-            whatsNew: [
+            highlights: [
                 "**تنبيه: سيصبح التطبيق مجانياً مع عملية شراء اختيارية داخله.** إذا كنت قد اشتريته من قبل، فافتح شاشة الإعدادات وسجّل الدخول لينتقل شراؤك وتحتفظ بجميع الميزات المميزة مجاناً، دون الحاجة إلى شراء ثانٍ.",
                 "أُعيدت كتابته بالكامل باستخدام تقنيات حديثة",
                 "تحديثات داخل التطبيق: ثبّت أحدث إصدار مباشرة من التطبيق",
@@ -664,7 +664,7 @@ module.exports = {
         es: {
             description:
                 "Elija una notificación persistente y manténgala oculta mientras la app esté instalada.",
-            whatsNew: [
+            highlights: [
                 "**Aviso: la app pasará a ser gratuita con una compra opcional dentro de la app.** Si ya la compró, abra la pantalla de Ajustes e inicie sesión para que su compra se conserve y mantenga todas las funciones premium gratis, sin necesidad de comprar otra vez.",
                 "Completamente reescrita con tecnologías modernas",
                 "Actualizaciones dentro de la app: instale la última versión directamente desde la app",
@@ -738,7 +738,7 @@ module.exports = {
         ru: {
             description:
                 "Выберите постоянное уведомление и держите его скрытым, пока приложение установлено.",
-            whatsNew: [
+            highlights: [
                 "**Внимание: приложение становится бесплатным с необязательной покупкой внутри.** Если вы уже купили его, откройте экран настроек и войдите, чтобы покупка перенеслась и все премиум-функции остались бесплатными, без повторной покупки.",
                 "Полностью переписано с использованием современных технологий",
                 "Обновления внутри приложения: установите последнюю версию прямо из приложения",
@@ -813,7 +813,7 @@ module.exports = {
         de: {
             description:
                 "Vektor-Icons mit beweglichem 3D-Relief beleuchten und als PNG, SVG oder Android-VectorDrawable exportieren.",
-            whatsNew: [
+            highlights: [
                 "Ihre Arbeit wird automatisch gespeichert und bei der Rückkehr wiederhergestellt",
                 "Installierbar und offline nutzbar, jetzt auch unter Android",
             ],
@@ -912,7 +912,7 @@ module.exports = {
         ar: {
             description:
                 "أضئ أيقونات متجهة بنقش ثلاثي الأبعاد قابل للتحريك، ثم صدّرها إلى PNG أو SVG أو Android VectorDrawable.",
-            whatsNew: [
+            highlights: [
                 "يُحفظ عملك تلقائياً ويُستعاد عند عودتك",
                 "قابل للتثبيت ويعمل دون اتصال، والآن على أندرويد أيضاً",
             ],
@@ -1011,7 +1011,7 @@ module.exports = {
         es: {
             description:
                 "Ilumine iconos vectoriales con un relieve 3D movible y expórtelos a PNG, SVG o Android VectorDrawable.",
-            whatsNew: [
+            highlights: [
                 "Su trabajo se guarda automáticamente y se restaura cuando vuelve",
                 "Instalable y funciona sin conexión, ahora también en Android",
             ],
@@ -1110,7 +1110,7 @@ module.exports = {
         ru: {
             description:
                 "Освещайте векторные иконки подвижным 3D-рельефом и экспортируйте в PNG, SVG или Android VectorDrawable.",
-            whatsNew: [
+            highlights: [
                 "Ваша работа сохраняется автоматически и восстанавливается при возвращении",
                 "Можно установить, работает офлайн, теперь и на Android",
             ],

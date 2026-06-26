@@ -15,10 +15,10 @@ This app does **NOT** collect any personal information. It works fully offline; 
 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
-{% whatsNew %}
+{% highlights %}
 - New Theme option in Settings: light, dark, or system
 - Detect more root managers (Kitsune Mask, SukiSU, KernelSU Next, SuperSU and more), each shown by name
-{% endwhatsNew %}
+{% endhighlights %}
 
 
 ## Changelog
