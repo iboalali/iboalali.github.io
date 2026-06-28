@@ -4,17 +4,22 @@
 // map of version -> translated bullets; versions absent from the map keep their
 // English entry (per-version fallback in apps.json.11ty.js).
 //
-// Provenance per app:
+// Provenance per app (all four are fully localized in de/ar/es/ru — name where
+// it differs, plus description, highlights, and changelog):
 //   basic_root_checker — description + highlights + changelog 2.2/2.3/2.4 are the
 //     app's own Play Store metadata (Listing short descriptions + release
 //     notes). changelog 2.1 and older were translated for this site to match
 //     the page's bullets (the repo's 2.1 notes are grouped differently, and
 //     older versions have no release notes). `name` set only where it differs
 //     from English (Arabic).
-//   billboard / hide_persistent_notification / icon_recomposer — no localized
-//     marketing copy exists in those repos, so description and highlights were
-//     translated for this site. Their changelogs are not yet localized (still
-//     English via fallback). Review welcome, especially ar/ru.
+//   hide_persistent_notification — description + highlights translated for this
+//     site. changelog 2.1 (en + de/ar/es/ru) is the app's own Play Store
+//     release notes, reused from the repo (em dashes normalized for site copy);
+//     2.0's German is likewise from the repo; the rest was translated for this
+//     site. Review welcome, especially ar/ru.
+//   billboard / icon_recomposer — no localized marketing copy exists in those
+//     repos, so description, highlights, and changelog were all translated for
+//     this site. Review welcome, especially ar/ru.
 module.exports = {
     basic_root_checker: {
         de: {
@@ -518,11 +523,18 @@ module.exports = {
                 "Eine dauerhafte Benachrichtigung auswählen und verborgen halten, solange die App installiert ist.",
             highlights: [
                 "**Hinweis: Die App wird mit einem optionalen In-App-Kauf kostenlos.** Wenn Sie sie bereits gekauft haben, öffnen Sie die Einstellungen und melden Sie sich an, damit Ihr Kauf übernommen wird und Sie alle Premium-Funktionen kostenlos behalten, kein zweiter Kauf nötig.",
-                "Komplett mit modernen Technologien neu geschrieben",
-                "In-App-Updates: die neueste Version direkt aus der App installieren",
+                "Jetzt auf Deutsch, Arabisch, Spanisch und Russisch verfügbar",
+                "In-App-Sprachauswahl in den Einstellungen (ab Android 13)",
                 "Unterstützung für Android 17",
             ],
             changelog: {
+                "2.1": [
+                    "➕ App jetzt auf Deutsch, Arabisch, Spanisch & Russisch verfügbar. Sprache in den Einstellungen (ab Android 13)",
+                    "➕ Design-Option: Hell, Dunkel oder System, mit sanftem Farbwechsel",
+                    "➕ Dezentes haptisches Feedback beim Tippen und Umschalten",
+                    "🛠️ Die Liste „Weitere Apps“ bleibt automatisch aktuell, auch offline, mit Buttons zum Installieren/Öffnen/Website",
+                    "🛠️ Medien-Benachrichtigungen erscheinen nicht mehr in der Auswahl, da sie sich nicht zuverlässig ausblenden lassen",
+                ],
                 "2.0": [
                     "✨ Komplett mit modernen Technologien neu geschrieben",
                     "➕ In-App-Updates: neueste Version direkt in der App installieren",
@@ -594,11 +606,18 @@ module.exports = {
                 "اختر إشعاراً دائماً وأبقِه مخفياً طوال مدة تثبيت التطبيق.",
             highlights: [
                 "**تنبيه: سيصبح التطبيق مجانياً مع عملية شراء اختيارية داخله.** إذا كنت قد اشتريته من قبل، فافتح شاشة الإعدادات وسجّل الدخول لينتقل شراؤك وتحتفظ بجميع الميزات المميزة مجاناً، دون الحاجة إلى شراء ثانٍ.",
-                "أُعيدت كتابته بالكامل باستخدام تقنيات حديثة",
-                "تحديثات داخل التطبيق: ثبّت أحدث إصدار مباشرة من التطبيق",
+                "متوفّر الآن بالألمانية والعربية والإسبانية والروسية",
+                "اختيار لغة التطبيق من الإعدادات (أندرويد 13 فأحدث)",
                 "دعم أندرويد 17",
             ],
             changelog: {
+                "2.1": [
+                    "➕ التطبيق متوفّر الآن بالألمانية والعربية والإسبانية والروسية. اختر لغتك من الإعدادات (أندرويد 13 فأحدث)",
+                    "➕ خيار السمة: فاتح أو داكن أو اتّباع النظام، مع انتقال لوني سلس",
+                    "➕ ردود فعل لمسية خفيفة عند النقر والتبديل في كل أنحاء التطبيق",
+                    "🛠️ قائمة \"تطبيقات أخرى\" تبقى محدّثة تلقائيًا وتعمل دون اتصال، مع أزرار للتثبيت/الفتح/الموقع",
+                    "🛠️ تُخفى إشعارات الوسائط من شاشة الاختيار لأنه لا يمكن إخفاؤها بشكل موثوق",
+                ],
                 "2.0": [
                     "✨ أُعيدت كتابته بالكامل باستخدام تقنيات حديثة",
                     "➕ تحديثات داخل التطبيق: ثبّت أحدث إصدار مباشرة من التطبيق",
@@ -666,11 +685,18 @@ module.exports = {
                 "Elija una notificación persistente y manténgala oculta mientras la app esté instalada.",
             highlights: [
                 "**Aviso: la app pasará a ser gratuita con una compra opcional dentro de la app.** Si ya la compró, abra la pantalla de Ajustes e inicie sesión para que su compra se conserve y mantenga todas las funciones premium gratis, sin necesidad de comprar otra vez.",
-                "Completamente reescrita con tecnologías modernas",
-                "Actualizaciones dentro de la app: instale la última versión directamente desde la app",
+                "Ahora disponible en alemán, árabe, español y ruso",
+                "Selector de idioma de la app en Ajustes (Android 13+)",
                 "Compatibilidad con Android 17",
             ],
             changelog: {
+                "2.1": [
+                    "➕ App disponible ahora en alemán, árabe, español y ruso. Elige tu idioma en Ajustes (Android 13+)",
+                    "➕ Opción de Tema: claro, oscuro o seguir al sistema, con transición de color suave",
+                    "➕ Vibración háptica sutil al tocar y al cambiar ajustes",
+                    "🛠️ La lista «Otras apps» se actualiza sola, funciona sin conexión y añade botones Instalar/Abrir/Web",
+                    "🛠️ Las notificaciones multimedia ya no aparecen en la selección, porque la app no puede ocultarlas de forma fiable",
+                ],
                 "2.0": [
                     "✨ Completamente reescrita con tecnologías modernas",
                     "➕ Actualizaciones dentro de la app: instala la última versión directamente desde la app",
@@ -740,11 +766,18 @@ module.exports = {
                 "Выберите постоянное уведомление и держите его скрытым, пока приложение установлено.",
             highlights: [
                 "**Внимание: приложение становится бесплатным с необязательной покупкой внутри.** Если вы уже купили его, откройте экран настроек и войдите, чтобы покупка перенеслась и все премиум-функции остались бесплатными, без повторной покупки.",
-                "Полностью переписано с использованием современных технологий",
-                "Обновления внутри приложения: установите последнюю версию прямо из приложения",
+                "Теперь доступно на немецком, арабском, испанском и русском",
+                "Выбор языка приложения в Настройках (Android 13+)",
                 "Поддержка Android 17",
             ],
             changelog: {
+                "2.1": [
+                    "➕ Приложение теперь доступно на немецком, арабском, испанском и русском. Выберите язык в Настройках (Android 13+)",
+                    "➕ Опция «Тема»: светлая, тёмная или как в системе, с плавным переходом цвета",
+                    "➕ Лёгкая тактильная отдача при нажатиях и переключениях",
+                    "🛠️ Список «Другие приложения» обновляется сам, работает офлайн и добавляет кнопки Установить/Открыть/Сайт",
+                    "🛠️ Медиауведомления больше не показываются при выборе, так как приложение не может надёжно скрыть их",
+                ],
                 "2.0": [
                     "✨ Полностью переписано с использованием современных технологий",
                     "➕ Обновления внутри приложения: установите последнюю версию прямо из приложения",
