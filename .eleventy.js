@@ -79,6 +79,18 @@ module.exports = function (eleventyConfig) {
         return `<a href="${link}" class="btn-container" target="_blank" rel="noopener"><img src="/media/github_badge.svg" alt="${alt}" /></a>`;
     });
 
+    // For a per-app privacy page (/app/<slug>/privacy/), find the sibling app
+    // detail page (/app/<slug>/) so the social-graph card can reuse the app's
+    // own name/tagline instead of the generic developer description. Returns the
+    // matching collection item, or null. Driven off collections (available in
+    // templates, unlike eleventyComputed) so it never drifts from the app page
+    // frontmatter — the same source the apps.json feed uses.
+    eleventyConfig.addFilter("appPageForPrivacy", function (all, url) {
+        if (!url || url === "/privacy/" || !url.endsWith("/privacy/")) return null;
+        const appUrl = url.replace(/privacy\/$/, "");
+        return (all || []).find((p) => p.url === appUrl && p.data.appName) || null;
+    });
+
     // `data-contact` carries the platform name so the click telemetry in main.js
     // identifies the card without parsing its (potentially localized) link text.
     eleventyConfig.addShortcode("socials", function (name, link, icon) {

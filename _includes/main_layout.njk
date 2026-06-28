@@ -7,13 +7,20 @@ title: Ibrahim Al-Alali
   - Generic defaults apply to every page.
   - App detail pages carry an `icon` (and `tagline`/`appName`) in their
     frontmatter, so the card automatically uses the app icon and tagline.
+  - Per-app privacy pages (/app/<slug>/privacy/) reuse the sibling app page's
+    icon and tagline (the app name is already in the title), so the card is
+    branded for the app instead of falling back to the generic profile defaults.
   - Any page may override `description` in its frontmatter.
 #}
-{%- set ogDescription = description or tagline or "Ibrahim Al-Alali is an Android app software developer" -%}
+{%- set privacyApp = collections.all | appPageForPrivacy(page.url) -%}
+{%- set privacyTagline = privacyApp.data.tagline if privacyApp else "" -%}
+{%- set ogDescription = description or privacyTagline or tagline or "Ibrahim Al-Alali is an Android app software developer" -%}
 {%- set ogUrl = siteUrl + page.url -%}
-{%- if icon -%}
-    {%- set ogImage = siteUrl + "/media/" + icon -%}
-    {%- set ogImageAlt = appName + " app icon" -%}
+{%- set cardIcon = icon or (privacyApp.data.icon if privacyApp else "") -%}
+{%- set cardAppName = appName or (privacyApp.data.appName if privacyApp else "") -%}
+{%- if cardIcon -%}
+    {%- set ogImage = siteUrl + "/media/" + cardIcon -%}
+    {%- set ogImageAlt = cardAppName + " app icon" -%}
     {%- set ogImageSize = "256" -%}
 {%- else -%}
     {%- set ogImage = siteUrl + "/media/profile.jpg" -%}
