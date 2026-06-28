@@ -67,10 +67,10 @@ module.exports = function (eleventyConfig) {
         return `<h${level} id="${id}">${text}</h${level}>`;
     });
 
-    // What's New callout — renders its markdown body inside an accent card
-    eleventyConfig.addPairedShortcode("whatsNew", function (content, label = "What's New") {
+    // Highlights callout — renders its markdown body inside an accent card
+    eleventyConfig.addPairedShortcode("highlights", function (content, label = "Highlights") {
         const body = md.render(content.trim()).replace(/\n+/g, "");
-        return `<aside class="whats-new"><span class="whats-new-label">${label}</span>${body}</aside>`;
+        return `<aside class="highlights"><span class="highlights-label">${label}</span>${body}</aside>`;
     });
 
     // GitHub badge paired shortcode — body is the alt / screen-reader text

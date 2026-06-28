@@ -34,7 +34,7 @@ html.via-vt .about-actions,
 html.via-vt .app-back-link,
 html.via-vt .app-hero,
 html.via-vt .app-content,
-html.via-vt .whats-new {
+html.via-vt .highlights {
     animation: none;
 }
 
@@ -669,7 +669,7 @@ a.btn-container img:hover {
     margin: 0 auto 30px auto;
 }
 
-.whats-new {
+.highlights {
     max-width: 680px;
     margin: 20px auto 40px auto;
     padding: 32px 32px 26px 32px;
@@ -681,7 +681,7 @@ a.btn-container img:hover {
     animation: about-reveal 0.6s 0.2s ease-out both;
 }
 
-.whats-new-label {
+.highlights-label {
     display: inline-block;
     position: absolute;
     top: -14px;
@@ -699,21 +699,21 @@ a.btn-container img:hover {
     box-shadow: 0 4px 14px var(--shadow-accent-strong);
 }
 
-.whats-new ul {
+.highlights ul {
     margin: 0;
     padding-left: 22px;
 }
 
-.whats-new li {
+.highlights li {
     margin-bottom: 8px;
     line-height: 1.6;
 }
 
-.whats-new li::marker {
+.highlights li::marker {
     color: var(--accent);
 }
 
-.whats-new li:last-child {
+.highlights li:last-child {
     margin-bottom: 0;
 }
 
@@ -945,7 +945,7 @@ a.btn-container img:hover {
         height: 48px;
     }
 
-    .whats-new {
+    .highlights {
         padding: 28px 20px 22px 20px;
     }
 

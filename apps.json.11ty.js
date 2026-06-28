@@ -28,10 +28,10 @@ function versionLabel(heading) {
     return heading.trim().replace(/:\s*$/, "").replace(/^Version\s+/i, "");
 }
 
-// Bullets inside the `{% whatsNew %}...{% endwhatsNew %}` callout, in order.
-function extractWhatsNew(body) {
+// Bullets inside the `{% highlights %}...{% endhighlights %}` callout, in order.
+function extractHighlights(body) {
     const m = body.match(
-        /\{%-?\s*whatsNew[^%]*%\}([\s\S]*?)\{%-?\s*endwhatsNew\s*-?%\}/
+        /\{%-?\s*highlights[^%]*%\}([\s\S]*?)\{%-?\s*endhighlights\s*-?%\}/
     );
     if (!m) return [];
     return m[1].split(/\r?\n/).map(bulletText).filter(Boolean);
@@ -107,7 +107,7 @@ module.exports = class {
                     description: t.description || tagline || null,
                     icon: `${siteUrl}/media/${icon}`,
                     website: appUrl || `${siteUrl}${item.url}`,
-                    whatsNew: t.whatsNew || extractWhatsNew(body),
+                    highlights: t.highlights || extractHighlights(body),
                     changelog: localizeChangelog(extractChangelog(body), t.changelog),
                 };
             });
