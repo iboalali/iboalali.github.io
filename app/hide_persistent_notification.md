@@ -9,13 +9,20 @@ tagline: Pick a persistent notification and keep it hidden for as long as the ap
 
 {% highlights %}
 - **Heads up: the app is going free with an optional in-app purchase.** If you already bought it, open the Settings screen and sign in so your purchase carries over and you keep every premium feature for free, no second purchase needed.
-- Completely rewritten with modern technologies
-- In-app updates: install the latest version right from the app
+- Now available in German, Arabic, Spanish, and Russian
+- In-app language picker in Settings (Android 13+)
 - Support for Android 17
 {% endhighlights %}
 
 
 ## Changelog
+### Version 2.1:
+* ➕ App now available in German, Arabic, Spanish & Russian. Pick your language in Settings (Android 13+)
+* ➕ Theme option: light, dark, or follow system, with a smooth color transition
+* ➕ Subtle haptic feedback on taps and toggles across the app
+* 🛠️ The About → Other apps list now updates automatically, works offline, and adds Install/Open/Website buttons
+* 🛠️ Media notifications no longer appear in the selection screen, since the app can't reliably hide them
+
 ### Version 2.0:
 * ✨ Completely rewritten with modern technologies
 * ➕ In-app updates: install the latest version right from the app
