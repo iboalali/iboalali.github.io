@@ -15,6 +15,8 @@
 //   hide_persistent_notification — description + highlights translated for this
 //     site. changelog 2.1 (en + de/ar/es/ru) is the app's own Play Store
 //     release notes, reused from the repo (em dashes normalized for site copy);
+//     its tablet/foldable + faster-startup bullets are from the repo's 2.1.2
+//     notes (2.1 was never published; 2.1.2 shipped the full 2.1+2.1.2 set).
 //     2.0's German is likewise from the repo; the rest was translated for this
 //     site. Review welcome, especially ar/ru.
 //   billboard / icon_recomposer — no localized marketing copy exists in those
@@ -532,6 +534,8 @@ module.exports = {
                     "➕ App jetzt auf Deutsch, Arabisch, Spanisch & Russisch verfügbar. Sprache in den Einstellungen (ab Android 13)",
                     "➕ Design-Option: Hell, Dunkel oder System, mit sanftem Farbwechsel",
                     "➕ Dezentes haptisches Feedback beim Tippen und Umschalten",
+                    "➕ Tablet- & Foldable-Layout: Bereiche nebeneinander auf großen Displays",
+                    "🛠️ Schnellerer Start und flüssigeres Scrollen",
                     "🛠️ Die Liste „Weitere Apps“ bleibt automatisch aktuell, auch offline, mit Buttons zum Installieren/Öffnen/Website",
                     "🛠️ Medien-Benachrichtigungen erscheinen nicht mehr in der Auswahl, da sie sich nicht zuverlässig ausblenden lassen",
                 ],
@@ -615,6 +619,8 @@ module.exports = {
                     "➕ التطبيق متوفّر الآن بالألمانية والعربية والإسبانية والروسية. اختر لغتك من الإعدادات (أندرويد 13 فأحدث)",
                     "➕ خيار السمة: فاتح أو داكن أو اتّباع النظام، مع انتقال لوني سلس",
                     "➕ ردود فعل لمسية خفيفة عند النقر والتبديل في كل أنحاء التطبيق",
+                    "➕ دعم الأجهزة اللوحية والقابلة للطي: عرض جزأين جنبًا إلى جنب على الشاشات الكبيرة",
+                    "🛠️ بدء تشغيل أسرع وتمرير أكثر سلاسة",
                     "🛠️ قائمة \"تطبيقات أخرى\" تبقى محدّثة تلقائيًا وتعمل دون اتصال، مع أزرار للتثبيت/الفتح/الموقع",
                     "🛠️ تُخفى إشعارات الوسائط من شاشة الاختيار لأنه لا يمكن إخفاؤها بشكل موثوق",
                 ],
@@ -694,6 +700,8 @@ module.exports = {
                     "➕ App disponible ahora en alemán, árabe, español y ruso. Elige tu idioma en Ajustes (Android 13+)",
                     "➕ Opción de Tema: claro, oscuro o seguir al sistema, con transición de color suave",
                     "➕ Vibración háptica sutil al tocar y al cambiar ajustes",
+                    "➕ Compatible con tablets y plegables: dos paneles en pantallas grandes",
+                    "🛠️ Inicio más rápido y desplazamiento más fluido",
                     "🛠️ La lista «Otras apps» se actualiza sola, funciona sin conexión y añade botones Instalar/Abrir/Web",
                     "🛠️ Las notificaciones multimedia ya no aparecen en la selección, porque la app no puede ocultarlas de forma fiable",
                 ],
@@ -775,6 +783,8 @@ module.exports = {
                     "➕ Приложение теперь доступно на немецком, арабском, испанском и русском. Выберите язык в Настройках (Android 13+)",
                     "➕ Опция «Тема»: светлая, тёмная или как в системе, с плавным переходом цвета",
                     "➕ Лёгкая тактильная отдача при нажатиях и переключениях",
+                    "➕ Поддержка планшетов и складных устройств: две панели рядом на больших экранах",
+                    "🛠️ Более быстрый запуск и плавная прокрутка",
                     "🛠️ Список «Другие приложения» обновляется сам, работает офлайн и добавляет кнопки Установить/Открыть/Сайт",
                     "🛠️ Медиауведомления больше не показываются при выборе, так как приложение не может надёжно скрыть их",
                 ],
