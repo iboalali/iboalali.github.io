@@ -17,13 +17,20 @@ Paste-ready TQL queries for the TelemetryDeck dashboard.
 
 If you're building inside the dashboard's Visual Query Editor, ignore `appID` and `baseFilters` (they're auto-filled). The values above are needed only when calling the Query API directly.
 
+## Custom-query editor quirks
+
+The dashboard decodes pasted JSON into its own typed model, which trips up two things (both learned the hard way, see the browser breakdown below):
+
+- **Dimensions are objects, not strings.** Every `groupBy` / `topN` dimension must be `{ "type": "default", "dimension": "<field>", "outputName": "<label>" }`. A bare string such as `"dimensions": ["browser"]` fails with *"Value was not of type 'Dictionary<String, Any>' ... found a string instead"*. The `TQL-Guideline-v0.1.0.md` examples still show the old string form, so do not copy dimensions from there.
+- **`limitSpec` is silently dropped**, so a `groupBy` will not stay sorted from the JSON. To sort: use a `topN` query (sorted by its `metric`, one dimension only), or click the table's column header to sort a multi-dimension `groupBy`.
+
 ## Available dimensions
 
-These are the queryable fields on the `pageview` signal, exported 2026-05-15:
+These are the queryable fields on the `pageview` signal, exported 2026-07-04:
 
 ```
 url, host, path, scheme, referrer, combinedSource
-utm_source, utm_campaign, utm_content
+utm_source, utm_medium, utm_campaign, utm_content
 browser, browserVersion, device
 isDesktop, isMobile, isTablet, isTouchCapable, isBot
 country.isoCode, country.isInEuropeanUnion, continent.code
@@ -106,13 +113,16 @@ Trend line for app-attributed traffic.
 
 ### 4. App × placement matrix
 
-Cross-tab of `utm_campaign` and `utm_content`. Highlights the best (app, screen) pairs.
+Cross-tab of `utm_campaign` and `utm_content`. Highlights the best (app, screen) pairs. Renders as a table; sort by clicking the **Users** column header (a `groupBy`'s `limitSpec` is dropped by the editor, see quirks above).
 
 ```json
 {
   "queryType": "groupBy",
   "granularity": "all",
-  "dimensions": ["utm_campaign", "utm_content"],
+  "dimensions": [
+    { "type": "default", "dimension": "utm_campaign", "outputName": "App" },
+    { "type": "default", "dimension": "utm_content", "outputName": "Placement" }
+  ],
   "aggregations": [{ "type": "userCount", "name": "Users" }],
   "filter": {
     "type": "and",
@@ -120,11 +130,6 @@ Cross-tab of `utm_campaign` and `utm_content`. Highlights the best (app, screen)
       { "type": "selector", "dimension": "utm_source", "value": "android_app" },
       { "type": "selector", "dimension": "isBot", "value": "False" }
     ]
-  },
-  "limitSpec": {
-    "type": "default",
-    "columns": [{ "dimension": "Users", "direction": "descending" }],
-    "limit": 100
   },
   "baseFilters": "thisApp",
   "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
@@ -225,6 +230,40 @@ Where visitors are coming from (ISO country code).
 }
 ```
 
+### 9. Browser breakdown
+
+Which browsers visitors use, ranked most-used first. `browser` and `browserVersion` are derived server-side by TelemetryDeck from the User-Agent, so no client-side setup is needed. `topN` is sorted by its `metric` (most-used first) and renders as a donut or bar chart.
+
+```json
+{
+  "queryType": "topN",
+  "granularity": "all",
+  "threshold": 20,
+  "dimension": { "type": "default", "dimension": "browser", "outputName": "Browser" },
+  "metric": { "type": "numeric", "metric": "users" },
+  "aggregations": [{ "type": "userCount", "name": "users" }],
+  "filter": { "type": "selector", "dimension": "isBot", "value": "False" },
+  "baseFilters": "thisApp",
+  "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
+}
+```
+
+For a **table** with exact per-browser counts, use `groupBy` instead (the table display is offered for `groupBy`, not `topN`) and sort by clicking the **Users** column header:
+
+```json
+{
+  "queryType": "groupBy",
+  "granularity": "all",
+  "dimensions": [{ "type": "default", "dimension": "browser", "outputName": "Browser" }],
+  "aggregations": [{ "type": "userCount", "name": "Users", "fieldName": null }],
+  "filter": { "type": "selector", "dimension": "isBot", "value": "False" },
+  "baseFilters": "thisApp",
+  "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
+}
+```
+
+To include versions, add a second dimension spec for `browserVersion` to the `groupBy` (`topN` allows only one dimension).
+
 ## Once `App.Referral` starts arriving
 
 The custom signal in `main.js` fires on every pageview within a session that started from an Android-app referral, even after internal navigation. Once it appears in the structural data export, swap the dimensions on queries 1, 2, and 4 from `utm_*` to the corresponding payload key for an attribution view that survives internal clicks:
@@ -249,7 +288,7 @@ return to the starting mode emit nothing. Use it to see which themes people
 actually prefer once they engage the toggle. These queries assume the signal
 type and payload keys have appeared in the structural data export.
 
-### 9. Most-chosen theme modes
+### 10. Most-chosen theme modes
 
 Ranks the resting mode visitors settle on, by number of toggle bursts.
 
@@ -273,7 +312,7 @@ Ranks the resting mode visitors settle on, by number of toggle bursts.
 }
 ```
 
-### 10. Theme transition matrix
+### 11. Theme transition matrix
 
 Cross-tab of `from` → `to` mode (burst start → resting mode). Shows the net
 moves visitors make through the toggle (e.g. how many leave `auto` for `paper`).
@@ -282,7 +321,10 @@ moves visitors make through the toggle (e.g. how many leave `auto` for `paper`).
 {
   "queryType": "groupBy",
   "granularity": "all",
-  "dimensions": ["Theme.Toggle.from", "Theme.Toggle.to"],
+  "dimensions": [
+    { "type": "default", "dimension": "Theme.Toggle.from", "outputName": "From" },
+    { "type": "default", "dimension": "Theme.Toggle.to", "outputName": "To" }
+  ],
   "aggregations": [{ "type": "eventCount", "name": "Clicks" }],
   "filter": {
     "type": "and",
@@ -290,11 +332,6 @@ moves visitors make through the toggle (e.g. how many leave `auto` for `paper`).
       { "type": "selector", "dimension": "type", "value": "Theme.Toggle" },
       { "type": "selector", "dimension": "isBot", "value": "False" }
     ]
-  },
-  "limitSpec": {
-    "type": "default",
-    "columns": [{ "dimension": "Clicks", "direction": "descending" }],
-    "limit": 100
   },
   "baseFilters": "thisApp",
   "appID": "2D083718-D442-4A8E-B797-68F24ADD0C7E"
@@ -312,7 +349,7 @@ card's `data-contact` attribute. Use it to see which platforms visitors actually
 reach out through. Assumes the signal type and payload key have appeared in the
 structural data export.
 
-### 11. Most-clicked contact platforms
+### 12. Most-clicked contact platforms
 
 Ranks the contact cards by number of clicks.
 
