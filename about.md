@@ -20,5 +20,5 @@ I work for [Blueworld GmbH](https://www.blueworld-gmbh.de/) developing a B2B tel
 <div class="about-actions">
 <a href="/" class="about-btn">My Apps</a>
 <a href="https://play.google.com/store/apps/dev?id=7518575784939651133" class="about-btn">Play Store</a>
-<a href="/contact" class="about-btn about-btn-primary">Get in Touch</a>
+<a href="/contact/" class="about-btn about-btn-primary">Get in Touch</a>
 </div>
