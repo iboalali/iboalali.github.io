@@ -64,8 +64,11 @@ title: Ibrahim Al-Alali
         document.createElement('nav'); 
         </script>
         <![endif]-->
-        <!-- Analytics: TelemetryDeck -->
+        <!-- Analytics: TelemetryDeck. defer keeps this cross-origin script off
+             the render-critical path (without it, first paint waits for the CDN).
+             All window.td callers in main.js guard/retry, so late load is safe. -->
         <script
+            defer
             src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
             data-app-id="2D083718-D442-4A8E-B797-68F24ADD0C7E"
         ></script>
