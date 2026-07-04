@@ -34,7 +34,11 @@ title: Ibrahim Al-Alali
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ title }}</title>
         <meta name="description" content="{{ ogDescription }}">
+        {%- if noindex %}
+        <meta name="robots" content="noindex">
+        {%- else %}
         <link rel="canonical" href="{{ ogUrl }}">
+        {%- endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <meta name="keywords" content="ibrahim, al-alali, ibrahim al-alali, alali, ibo, apps, app, play store, notification, java, kotlin">
         <meta name="language" content="English">
@@ -97,13 +101,13 @@ title: Ibrahim Al-Alali
                     {% if page.url == "/" %}<span class="nav-current">Home</span>{% else %}<a href="/">Home</a>{% endif %}
                 </li>
                 <li>
-                    {% if page.url == "/about/" %}<span class="nav-current">About</span>{% else %}<a href="/about">About</a>{% endif %}
+                    {% if page.url == "/about/" %}<span class="nav-current">About</span>{% else %}<a href="/about/">About</a>{% endif %}
                 </li>
                 <li>
-                    {% if page.url == "/contact/" %}<span class="nav-current">Contact</span>{% else %}<a href="/contact">Contact</a>{% endif %}
+                    {% if page.url == "/contact/" %}<span class="nav-current">Contact</span>{% else %}<a href="/contact/">Contact</a>{% endif %}
                 </li>
                 <li>
-                    {% if page.url == "/privacy/" %}<span class="nav-current">Privacy</span>{% else %}<a href="/privacy">Privacy</a>{% endif %}
+                    {% if page.url == "/privacy/" %}<span class="nav-current">Privacy</span>{% else %}<a href="/privacy/">Privacy</a>{% endif %}
                 </li>
             </ul>
         </nav>

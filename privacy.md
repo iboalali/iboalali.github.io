@@ -22,4 +22,4 @@ This site is hosted on GitHub Pages. GitHub may log standard request metadata (s
 
 {% heading "Contact", "contact" %}
 
-Questions about this policy? [Get in touch](/contact).
+Questions about this policy? [Get in touch](/contact/).

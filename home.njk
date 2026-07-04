@@ -1,0 +1,24 @@
+---
+# Redirect stub for the legacy /home URL (from the old Tumblr blog) → homepage.
+# Google had /home in the "Not found (404)" report; this makes it resolve and
+# consolidates any link equity onto "/". Output is /home.html, which GitHub
+# Pages serves for a request to /home. Excluded from collections so it never
+# lands in the sitemap or the apps feed. Uses the canonical + meta-refresh +
+# JS + noindex pattern that jekyll-redirect-from emits.
+permalink: "home.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Redirecting…</title>
+        <link rel="canonical" href="{{ siteUrl }}/">
+        <script>location.replace("{{ siteUrl }}/")</script>
+        <meta http-equiv="refresh" content="0; url={{ siteUrl }}/">
+        <meta name="robots" content="noindex">
+    </head>
+    <body>
+        <p>This page has moved. <a href="{{ siteUrl }}/">Continue to iboalali.com</a>.</p>
+    </body>
+</html>
