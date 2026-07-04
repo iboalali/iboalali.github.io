@@ -1,3 +1,4 @@
+const fs = require("fs");
 const markdownIt = require("markdown-it");
 const md = markdownIt({ html: true });
 
@@ -36,8 +37,13 @@ module.exports = function (eleventyConfig) {
     // rather than Gravatar: same-origin avoids the slow cross-origin request, and
     // the optimized JPEG is a fraction of Gravatar's PNG. width/height supply the
     // intrinsic aspect ratio so the box reserves space before the image loads.
+    // The photo is the LCP element on the home and about pages: fetchpriority
+    // beats the browser's default Medium image priority, and the srcset variants
+    // (192/384, generated from the 500px original) cover the largest display
+    // size, 180px CSS on the about hero, at 1x and 2x. The 500px original stays
+    // for 3x screens and as the og:image (social cards ignore srcset).
     eleventyConfig.addShortcode("profilePhoto", function (url) {
-        return `<img alt="Photo of Ibrahim" class="profile-photo" src="/media/profile.jpg" width="500" height="500" decoding="async">`
+        return `<img alt="Photo of Ibrahim" class="profile-photo" src="/media/profile.jpg" srcset="/media/profile_192.jpg 192w, /media/profile_384.jpg 384w, /media/profile.jpg 500w" sizes="180px" width="500" height="500" decoding="async" fetchpriority="high">`
     });
 
     // App listing paired shortcode to display an app with its details
@@ -51,9 +57,17 @@ module.exports = function (eleventyConfig) {
         // Create the GitHub button if a repo URL is provided
         const githubButton = repoUrl ? `<a href="${repoUrl}" target="_blank" rel="noopener" class="btn-container"><img src="/media/github_badge.svg" alt="View ${name} source on GitHub" /></a>` : '';
 
+        // App cards display the icon at 100px CSS, so a 128px variant covers 1x
+        // screens and the 256px original covers 2x. The variant is optional: a
+        // new app whose <icon>_128.png doesn't exist yet just gets the original.
+        const icon128 = icon.replace(/\.png$/, "_128.png");
+        const iconSrcset = fs.existsSync(`media/${icon128}`)
+            ? ` srcset="/media/${icon128} 128w, /media/${icon} 256w" sizes="100px"`
+            : "";
+
         // Return the HTML structure for an app item
         return `<div class="app-item">
-            <img alt="${name} app icon" class="app-icon" src="/media/${icon}">
+            <img alt="${name} app icon" class="app-icon" src="/media/${icon}"${iconSrcset}>
             <div class="app-item-details">
                 <h3>${title}</h3>
                 <p>${description.trim()}</p>

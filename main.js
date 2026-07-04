@@ -162,9 +162,12 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     }
 
     if (!fire()) {
+        // The SDK loads with defer and executes after this script, so the first
+        // attempt usually misses. Poll long enough (10s) to cover a slow first
+        // fetch of the SDK from the CDN.
         var tries = 0;
         var iv = setInterval(function () {
-            if (fire() || ++tries > 20) clearInterval(iv);
+            if (fire() || ++tries > 100) clearInterval(iv);
         }, 100);
     }
 })();
