@@ -11,6 +11,14 @@ on:
     # Runs at 00:00 UTC every day
   #  - cron: '0 0 * * *'
 
+# Only one Pages deployment at a time. Overlapping deployments to the
+# github-pages environment can collide and surface as the Pages backend's
+# generic "Deployment failed, try again later." Queue instead of cancelling so
+# an in-progress deploy is never left half-applied.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,7 +45,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${\{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to GitHub Pages
