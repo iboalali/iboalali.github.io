@@ -829,6 +829,14 @@ a.btn-container img:hover {
     box-shadow: 0 4px 16px var(--shadow-accent);
 }
 
+/* Text fallback when the browser can't render colour emoji (set by main.js).
+   Emoji glyphs are ~22px; the words need a smaller size to fit the round button. */
+.theme-toggle--text {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
 .theme-toggle-tooltip {
     position: fixed;
     bottom: 82px;
@@ -975,6 +983,10 @@ a.btn-container img:hover {
         width: 42px;
         height: 42px;
         font-size: 18px;
+    }
+
+    .theme-toggle--text {
+        font-size: 11px;
     }
 
     .theme-toggle-tooltip {

@@ -21,6 +21,14 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         paper: '📖',                  // open book
         auto: '🖥️'              // desktop computer
     };
+    // Text fallback for devices that can't render colour emoji (e-ink readers,
+    // old browsers). Kept short so it fits the 48px round button.
+    var textLabels = {
+        light: 'Light',
+        dark: 'Dark',
+        paper: 'Paper',
+        auto: 'Auto'
+    };
     var labels = {
         light: 'Theme: light. Click to switch to dark.',
         dark: 'Theme: dark. Click to switch to paper.',
@@ -33,6 +41,46 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         paper: 'Paper',
         auto: 'Auto (matches system)'
     };
+
+    // Detect real colour-emoji support once. Draw the same glyph twice in two
+    // different fill colours: a colour emoji renders from its own font tables
+    // and ignores fillStyle, so both passes come out byte-identical; a "tofu"
+    // box or a monochrome fallback glyph is painted with fillStyle, so the two
+    // passes differ. A blank result (nothing drawn) also counts as unsupported.
+    var emojiSupported = (function () {
+        try {
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext && canvas.getContext('2d', { willReadFrequently: true });
+            if (!ctx) return false;
+            canvas.width = 16;
+            canvas.height = 16;
+            ctx.textBaseline = 'top';
+            ctx.font = '16px Arial, sans-serif';
+
+            function render(color) {
+                ctx.clearRect(0, 0, 16, 16);
+                ctx.fillStyle = color;
+                ctx.fillText('😀', 0, 0); // 😀 grinning face
+                return ctx.getImageData(0, 0, 16, 16).data;
+            }
+
+            var red = render('#f00');
+            var green = render('#0f0');
+
+            var drawn = false;
+            for (var i = 3; i < red.length; i += 4) {
+                if (red[i] !== 0) { drawn = true; break; }
+            }
+            if (!drawn) return false;
+
+            for (var j = 0; j < red.length; j++) {
+                if (red[j] !== green[j]) return false;
+            }
+            return true;
+        } catch (e) {
+            return false; // canvas/getImageData blocked (e.g. privacy mode) — play it safe
+        }
+    })();
 
     function getMode() {
         var stored = localStorage.getItem('theme');
@@ -58,7 +106,7 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
 
     function updateIcon() {
         var mode = getMode();
-        btn.textContent = icons[mode];
+        btn.textContent = emojiSupported ? icons[mode] : textLabels[mode];
         btn.setAttribute('aria-label', labels[mode]);
 
         var ghIcon = document.querySelector('.small-icon[alt="Github"]');
@@ -118,6 +166,7 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
         if (document.visibilityState === 'hidden') flushToggle();
     });
 
+    if (!emojiSupported) btn.classList.add('theme-toggle--text');
     updateIcon();
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
