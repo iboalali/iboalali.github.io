@@ -19,9 +19,16 @@
 //     notes (2.1 was never published; 2.1.2 shipped the full 2.1+2.1.2 set).
 //     2.0's German is likewise from the repo; the rest was translated for this
 //     site. Review welcome, especially ar/ru.
-//   billboard / icon_recomposer — no localized marketing copy exists in those
-//     repos, so description, highlights, and changelog were all translated for
-//     this site. Review welcome, especially ar/ru.
+//   billboard — changelog 3.0.0 (en + de/ar/es/ru) is the app's own Play Store
+//     release notes, reused from the repo's `Play Store/Release Notes/3.0.0/
+//     website/` files (dashes normalized for site copy, German "bei Tipps"
+//     corrected to "beim Tippen"). highlights condense those same 3.0.0 notes,
+//     reusing their per-locale wording. description and changelog 2.1.1 and
+//     older were translated for this site, as the repo has no localized copy
+//     for them. Review welcome, especially ar/ru.
+//   icon_recomposer — no localized marketing copy exists in that repo, so
+//     description, highlights, and changelog were all translated for this site.
+//     Review welcome, especially ar/ru.
 module.exports = {
     basic_root_checker: {
         de: {
@@ -352,7 +359,36 @@ module.exports = {
         de: {
             description:
                 "Großen Text auf dem Bildschirm anzeigen, passend skaliert und nie abgeschnitten.",
+            highlights: [
+                "**Von Grund auf neu aufgebaut, rund um Ebenen:** Stapele Text-, Farb- und Effekt-Ebenen und kombiniere, sortiere und benenne sie frei, alles im frischen violetten Look",
+                "**Spricht jetzt fünf Sprachen:** Deutsch, Spanisch, Russisch und Arabisch (mit vollständigem Rechts-nach-links-Layout), zusätzlich zu Englisch, mit einer Sprach-Einstellung unabhängig vom Gerät",
+                "Eine Sammlung als Startbildschirm für deine Billboards und ein „Zuletzt“-Verlauf, der jedes im Vollbild gezeigte Billboard automatisch speichert, mit kostenloser Kapazität von 3 auf 10",
+                "Teile ein Billboard als bearbeitbare .billboard-Datei oder als PNG-Bild",
+                "Unterstützung für Android 17",
+            ],
             changelog: {
+                "3.0.0": [
+                    "✨ Von Grund auf neu aufgebaut, rund um Ebenen, mit einer echten Heimat für deine Kreationen und einem frischen violetten Look.",
+                    "➕ Ebenen-basierte Gestaltung: Stapele Text-, Farb- und Effekt-Ebenen (Streifen, Verlauf, Schachbrett, Punkte) und kombiniere, sortiere und benenne sie frei.",
+                    "➕ Zwei unabhängige Bearbeitungsmodi, Einfach und Erweitert, jeder mit eigenen Ebenen und eigener Ausrichtung; ein Wechsel verändert den anderen nie.",
+                    "➕ Ein vollständiges Farbrad mit Helligkeits- und Transparenzregler und sechs kostenlosen Grundfarben, neben der einfachen Auto/Schwarz/Weiß-Füllung.",
+                    "➕ Eine Sammlung als Startbildschirm für deine Billboards: per Drag-and-drop sortieren, öffnen, teilen oder über das Kachelmenü löschen.",
+                    "➕ Ein „Zuletzt“-Verlauf, der jedes im Vollbild gezeigte Billboard automatisch speichert, damit nichts verloren geht.",
+                    "➕ Teile ein Billboard als bearbeitbare .billboard-Datei oder als PNG-Bild, mit Vorschau im Teilen-Menü.",
+                    "➕ Importiere .billboard-Dateien aus anderen Apps; sie landen direkt in „Zuletzt“.",
+                    "➕ Vollbild öffnet sich jetzt per Wisch-Geste nach unten von der Editor-Vorschau und gleitet sanft auf, statt hart umzuschneiden.",
+                    "➕ Ein zweispaltiger Editor auf großen Tablets und Foldables im Querformat, mit Live-Vorschau neben den Reglern.",
+                    "➕ Auf besonders breiten Bildschirmen öffnen sich Einstellungen, Über und Open-Source-Lizenzen als schwebende Karte über dem Editor statt als volle Seite.",
+                    "➕ Eine Design-Einstellung (Systemstandard, Hell, Dunkel) und eine Sprach-Einstellung, beide unabhängig vom Gerät.",
+                    "➕ Billboard spricht jetzt auch Deutsch, Spanisch, Russisch und Arabisch (mit vollständigem Rechts-nach-links-Layout), zusätzlich zu Englisch.",
+                    "➕ Ein überarbeiteter Über-Bildschirm mit eigener Open-Source-Lizenzen-Seite und einem „Weitere Apps“-Bereich.",
+                    "➕ Optionales haptisches Feedback beim Tippen und bei Gesten sowie datenschutzfreundliche, abwählbare Nutzungsanalyse ohne Billboard-Inhalte. Beides lässt sich in den Einstellungen umschalten.",
+                    "➕ Umfassende Unterstützung für Bildschirmleser (TalkBack) in der ganzen App.",
+                    "➕ Unterstützung für Android 17.",
+                    "➕ Ein KI-Assistent auf dem Gerät (z. B. Gemini) kann Billboards für dich erstellen: Ebenen hinzufügen, bearbeiten und entfernen, Ausrichtung festlegen, neue Billboards anlegen, Billboards durchsuchen und speichern, die Sammlung verwalten und Gespeicherte löschen, jeweils mit Vorschau. Es gelten dieselben Grenzen wie für die App, sodass Effekte und eigene Farben weiterhin das Erweitert-Freischalten benötigen.",
+                    "🔨 Ersetzt die alte Verlaufsliste: „Zuletzt“ und Sammlung übernehmen, mit kostenloser Kapazität von 3 auf 10.",
+                    "🔨 Entfernt die alte Spenden-Option; die Kapazitätserweiterung ist jetzt ein einzelner Kauf zusammen mit dem neuen Erweitert-Freischalten.",
+                ],
                 "2.1.1": [
                     "➕ Unterstützung für Android 16",
                     "➖ Unterstützung für Android 5 und 5.1 entfernt",
@@ -394,7 +430,36 @@ module.exports = {
         ar: {
             description:
                 "اعرض نصاً كبيراً على الشاشة بحجم يتناسب تماماً دون أن يُقتطع أبداً.",
+            highlights: [
+                "**أُعيد بناء التطبيق من الصفر حول فكرة الطبقات:** كدّس طبقات النص واللون والتأثيرات، وادمجها ورتّبها وأعد تسميتها بحرية، بمظهر أرجواني منعش",
+                "**يتحدث الآن خمس لغات:** الألمانية والإسبانية والروسية والعربية (بدعم كامل للكتابة من اليمين لليسار)، إلى جانب الإنجليزية، مع إعداد للغة مستقل عن الجهاز",
+                "شاشة المجموعة للوحات التي تحتفظ بها، وسجل «الأخيرة» الذي يحفظ تلقائيًا كل لوحة تعرضها بملء الشاشة، مع سعة مجانية تنمو من 3 إلى 10",
+                "شارك اللوحة كملف .billboard قابل للتحرير أو كصورة PNG",
+                "دعم أندرويد 17",
+            ],
             changelog: {
+                "3.0.0": [
+                    "✨ أُعيد بناء التطبيق من الصفر حول فكرة الطبقات، مع وجهة حقيقية لتصاميمك ومظهر أرجواني منعش.",
+                    "➕ تصميم قائم على الطبقات: كدّس طبقات النص واللون والتأثيرات البصرية (خطوط، تدرّج، رقعة شطرنج، نقاط)، وادمجها ورتّبها وأعد تسميتها بحرية.",
+                    "➕ وضعان مستقلان للتحرير، أساسي ومتقدّم: لكلٍّ طبقاته واتجاهه، فالتبديل بينهما لا يؤثر على الآخر.",
+                    "➕ منتقي ألوان كامل بشريطَي سطوع وشفافية وست ألوان جاهزة مجانية، إلى جانب التعبئة الأساسية Auto/أسود/أبيض.",
+                    "➕ شاشة المجموعة الرئيسية للوحات التي تحتفظ بها: أعد ترتيبها بالسحب، وافتحها أو شاركها أو احذفها من قائمة كل بطاقة.",
+                    "➕ سجل «الأخيرة» يحفظ تلقائيًا كل لوحة تعرضها بملء الشاشة، فلا يضيع أي تصميم.",
+                    "➕ شارك اللوحة كملف .billboard قابل للتحرير أو كصورة PNG، مع معاينة عند المشاركة.",
+                    "➕ استورد ملفات .billboard من تطبيقات أخرى، لتحطّ مباشرة في «الأخيرة».",
+                    "➕ يفتح ملء الشاشة الآن بسحب معاينة المحرر إلى الأسفل، وينتقل بسلاسة بدلًا من التبديل المفاجئ.",
+                    "➕ محرر بعمودين على الأجهزة اللوحية والقابلة للطي الكبيرة في الوضع الأفقي، مع معاينة حيّة بجانب عناصر التحكم.",
+                    "➕ على الشاشات العريضة جدًا، تُفتح الإعدادات وحول التطبيق وشكر المصادر المفتوحة كبطاقة عائمة فوق المحرر بدلًا من صفحة كاملة.",
+                    "➕ إعداد للمظهر (افتراضي النظام أو فاتح أو داكن) وإعداد للغة، مستقلان عن إعدادات الجهاز.",
+                    "➕ يتحدث Billboard الآن الألمانية والإسبانية والروسية والعربية (بدعم كامل للكتابة من اليمين لليسار)، إلى جانب الإنجليزية.",
+                    "➕ شاشة «حول التطبيق» بتصميم جديد، مع صفحة مستقلة لشكر المصادر المفتوحة وقسم «تطبيقات أخرى».",
+                    "➕ ردود فعل لمسية اختيارية عند النقر والإيماءات، وتحليلات استخدام اختيارية تحترم الخصوصية ولا تشمل نص لوحتك أو ألوانها. لكل منهما مفتاح في الإعدادات.",
+                    "➕ دعم واسع لقارئ الشاشة (TalkBack) في أنحاء التطبيق.",
+                    "➕ دعم أندرويد 17.",
+                    "➕ يمكن لمساعد ذكاء اصطناعي على الجهاز (مثل Gemini) إنشاء لوحات نيابةً عنك: إضافة الطبقات وتعديلها وحذفها، وتحديد الاتجاه، وبدء لوحة جديدة، وتصفّح اللوحات وحفظها، وإدارة مجموعتك، وحذف المحفوظة، وتُعاد كل لوحة مع معاينة. ويخضع لنفس حدود التطبيق، فالتأثيرات والألوان المخصّصة لا تزال بحاجة إلى فتح الوضع المتقدّم.",
+                    "🔨 يستبدل قائمة السجل القديمة الواحدة: تتولى «الأخيرة» والمجموعة المهمة الآن، مع سعة مجانية تنمو من 3 إلى 10.",
+                    "🔨 يزيل خيار التبرع القديم؛ توسعة السعة الآن عملية شراء واحدة إلى جانب فتح الوضع المتقدّم الجديد.",
+                ],
                 "2.1.1": [
                     "➕ دعم أندرويد 16",
                     "➖ إزالة دعم أندرويد 5 و5.1",
@@ -436,7 +501,36 @@ module.exports = {
         es: {
             description:
                 "Muestre texto grande en la pantalla, ajustado para caber sin cortarse nunca.",
+            highlights: [
+                "**Reconstruida desde cero en torno a las capas:** apila capas de texto, color y efectos, y combínalas, reordénalas y renómbralas libremente, todo con un renovado look violeta",
+                "**Ahora habla cinco idiomas:** alemán, español, ruso y árabe (con diseño completo de derecha a izquierda), además de inglés, con un ajuste de Idioma independiente del dispositivo",
+                "Una Colección como pantalla de inicio para los billboards que conservas, y un historial de Recientes que guarda automáticamente cada billboard que muestras a pantalla completa, con la capacidad gratuita de 3 a 10",
+                "Comparte un billboard como archivo .billboard editable o como imagen PNG",
+                "Compatibilidad con Android 17",
+            ],
             changelog: {
+                "3.0.0": [
+                    "✨ Reconstruida desde cero en torno a las capas, con un hogar real para tus creaciones y un renovado look violeta.",
+                    "➕ Composición por capas: apila capas de texto, color y efectos visuales (rayas, degradado, damero, puntos), y combínalas, reordénalas y renómbralas libremente.",
+                    "➕ Dos modos de edición independientes, Básico y Avanzado: cada uno con sus propias capas y orientación, así que cambiar de uno nunca afecta al otro.",
+                    "➕ Un selector de color completo con brillo y opacidad y seis colores predefinidos gratuitos, junto al relleno básico Auto/Negro/Blanco.",
+                    "➕ Una Colección como pantalla de inicio para los billboards que conservas: reordénalos arrastrando, y ábrelos, compártelos o elimínalos desde el menú de cada mosaico.",
+                    "➕ Un historial de Recientes que guarda automáticamente cada billboard que muestras a pantalla completa, para que nada se pierda.",
+                    "➕ Comparte un billboard como archivo .billboard editable o como imagen PNG, con vista previa al compartir.",
+                    "➕ Importa archivos .billboard de otras apps: aterrizan directamente en Recientes.",
+                    "➕ Pantalla completa ahora se abre deslizando hacia abajo la vista previa del editor, con suavidad en lugar de cortar de golpe.",
+                    "➕ Un editor de dos paneles en tablets y foldables grandes en horizontal, con vista previa en vivo junto a los controles.",
+                    "➕ En pantallas muy anchas, Ajustes, Acerca de y Créditos de código abierto se abren como una tarjeta flotante sobre el editor, no a pantalla completa.",
+                    "➕ Un ajuste de Tema (predeterminado del sistema, claro u oscuro) y otro de Idioma, ambos independientes del dispositivo.",
+                    "➕ Billboard ahora habla alemán, español, ruso y árabe (con diseño completo de derecha a izquierda), además de inglés.",
+                    "➕ Una pantalla Acerca de rediseñada, con su propia página de Créditos de código abierto y una sección de «Otras apps».",
+                    "➕ Respuesta háptica opcional en toques y gestos, y análisis de uso opcional y respetuoso con la privacidad que nunca incluye tu texto ni tus colores, ambos con un interruptor en Ajustes.",
+                    "➕ Amplio soporte de lector de pantalla (TalkBack) en toda la app.",
+                    "➕ Compatibilidad con Android 17.",
+                    "➕ Un asistente de IA en el dispositivo (como Gemini) puede crear billboards por ti: añadir, editar y quitar capas, ajustar la orientación, empezar billboards nuevos, explorar y guardar billboards, gestionar tu Colección y eliminar los guardados, cada uno con una vista previa. Tiene los mismos límites que la app, así que los efectos y los colores personalizados siguen necesitando el desbloqueo Avanzado.",
+                    "🔨 Sustituye la antigua lista de Historial: Recientes y Colección toman el relevo, con una capacidad gratuita que crece de 3 a 10.",
+                    "🔨 Elimina la antigua opción de donación; la ampliación de capacidad ahora es una única compra junto al nuevo desbloqueo Avanzado.",
+                ],
                 "2.1.1": [
                     "➕ Compatibilidad con Android 16",
                     "➖ Se retiró la compatibilidad con Android 5 y 5.1",
@@ -478,7 +572,36 @@ module.exports = {
         ru: {
             description:
                 "Показывайте крупный текст на экране, подогнанный по размеру и никогда не обрезанный.",
+            highlights: [
+                "**Полностью пересобрано вокруг слоёв:** складывайте слои текста, цвета и эффектов, свободно комбинируйте, переставляйте и переименовывайте их, всё в обновлённом фиолетовом стиле",
+                "**Теперь говорит на пяти языках:** немецком, испанском, русском и арабском (с полной поддержкой письма справа налево) в дополнение к английскому, с настройкой языка, независимой от устройства",
+                "«Коллекция» для сохранённых билбордов и лента «Недавние», которая автоматически сохраняет каждый билборд, показанный на весь экран, а бесплатный лимит растёт с 3 до 10",
+                "Делитесь билбордом как редактируемым файлом .billboard или как PNG-изображением",
+                "Поддержка Android 17",
+            ],
             changelog: {
+                "3.0.0": [
+                    "✨ Приложение полностью пересобрано вокруг слоёв, с настоящим домом для ваших творений и обновлённым фиолетовым стилем.",
+                    "➕ Композиция из слоёв: складывайте слои текста, цвета и визуальных эффектов (полосы, градиент, клетки, точки), свободно комбинируйте, переставляйте и переименовывайте их.",
+                    "➕ Два независимых режима редактирования, Базовый и Расширенный: у каждого свои слои и ориентация, поэтому переключение не затрагивает другой.",
+                    "➕ Полный выбор цвета с ползунками яркости и прозрачности и шесть бесплатных готовых цветов, в дополнение к базовой заливке Авто/Чёрный/Белый.",
+                    "➕ «Коллекция»: главный экран для сохранённых билбордов. Перетаскивайте для изменения порядка, открывайте, делитесь или удаляйте через меню карточки.",
+                    "➕ Лента «Недавние» автоматически сохраняет каждый билборд, показанный на весь экран, чтобы ничего не потерялось.",
+                    "➕ Делитесь билбордом как редактируемым файлом .billboard или как PNG-изображением, с превью при отправке.",
+                    "➕ Импортируйте файлы .billboard из других приложений; они сразу попадают в «Недавние».",
+                    "➕ Полноэкранный режим теперь открывается жестом вниз от превью в редакторе и плавно раскрывается вместо резкой смены экрана.",
+                    "➕ Двухпанельный редактор на больших планшетах и раскладушках в альбомной ориентации, с живым превью рядом с элементами управления.",
+                    "➕ На очень широких экранах Настройки, «О приложении» и лицензии открытого кода открываются как плавающая карточка поверх редактора, а не как полноэкранная страница.",
+                    "➕ Настройка темы (системная, светлая или тёмная) и настройка языка, обе независимы от настроек устройства.",
+                    "➕ Billboard теперь говорит на немецком, испанском, русском и арабском (с полной поддержкой письма справа налево) в дополнение к английскому.",
+                    "➕ Обновлённый экран «О приложении» с отдельной страницей лицензий открытого кода и разделом «Другие приложения».",
+                    "➕ Дополнительный тактильный отклик при касаниях и жестах и анонимная, отключаемая аналитика использования, которая никогда не включает текст или цвета билборда. Оба переключателя есть в Настройках.",
+                    "➕ Широкая поддержка программ чтения с экрана (TalkBack) по всему приложению.",
+                    "➕ Поддержка Android 17.",
+                    "➕ ИИ-ассистент на устройстве (например, Gemini) может создать билборд за вас: добавлять, редактировать и удалять слои, задавать ориентацию, начинать новый билборд, просматривать и сохранять билборды, управлять Коллекцией и удалять сохранённые, каждый возвращается с превью. На него действуют те же ограничения, что и на приложение, поэтому для эффектов и пользовательских цветов по-прежнему нужна разблокировка Расширенного режима.",
+                    "🔨 Заменяет старый единый список истории: «Недавние» и Коллекция берут эту роль на себя, а бесплатный лимит растёт с 3 до 10.",
+                    "🔨 Убирает старую опцию доната; расширение лимита теперь одна покупка вместе с новой разблокировкой Расширенного режима.",
+                ],
                 "2.1.1": [
                     "➕ Поддержка Android 16",
                     "➖ Удалена поддержка Android 5 и 5.1",
