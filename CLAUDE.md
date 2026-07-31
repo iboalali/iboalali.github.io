@@ -46,12 +46,12 @@ Local checkouts of the apps showcased on this site, recorded for fast access whe
 | App (website) | App page | Source project path |
 | --- | --- | --- |
 | Icon Recomposer | `app/icon_recomposer.md` | `/home/iboalali/Documents/Icon Recomposer` |
-| Hide Persistent Notification | `app/hide_persistent_notification.md` | `/home/iboalali/StudioProjects/Hide-Persistent-Notification` |
-| Book Keeper | `app/book_keeper.md` | `/home/iboalali/StudioProjects/book-keeper` |
-| Billboard | `app/billboard.md` | `/home/iboalali/StudioProjects/Billboard` |
-| Basic Root Checker | `app/basic_root_checker.md` | `/home/iboalali/StudioProjects/Basic-Root-Checker` |
+| Hide Persistent Notification | `app/hide_persistent_notification.md` | `/home/iboalali/StudioProjects/private/Hide-Persistent-Notification` |
+| Book Keeper | `app/book_keeper.md` | `/home/iboalali/StudioProjects/private/book-keeper` |
+| Billboard | `app/billboard.md` | `/home/iboalali/StudioProjects/private/Billboard` |
+| Basic Root Checker | `app/basic_root_checker.md` | `/home/iboalali/StudioProjects/private/Basic-Root-Checker` |
 
-Maintenance: these paths cover only apps already on the site. When a project moves or a new app is added to the site, re-scan the project roots (`/home/iboalali/StudioProjects/`, `/home/iboalali/Documents/`) and update the path here. Don't add a project that isn't on the site unless explicitly asked.
+Maintenance: these paths cover only apps already on the site. When a project moves or a new app is added to the site, re-scan the project roots (`/home/iboalali/StudioProjects/private/`, `/home/iboalali/StudioProjects/`, `/home/iboalali/Documents/`) and update the path here. Don't add a project that isn't on the site unless explicitly asked.
 
 ## Theming
 
