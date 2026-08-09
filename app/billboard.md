@@ -9,8 +9,38 @@ tagline: Show large text on screen, sized to fit without ever cutting off.
 
 Can be used in meeting to vote on a subject with a number or a text.
 
+{% highlights %}
+- **Rebuilt from the ground up around layers:** stack text, color, and effect layers, then combine, reorder, and rename them freely, all in a refreshed violet look
+- **Now speaks five languages:** German, Spanish, Russian, and Arabic (with full right-to-left layout), alongside English, with a Language setting independent of your device
+- A Collection home for the billboards you keep, and a Recent trail that auto-saves every billboard you show fullscreen, with free capacity growing from 3 to 10
+- Share a billboard as an editable .billboard file or a PNG image
+- Support for Android 17
+{% endhighlights %}
+
 
 ## Changelog
+### Version 3.0.0
+* ✨ Rebuilt from the ground up around layers, with a real home for your creations and a refreshed violet look.
+* ➕ Layer-based composition: stack text, color, and effect layers (stripes, gradient, checkerboard, dots), then combine, reorder, and rename them freely.
+* ➕ Two independent editing modes, Basic and Advanced, each with its own layers and orientation, so switching never touches the other.
+* ➕ A full color wheel with brightness and opacity, plus six free preset colors, alongside the basic Auto/Black/White fill.
+* ➕ A Collection home for the billboards you keep: drag to reorder, and open, share, or delete from each tile's menu.
+* ➕ A Recent trail that auto-saves every billboard you show fullscreen, so nothing is lost.
+* ➕ Share a billboard as an editable .billboard file or a PNG image, with a thumbnail preview in the share menu.
+* ➕ Import .billboard files from other apps; they land straight in Recent.
+* ➕ Fullscreen now opens with a pull-down gesture from the editor preview, gliding open instead of cutting away.
+* ➕ A two-pane editor on large landscape tablets and foldables, with a live preview beside the controls.
+* ➕ On extra-large screens, Settings, About, and Open Source Credits open as a floating card over the editor, not a full-screen page.
+* ➕ A Theme setting (System, Light, or Dark) and a Language setting, both independent of your device.
+* ➕ Billboard now speaks German, Spanish, Russian, and Arabic (with full right-to-left layout), alongside English.
+* ➕ A redesigned About screen with its own Open Source Credits page and an "Other apps" section.
+* ➕ Optional haptic feedback on taps and gestures, and privacy-friendly, opt-out analytics that never include your text or colors. Each has a Settings toggle.
+* ➕ Broad screen-reader (TalkBack) support across the app.
+* ➕ Support for Android 17.
+* ➕ An on-device AI assistant (like Gemini) can build billboards for you: add, edit, and remove layers, set orientation, start new billboards, browse and save them, manage your Collection, and delete saved ones, each returned with a preview. It follows the same limits as the app, so effects and custom colors still need the Advanced unlock.
+* 🔨 Replaces the old single History list: Recent and Collection take over, with free capacity growing from 3 to 10.
+* 🔨 Removes the old in-app donation; capacity is now a single purchase alongside the new Advanced unlock.
+
 ### Version 2.1.1
 * ➕ Support for Android 16
 * ➖ Remove support for Android 5 and 5.1
