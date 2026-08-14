@@ -29,6 +29,13 @@ module.exports = function (eleventyConfig) {
     // Add main JS
     eleventyConfig.addPassthroughCopy("main.js");
 
+    // Vendored third-party JS. Currently only the TelemetryDeck JavaScript SDK
+    // (@telemetrydeck/sdk), kept byte-identical to the npm dist so it can be
+    // diffed against a fresh `npm pack` when updating. Self-hosted rather than
+    // pulled from a CDN, for the same reason the profile photo is: no extra
+    // cross-origin fetch. See the Analytics notes in CLAUDE.md.
+    eleventyConfig.addPassthroughCopy("vendor");
+
     // add short codes to add custom html to the markdown generated site
     // https://github.com/corbindavenport/corbindavenport.github.io/blob/main/.eleventy.js
     // eleventyConfig.addShortcode

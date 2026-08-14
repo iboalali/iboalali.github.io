@@ -83,14 +83,69 @@ title: Ibrahim Al-Alali
         document.createElement('nav'); 
         </script>
         <![endif]-->
-        <!-- Analytics: TelemetryDeck. defer keeps this cross-origin script off
-             the render-critical path (without it, first paint waits for the CDN).
-             All window.td callers in main.js guard/retry, so late load is safe. -->
+        <!-- Analytics, part 1 of 2: the TelemetryDeck *Web* SDK, which sends the
+             automatic pageview and nothing else. defer keeps this cross-origin
+             script off the render-critical path (without it, first paint waits
+             for the CDN). It sends no user identifier at all; TelemetryDeck
+             derives one server-side. It also auto-enables test mode on
+             localhost, so local pageviews stay out of the live dashboard. -->
         <script
             defer
             src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
             data-app-id="2D083718-D442-4A8E-B797-68F24ADD0C7E"
         ></script>
+        <!-- Analytics, part 2 of 2: the TelemetryDeck *JavaScript* SDK, which is
+             what provides window.td.signal(). The Web SDK above exposes no API
+             whatsoever, so without this every custom signal in main.js
+             (App.Referral, Theme.Toggle, Contact.Click, Shortlink.Visit) is a
+             silent no-op. Vendored under /vendor rather than fetched from a CDN,
+             so no extra cross-origin request. Module scripts are deferred by
+             default and every window.td caller in main.js guards and retries, so
+             a late load is safe.
+
+             clientUser is required by this SDK (it throws when empty) and is
+             hashed before sending. A per-session random ID means the numbers
+             count visits rather than people, and nothing persists once the tab
+             closes. Note this makes user counts on custom signals independent
+             from user counts on pageviews, which come from the Web SDK above.
+
+             testMode must be set explicitly here; unlike the Web SDK, this one
+             does not detect localhost on its own. Signals marked as test only
+             appear in the dashboard's Test Mode. The whole block is wrapped in
+             try/catch: if anything fails, window.td stays undefined and the
+             signals no-op exactly as they did before, rather than throwing. -->
+        <script type="module">
+            import TelemetryDeck from "/vendor/telemetrydeck.js";
+
+            try {
+                const random = () =>
+                    crypto.randomUUID
+                        ? crypto.randomUUID()
+                        : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+
+                const KEY = "td_session_user";
+                let user;
+                try {
+                    user = sessionStorage.getItem(KEY);
+                    if (!user) {
+                        user = random();
+                        sessionStorage.setItem(KEY, user);
+                    }
+                } catch (e) {
+                    user = random(); // storage blocked, keep it in memory only
+                }
+
+                window.td = new TelemetryDeck({
+                    appID: "2D083718-D442-4A8E-B797-68F24ADD0C7E",
+                    clientUser: user,
+                    testMode:
+                        /^localhost$|^127(\.\d+){0,2}\.\d+$|^\[::1?\]$/.test(location.hostname) ||
+                        location.protocol === "file:",
+                });
+            } catch (e) {
+                /* SDK unavailable: signals stay no-ops, page is unaffected */
+            }
+        </script>
         <!-- Open Graph / social graph card -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ibrahim Al-Alali" />
