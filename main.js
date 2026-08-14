@@ -221,6 +221,45 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     }
 })();
 
+// Short-link arrivals: the /bb, /brc, /hpn stubs (shortlinks.11ty.js) redirect
+// within milliseconds, far too fast for the deferred TelemetryDeck SDK to load
+// and send from the stub itself, so the stub stashes its slug in sessionStorage
+// and the destination page fires the signal here. sessionStorage rather than a
+// query parameter keeps the address bar clean and avoids clobbering any utm_*
+// the short link was tagged with (e.g. /hpn?utm_source=qr). Fires once per
+// arrival: the key is cleared on read, so browsing on to other pages in the same
+// session doesn't re-count it.
+;(function () {
+    var KEY = 'td_shortlink';
+    var slug;
+    try {
+        slug = sessionStorage.getItem(KEY);
+        if (slug) sessionStorage.removeItem(KEY);
+    } catch (e) { return; } // sessionStorage disabled, silently ignore
+    if (!slug) return;
+
+    var landing = window.location.pathname;
+
+    function fire() {
+        if (!window.td || typeof window.td.signal !== 'function') return false;
+        window.td.signal('Shortlink.Visit', {
+            'Shortlink.Visit.slug':    slug,
+            'Shortlink.Visit.landing': landing,
+        });
+        return true;
+    }
+
+    if (!fire()) {
+        // Same as App.Referral above: the SDK loads with defer and executes
+        // after this script, so the first attempt usually misses. Poll long
+        // enough (10s) to cover a slow first fetch of the SDK from the CDN.
+        var tries = 0;
+        var iv = setInterval(function () {
+            if (fire() || ++tries > 100) clearInterval(iv);
+        }, 100);
+    }
+})();
+
 // Contact-card telemetry: fire a Contact.Click signal naming which platform the
 // visitor opened from the contact page. The cards are external links (opened in
 // a new tab by the handler at the top of this file), so the current page stays
