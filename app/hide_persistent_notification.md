@@ -5,6 +5,18 @@ appName: Hide Persistent Notification
 icon: hide+persistent+notification+icon.png
 packageName: com.iboalali.hidepersistentnotifications
 tagline: Pick a persistent notification and keep it hidden for as long as the app is installed.
+# See the App screenshots notes in CLAUDE.md. Variants live in
+# media/screenshots/hide_persistent_notification/ and come from
+# tools/make_screenshots.py.
+screenshots:
+  - file: home
+    alt: The home screen listing the notifications the app is managing, with a button to add another
+  - file: add
+    alt: The Select a Notification screen, choosing which of the current notifications to hide
+  - file: history
+    alt: The hiding history, listing each notification with how long it was hidden and when
+  - file: settings
+    alt: Settings, with theme and language options, battery optimization guidance, and a control to show all hidden notifications
 ---
 
 {% highlights %}

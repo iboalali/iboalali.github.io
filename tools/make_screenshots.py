@@ -47,6 +47,27 @@ SETS = {
             ("SettingsShot.png", "settings"),
         ],
     ),
+    # About/Licence shots are deliberately left out of every set: they are the
+    # same boilerplate in each app and say nothing about what it does.
+    "basic_root_checker": (
+        "/home/iboalali/Projects/private/android/Basic-Root-Checker/"
+        "Play Store/Generated Screenshots/v2.5/default/Phone",
+        [
+            ("MainNotCheckedShot.png", "main"),
+            ("MainRootedShot.png", "result"),
+            ("SettingsShot.png", "settings"),
+        ],
+    ),
+    "hide_persistent_notification": (
+        "/home/iboalali/Projects/private/android/Hide-Persistent-Notification/"
+        "Play Store/Generated Screenshots/v2.2/default/Phone",
+        [
+            ("HomeShot.png", "home"),
+            ("AddNotificationShot.png", "add"),
+            ("HistoryShot.png", "history"),
+            ("SettingsShot.png", "settings"),
+        ],
+    ),
 }
 
 
