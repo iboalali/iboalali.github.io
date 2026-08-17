@@ -2,3 +2,8 @@ node_modules/
 .DS_Store
 _site/
 /captures
+# Claude Code's per-machine state: settings.local.json (permission choices) and
+# scheduled_tasks.lock. Not shared config, so it stays local. Note .claude/ is
+# also in .eleventyignore, for a different reason: writes to it during a
+# dev-server session would otherwise trigger a rebuild and live-reload loop.
+.claude/
