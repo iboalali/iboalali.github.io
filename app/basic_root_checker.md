@@ -6,6 +6,15 @@ icon: basic+root+checker+icon.png
 packageName: com.iboalali.basicrootchecker
 repoUrl: https://github.com/iboalali/Basic-Root-Checker
 tagline: Check whether your device has root access - quick, simple, no-frills.
+# See the App screenshots notes in CLAUDE.md. Variants live in
+# media/screenshots/basic_root_checker/ and come from tools/make_screenshots.py.
+screenshots:
+  - file: main
+    alt: The main screen before checking, showing the device name, model, and Android version, with a button to run the check
+  - file: result
+    alt: The result after checking, a green tick reporting that the device has root access via Magisk
+  - file: settings
+    alt: Settings, with usage data, analytics identity reset, haptic feedback, theme, and language options
 ---
 
 _Basic Root Checker_ does **NOT** root your device. It will only show you if your device has root access (or is rooted).
