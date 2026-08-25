@@ -22,7 +22,10 @@
 //   billboard — changelog 3.0.0 (en + de/ar/es/ru) is the app's own Play Store
 //     release notes, reused from the repo's `Play Store/Release Notes/3.0.0/
 //     website/` files (dashes normalized for site copy, German "bei Tipps"
-//     corrected to "beim Tippen"). highlights condense those same 3.0.0 notes,
+//     corrected to "beim Tippen"). changelog 3.0.1 follows the repo's
+//     `Play Store/Release Notes/3.0.1/` notes per locale, with the launch-time
+//     bullet expanded for the site (the store has no length limit here).
+//     highlights condense those same 3.0.0 notes,
 //     reusing their per-locale wording. description and changelog 2.1.1 and
 //     older were translated for this site, as the repo has no localized copy
 //     for them. Review welcome, especially ar/ru.
@@ -367,6 +370,11 @@ module.exports = {
                 "Unterstützung für Android 17",
             ],
             changelog: {
+                "3.0.1": [
+                    "🛠️ Ein kleines Wartungs-Update. An dem, was die App tut, ändert sich nichts.",
+                    "🔨 Die App startet etwas schneller, rund 60 ms weniger beim Start. Die Prüfung, ob anonyme Nutzungsdaten eingeschaltet sind, wartet nicht mehr auf den Speicher, bevor der erste Bildschirm gezeichnet werden kann.",
+                    "🛠️ Aufräumarbeiten im Hintergrund, auch beim Umgang mit anonymen Nutzungsdaten.",
+                ],
                 "3.0.0": [
                     "✨ Von Grund auf neu aufgebaut, rund um Ebenen, mit einer echten Heimat für deine Kreationen und einem frischen violetten Look.",
                     "➕ Ebenen-basierte Gestaltung: Stapele Text-, Farb- und Effekt-Ebenen (Streifen, Verlauf, Schachbrett, Punkte) und kombiniere, sortiere und benenne sie frei.",
@@ -438,6 +446,11 @@ module.exports = {
                 "دعم أندرويد 17",
             ],
             changelog: {
+                "3.0.1": [
+                    "🛠️ تحديث صيانة صغير. لم يتغيّر شيء في ما يفعله التطبيق.",
+                    "🔨 يبدأ التطبيق أسرع قليلًا، بنحو 60 مللي ثانية. لم يعد التحقق من تفعيل بيانات الاستخدام مجهولة المصدر ينتظر التخزين قبل رسم الشاشة الأولى.",
+                    "🛠️ ترتيب داخلي، بما في ذلك طريقة التعامل مع بيانات الاستخدام مجهولة المصدر.",
+                ],
                 "3.0.0": [
                     "✨ أُعيد بناء التطبيق من الصفر حول فكرة الطبقات، مع وجهة حقيقية لتصاميمك ومظهر أرجواني منعش.",
                     "➕ تصميم قائم على الطبقات: كدّس طبقات النص واللون والتأثيرات البصرية (خطوط، تدرّج، رقعة شطرنج، نقاط)، وادمجها ورتّبها وأعد تسميتها بحرية.",
@@ -509,6 +522,11 @@ module.exports = {
                 "Compatibilidad con Android 17",
             ],
             changelog: {
+                "3.0.1": [
+                    "🛠️ Una pequeña actualización de mantenimiento. Nada de lo que hace la app ha cambiado.",
+                    "🔨 La app arranca un poco más rápido, unos 60 ms menos al iniciarse. Comprobar si los datos anónimos de uso están activados ya no espera al almacenamiento antes de dibujar la primera pantalla.",
+                    "🛠️ Limpieza interna, incluida la gestión de los datos anónimos de uso.",
+                ],
                 "3.0.0": [
                     "✨ Reconstruida desde cero en torno a las capas, con un hogar real para tus creaciones y un renovado look violeta.",
                     "➕ Composición por capas: apila capas de texto, color y efectos visuales (rayas, degradado, damero, puntos), y combínalas, reordénalas y renómbralas libremente.",
@@ -580,6 +598,11 @@ module.exports = {
                 "Поддержка Android 17",
             ],
             changelog: {
+                "3.0.1": [
+                    "🛠️ Небольшое обновление. В том, что делает приложение, ничего не изменилось.",
+                    "🔨 Приложение запускается немного быстрее, примерно на 60 мс. Проверка того, включены ли анонимные данные об использовании, больше не ждёт обращения к хранилищу до отрисовки первого экрана.",
+                    "🛠️ Внутренняя чистка, в том числе в работе с анонимными данными об использовании.",
+                ],
                 "3.0.0": [
                     "✨ Приложение полностью пересобрано вокруг слоёв, с настоящим домом для ваших творений и обновлённым фиолетовым стилем.",
                     "➕ Композиция из слоёв: складывайте слои текста, цвета и визуальных эффектов (полосы, градиент, клетки, точки), свободно комбинируйте, переставляйте и переименовывайте их.",
