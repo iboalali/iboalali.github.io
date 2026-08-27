@@ -6,12 +6,18 @@
 //
 // Provenance per app (all four are fully localized in de/ar/es/ru — name where
 // it differs, plus description, highlights, and changelog):
-//   basic_root_checker — description + highlights + changelog 2.2/2.3/2.4 are the
-//     app's own Play Store metadata (Listing short descriptions + release
-//     notes). changelog 2.1 and older were translated for this site to match
-//     the page's bullets (the repo's 2.1 notes are grouped differently, and
-//     older versions have no release notes). `name` set only where it differs
-//     from English (Arabic).
+//   basic_root_checker — description + highlights + changelog 2.2/2.3/2.4/2.5 are
+//     the app's own Play Store metadata (Listing short descriptions + release
+//     notes). 2.5's bullets follow the repo's `Play Store/Release Notes/2.5/`
+//     notes per locale, expanded for the site (the store has a length limit,
+//     the page does not), with screen and setting names taken from the app's
+//     own `values-<locale>/strings.xml` so they match what the app shows. Its
+//     Magisk-version bullet is not in the store notes and was translated for
+//     this site. highlights are 2.5's first and fourth bullets, reusing that
+//     per-locale wording. changelog 2.1 and older were translated for this site
+//     to match the page's bullets (the repo's 2.1 notes are grouped
+//     differently, and older versions have no release notes). `name` set only
+//     where it differs from English (Arabic).
 //   hide_persistent_notification — description + highlights translated for this
 //     site. changelog 2.1 (en + de/ar/es/ru) is the app's own Play Store
 //     release notes, reused from the repo (em dashes normalized for site copy);
@@ -37,10 +43,20 @@ module.exports = {
         de: {
             description: "Ist Ihr Gerät gerootet? Finden Sie es sofort heraus!",
             highlights: [
-                "Neue Design-Option: hell, dunkel oder System",
-                "Mehr Root-Manager erkannt (Kitsune Mask, SukiSU, KernelSU Next, SuperSU u. a.), jeweils mit Namen",
+                "Große Displays: Einstellungen, Über und Lizenzen öffnen sich als Dialog, per Wischen schließbar",
+                "Weitere Apps im Über-Bildschirm lädt aktuelle Infos aus dem Web, in deiner Sprache",
             ],
             changelog: {
+                "2.5": [
+                    "➕ Große Displays: Einstellungen, Über und Lizenzen öffnen sich als Dialog über dem Hauptbildschirm, schließbar durch Wischen nach unten, Tippen daneben oder Zurück",
+                    "➕ Die App direkt in der App bewerten, plus ein Link „App bewerten“ im Über-Bildschirm (Google-Play-Version)",
+                    "➕ Optionale Karte „Entwicklung unterstützen“ auf dem Hauptbildschirm nach einer Root-Prüfung, öffnet das Trinkgeld mit einem Tippen (Google-Play-Version)",
+                    "🛠️ „Weitere Apps“ im Über-Bildschirm lädt aktuelle Beschreibungen und Highlights aus dem Web, in deiner Sprache",
+                    "🛠️ Lizenzen nennt alle mitgelieferten Bibliotheken, nach Lizenz gruppiert, jeweils mit vollem Lizenztext und Link zum Projekt",
+                    "🛠️ Schnellerer Kaltstart und flüssigeres erstes Scrollen",
+                    "🔨 Die Magisk-Version auf der Ergebniskarte wird wieder als Version angezeigt, statt „v27.0:MAGISK:R“",
+                    "🔨 Der Schalter für anonyme Nutzungsdaten wirkt sofort, und der Fortschrittsbalken des In-App-Updates füllt sich flüssig",
+                ],
                 "2.4": [
                     "➕ Dezentes haptisches Feedback: Tippen, Schalter und Auswahl geben einen sanften Impuls",
                     "➕ Root-Status dieses Geräts aus Assistenten und anderen Apps prüfen, ohne sie zu öffnen (Android 16+)",
@@ -119,10 +135,20 @@ module.exports = {
             name: "التحقق من الـ Root",
             description: "هل جهازك حاصل على صلاحيات الروت؟ اكتشف ذلك فوراً!",
             highlights: [
-                "خيار مظهر جديد في الإعدادات: فاتح أو داكن أو حسب النظام",
-                "اكتشاف مزيد من مديري الروت (Kitsune Mask وSukiSU وKernelSU Next وSuperSU وغيرها) وعرض كلٍّ باسمه",
+                "الشاشات الكبيرة: الإعدادات و«عن التطبيق» والتراخيص تُفتح كنافذة تُغلق بالسحب",
+                "«تطبيقات أخرى» في شاشة عن التطبيق تُحدَّث من الويب بلغتك",
             ],
             changelog: {
+                "2.5": [
+                    "➕ الشاشات الكبيرة: الإعدادات و«عن التطبيق» والتراخيص تُفتح كنافذة فوق الشاشة الرئيسية، تُغلق بسحب البطاقة للأسفل أو النقر خارجها أو بزر الرجوع",
+                    "➕ قيّم التطبيق من داخله، مع رابط «قيّم التطبيق» في شاشة عن التطبيق (نسخة Google Play)",
+                    "➕ بطاقة اختيارية «ادعم التطوير» على الشاشة الرئيسية بعد فحص الروت، تفتح صندوق الإكراميات بنقرة واحدة (نسخة Google Play)",
+                    "🛠️ «تطبيقات أخرى» في شاشة عن التطبيق تُحدَّث من الويب، وتعرض وصف كل تطبيق وأبرز مزاياه بلغتك",
+                    "🛠️ التراخيص تذكر كل المكتبات المضمّنة، مجمّعة حسب الترخيص، مع النص الكامل ورابط لكل مشروع",
+                    "🛠️ بدء تشغيل أسرع وتمرير أول أكثر سلاسة",
+                    "🔨 إصلاح عرض إصدار Magisk على بطاقة النتيجة، بعد أن كان يظهر مثل «v27.0:MAGISK:R»",
+                    "🔨 إعادة تفعيل بيانات الاستخدام المجهولة تسري فوراً، وشريط تقدّم التحديث داخل التطبيق يمتلئ بسلاسة",
+                ],
                 "2.4": [
                     "➕ ردود لمسية خفيفة في كل أنحاء التطبيق: النقر والمفاتيح والاختيارات تعطي نبضة لطيفة",
                     "➕ تحقّق من حالة روت هذا الجهاز من المساعدين والتطبيقات الأخرى دون فتح التطبيق (أندرويد 16+)",
@@ -197,10 +223,20 @@ module.exports = {
         es: {
             description: "¿Su dispositivo tiene acceso root? ¡Descúbralo al instante!",
             highlights: [
-                "Nueva opción de Tema: claro, oscuro o sistema",
-                "Se detectan más gestores de root (Kitsune Mask, SukiSU, KernelSU Next, SuperSU y más), cada uno por su nombre",
+                "Pantallas grandes: Ajustes, Acerca de y Licencias se abren como un diálogo que se cierra deslizando",
+                "Otras aplicaciones en Acerca de se actualiza desde la web, en tu idioma",
             ],
             changelog: {
+                "2.5": [
+                    "➕ Pantallas grandes: Ajustes, Acerca de y Licencias se abren como un diálogo sobre la pantalla principal, que se cierra deslizando la tarjeta hacia abajo, tocando fuera o con Atrás",
+                    "➕ Valora la app sin salir de ella, y un enlace «Valora la app» en Acerca de (versión de Google Play)",
+                    "➕ Tarjeta opcional «Apoya el desarrollo» en la pantalla principal tras comprobar el root, que abre el bote de propinas con un toque (versión de Google Play)",
+                    "🛠️ «Otras aplicaciones» en Acerca de se actualiza desde la web y muestra la descripción y las novedades de cada app en tu idioma",
+                    "🛠️ Licencias acredita todas las bibliotecas incluidas, agrupadas por licencia, con el texto completo y un enlace a cada proyecto",
+                    "🛠️ Inicio en frío más rápido y primer desplazamiento más fluido",
+                    "🔨 La versión de Magisk en la tarjeta de resultado vuelve a mostrarse como una versión, en vez de «v27.0:MAGISK:R»",
+                    "🔨 El interruptor de datos de uso anónimos se aplica al instante, y la barra de progreso de la actualización avanza con fluidez",
+                ],
                 "2.4": [
                     "➕ Vibración háptica sutil en la app: toques, interruptores y selecciones dan un leve toque",
                     "➕ Consulta el estado de root del dispositivo desde asistentes y otras apps, sin abrirla (Android 16+)",
@@ -278,10 +314,20 @@ module.exports = {
         ru: {
             description: "Есть ли root на вашем устройстве? Узнайте мгновенно!",
             highlights: [
-                "Новая опция Тема: светлая, тёмная или как в системе",
-                "Распознаётся больше root-менеджеров (Kitsune Mask, SukiSU, KernelSU Next, SuperSU и др.), каждый под своим именем",
+                "Большие экраны: «Настройки», «О приложении» и «Лицензии» открываются как диалог, закрывается свайпом",
+                "«Другие приложения» в разделе «О приложении» обновляются из интернета, на вашем языке",
             ],
             changelog: {
+                "2.5": [
+                    "➕ Большие экраны: «Настройки», «О приложении» и «Лицензии» открываются как диалог поверх главного экрана, закрывается свайпом карточки вниз, нажатием вне её или кнопкой «Назад»",
+                    "➕ Оценка приложения прямо в нём и ссылка «Оценить приложение» в разделе «О приложении» (версия Google Play)",
+                    "➕ Необязательная карточка «Поддержать разработку» на главном экране после проверки root, открывает чаевые одним нажатием (версия Google Play)",
+                    "🛠️ «Другие приложения» в разделе «О приложении» обновляются из интернета и показывают описание и главное о каждом приложении на вашем языке",
+                    "🛠️ «Лицензии» перечисляют все встроенные библиотеки, сгруппированные по лицензиям, с полным текстом и ссылкой на каждый проект",
+                    "🛠️ Быстрее холодный запуск и плавнее первая прокрутка",
+                    "🔨 Версия Magisk на карточке результата снова отображается как версия, а не «v27.0:MAGISK:R»",
+                    "🔨 Переключатель анонимных данных об использовании срабатывает сразу, а индикатор загрузки обновления заполняется плавно",
+                ],
                 "2.4": [
                     "➕ Лёгкая виброотдача в приложении: нажатия, переключатели и выбор дают мягкий отклик",
                     "➕ Проверяйте статус root этого устройства из ассистентов и других приложений, не открывая его (Android 16+)",
