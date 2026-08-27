@@ -12,13 +12,23 @@
 //     the page's bullets (the repo's 2.1 notes are grouped differently, and
 //     older versions have no release notes). `name` set only where it differs
 //     from English (Arabic).
-//   hide_persistent_notification — description + highlights translated for this
-//     site. changelog 2.1 (en + de/ar/es/ru) is the app's own Play Store
+//   hide_persistent_notification — description translated for this site.
+//     changelog 2.2 (en + de/ar/es/ru) follows the repo's `Play Store/Release
+//     Notes/2.2/` notes per locale, expanded for the site (the store has a
+//     length limit, the page does not), with screen and setting names taken
+//     from the app's own `values-<locale>/strings.xml` so they match what the
+//     app shows (which is why Spanish reads "Contactar al desarrollador" and
+//     German "Über", where the store notes differ). Its purchase-nudge and
+//     Other-apps bullets are not in the store notes and were translated for
+//     this site. highlights are 2.2's two new features, reusing that per-locale
+//     wording, behind the going-free notice, which stands until the free
+//     version ships. changelog 2.1 (en + de/ar/es/ru) is likewise the app's own
 //     release notes, reused from the repo (em dashes normalized for site copy);
 //     its tablet/foldable + faster-startup bullets are from the repo's 2.1.2
-//     notes (2.1 was never published; 2.1.2 shipped the full 2.1+2.1.2 set).
-//     2.0's German is likewise from the repo; the rest was translated for this
-//     site. Review welcome, especially ar/ru.
+//     notes (2.1 was never published; 2.1.2 shipped the full 2.1+2.1.2 set, and
+//     2.1.2 carried nothing else user-facing). 2.0's German is likewise from
+//     the repo; the rest was translated for this site. Review welcome,
+//     especially ar/ru.
 //   billboard — changelog 3.0.0 (en + de/ar/es/ru) is the app's own Play Store
 //     release notes, reused from the repo's `Play Store/Release Notes/3.0.0/
 //     website/` files (dashes normalized for site copy, German "bei Tipps"
@@ -671,11 +681,19 @@ module.exports = {
                 "Eine dauerhafte Benachrichtigung auswählen und verborgen halten, solange die App installiert ist.",
             highlights: [
                 "**Hinweis: Die App wird mit einem optionalen In-App-Kauf kostenlos.** Wenn Sie sie bereits gekauft haben, öffnen Sie die Einstellungen und melden Sie sich an, damit Ihr Kauf übernommen wird und Sie alle Premium-Funktionen kostenlos behalten, kein zweiter Kauf nötig.",
-                "Jetzt auf Deutsch, Arabisch, Spanisch und Russisch verfügbar",
-                "In-App-Sprachauswahl in den Einstellungen (ab Android 13)",
-                "Unterstützung für Android 17",
+                "Assistenten wie Gemini auf dem Gerät können Benachrichtigungen per Sprache auflisten, ausblenden oder anzeigen, ohne die App zu öffnen (ab Android 16)",
+                "Neue Option „Entwickler kontaktieren“ unter „Über“ öffnet deine E-Mail-App",
             ],
             changelog: {
+                "2.2": [
+                    "➕ Assistenten wie Gemini auf dem Gerät können Benachrichtigungen per Sprache auflisten, ausblenden oder anzeigen, ohne die App zu öffnen (ab Android 16)",
+                    "➕ Neue Option „Entwickler kontaktieren“ unter „Über“ öffnet deine E-Mail-App, mit Adresse und Betreff vorausgefüllt",
+                    "➕ Wer die App vor dem Wechsel zu kostenlos gekauft hat, wird jetzt auf jedem Bildschirm über eine Leiste zur Anmeldung geführt, die den Kauf überträgt, und die Einstellungen öffnen dazu beim Aufrufen keinen Dialog mehr",
+                    "🛠️ Die Lizenzseite nennt alle enthaltenen Bibliotheken, und jeder Eintrag verlinkt auf sein Projekt",
+                    "🔨 Der Ausblendverlauf zeigt jetzt eine echte Dauer („6 Std., 12 Min.“) statt einer Stoppuhr",
+                    "🔨 Schaltflächen in einer gescrollten Liste reagieren wieder auf Tippen",
+                    "🔨 Die Liste „Weitere Apps“ unter „Über“ verliert ihre Highlights nicht mehr, und ihre animierte Beschriftung verbraucht weniger Akku",
+                ],
                 "2.1": [
                     "➕ App jetzt auf Deutsch, Arabisch, Spanisch & Russisch verfügbar. Sprache in den Einstellungen (ab Android 13)",
                     "➕ Design-Option: Hell, Dunkel oder System, mit sanftem Farbwechsel",
@@ -756,11 +774,19 @@ module.exports = {
                 "اختر إشعاراً دائماً وأبقِه مخفياً طوال مدة تثبيت التطبيق.",
             highlights: [
                 "**تنبيه: سيصبح التطبيق مجانياً مع عملية شراء اختيارية داخله.** إذا كنت قد اشتريته من قبل، فافتح شاشة الإعدادات وسجّل الدخول لينتقل شراؤك وتحتفظ بجميع الميزات المميزة مجاناً، دون الحاجة إلى شراء ثانٍ.",
-                "متوفّر الآن بالألمانية والعربية والإسبانية والروسية",
-                "اختيار لغة التطبيق من الإعدادات (أندرويد 13 فأحدث)",
-                "دعم أندرويد 17",
+                "استخدم مساعدين على الجهاز مثل Gemini لعرض الإشعارات أو إخفائها أو إظهارها بالصوت، دون فتح التطبيق (أندرويد 16 فأحدث)",
+                "خيار جديد «مراسلة المطوّر» في شاشة «حول التطبيق» يفتح تطبيق بريدك",
             ],
             changelog: {
+                "2.2": [
+                    "➕ استخدم مساعدين على الجهاز مثل Gemini لعرض الإشعارات أو إخفائها أو إظهارها بالصوت، دون فتح التطبيق (أندرويد 16 فأحدث)",
+                    "➕ خيار جديد «مراسلة المطوّر» في شاشة «حول التطبيق» يفتح تطبيق بريدك، مع تعبئة العنوان والموضوع",
+                    "➕ من اشترى التطبيق قبل أن يصبح مجانياً يجد الآن شريطاً على كل شاشة يوجّهه إلى تسجيل الدخول الذي ينقل شراءه، ولم تعد الإعدادات تفتح نافذة بهذا الشأن عند الدخول إليها",
+                    "🛠️ تسرد صفحة التراخيص كل المكتبات المضمّنة، ويقود كل إدخال إلى مشروعه",
+                    "🔨 يعرض سجل الإخفاء الآن مدة حقيقية («6 ساعات، 12 دقيقة») بدلاً من عداد زمني",
+                    "🔨 لم تعد الأزرار في قائمة مُمرَّرة تتوقف عن الاستجابة للنقر",
+                    "🔨 لم تعد قائمة «تطبيقات أخرى» في شاشة «حول التطبيق» تفقد أبرز الميزات، وأصبح عنوانها المتحرك يستهلك بطارية أقل",
+                ],
                 "2.1": [
                     "➕ التطبيق متوفّر الآن بالألمانية والعربية والإسبانية والروسية. اختر لغتك من الإعدادات (أندرويد 13 فأحدث)",
                     "➕ خيار السمة: فاتح أو داكن أو اتّباع النظام، مع انتقال لوني سلس",
@@ -837,11 +863,19 @@ module.exports = {
                 "Elija una notificación persistente y manténgala oculta mientras la app esté instalada.",
             highlights: [
                 "**Aviso: la app pasará a ser gratuita con una compra opcional dentro de la app.** Si ya la compró, abra la pantalla de Ajustes e inicie sesión para que su compra se conserve y mantenga todas las funciones premium gratis, sin necesidad de comprar otra vez.",
-                "Ahora disponible en alemán, árabe, español y ruso",
-                "Selector de idioma de la app en Ajustes (Android 13+)",
-                "Compatibilidad con Android 17",
+                "Usa asistentes en el dispositivo como Gemini para listar, ocultar o mostrar notificaciones por voz, sin abrir la app (Android 16+)",
+                "Nueva opción «Contactar al desarrollador» en Acerca de abre tu app de correo",
             ],
             changelog: {
+                "2.2": [
+                    "➕ Usa asistentes en el dispositivo como Gemini para listar, ocultar o mostrar notificaciones por voz, sin abrir la app (Android 16+)",
+                    "➕ Nueva opción «Contactar al desarrollador» en Acerca de abre tu app de correo, con la dirección y el asunto ya puestos",
+                    "➕ Si compraste la app antes de que fuera gratuita, ahora una barra en todas las pantallas lleva al inicio de sesión que conserva tu compra, y Ajustes ya no abre un diálogo sobre ello al entrar",
+                    "🛠️ La pantalla de Licencias incluye todas las bibliotecas, y cada entrada enlaza a su proyecto",
+                    "🔨 El historial de ocultación muestra una duración real («6 h, 12 min»), no un cronómetro",
+                    "🔨 Los botones de una lista desplazada vuelven a responder a los toques",
+                    "🔨 La lista «Otras apps» en Acerca de ya no pierde sus destacados, y su etiqueta animada consume menos batería",
+                ],
                 "2.1": [
                     "➕ App disponible ahora en alemán, árabe, español y ruso. Elige tu idioma en Ajustes (Android 13+)",
                     "➕ Opción de Tema: claro, oscuro o seguir al sistema, con transición de color suave",
@@ -920,11 +954,19 @@ module.exports = {
                 "Выберите постоянное уведомление и держите его скрытым, пока приложение установлено.",
             highlights: [
                 "**Внимание: приложение становится бесплатным с необязательной покупкой внутри.** Если вы уже купили его, откройте экран настроек и войдите, чтобы покупка перенеслась и все премиум-функции остались бесплатными, без повторной покупки.",
-                "Теперь доступно на немецком, арабском, испанском и русском",
-                "Выбор языка приложения в Настройках (Android 13+)",
-                "Поддержка Android 17",
+                "Ассистенты на устройстве, например Gemini, могут голосом показать, скрыть или вернуть уведомления, не открывая приложение (Android 16+)",
+                "Новый пункт «Связаться с разработчиком» в разделе «О приложении» открывает почту",
             ],
             changelog: {
+                "2.2": [
+                    "➕ Ассистенты на устройстве, например Gemini, могут голосом показать, скрыть или вернуть уведомления, не открывая приложение (Android 16+)",
+                    "➕ Новый пункт «Связаться с разработчиком» в разделе «О приложении» открывает почту с заполненными адресом и темой",
+                    "➕ Тем, кто купил приложение до перехода на бесплатную модель, полоса на каждом экране теперь показывает вход, который переносит покупку, а настройки больше не открывают диалог об этом при входе",
+                    "🛠️ На экране лицензий перечислены все библиотеки, и каждая запись ведёт на свой проект",
+                    "🔨 История скрытия теперь показывает реальную длительность («6 ч, 12 мин»), а не секундомер",
+                    "🔨 Кнопки в прокрученном списке снова реагируют на нажатия",
+                    "🔨 Список «Другие приложения» в разделе «О приложении» больше не теряет блок «Главное», и его анимированная надпись тратит меньше заряда",
+                ],
                 "2.1": [
                     "➕ Приложение теперь доступно на немецком, арабском, испанском и русском. Выберите язык в Настройках (Android 13+)",
                     "➕ Опция «Тема»: светлая, тёмная или как в системе, с плавным переходом цвета",
