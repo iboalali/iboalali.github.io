@@ -21,13 +21,21 @@ screenshots:
 
 {% highlights %}
 - **Heads up: the app is going free with an optional in-app purchase.** If you already bought it, open the Settings screen and sign in so your purchase carries over and you keep every premium feature for free, no second purchase needed.
-- Now available in German, Arabic, Spanish, and Russian
-- In-app language picker in Settings (Android 13+)
-- Support for Android 17
+- Use on-device assistants like Gemini to list, hide, or show notifications by voice, without opening the app (Android 16+)
+- New "Contact developer" option in About opens your email app
 {% endhighlights %}
 
 
 ## Changelog
+### Version 2.2:
+* ➕ Use on-device assistants like Gemini to list, hide, or show notifications by voice, without opening the app (Android 16+)
+* ➕ New "Contact developer" option in About opens your email app, with the address and subject filled in
+* ➕ If you bought the app before it went free, the sign-in that carries your purchase over is now pointed to from a bar on every screen, and Settings no longer opens a dialog about it when you go in
+* 🛠️ The Licenses screen credits every bundled library, and every entry links to its project
+* 🔨 Hiding history shows a real duration ("6 hr, 12 min") instead of a stopwatch reading
+* 🔨 Buttons in a scrolled list no longer stop responding to taps
+* 🔨 The Other apps list in About keeps its highlights, and its animated label costs less battery
+
 ### Version 2.1:
 * ➕ App now available in German, Arabic, Spanish & Russian. Pick your language in Settings (Android 13+)
 * ➕ Theme option: light, dark, or follow system, with a smooth color transition
