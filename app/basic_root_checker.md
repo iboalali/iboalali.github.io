@@ -25,12 +25,22 @@ This app does **NOT** collect any personal information. It works fully offline; 
 This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 {% highlights %}
-- New Theme option in Settings: light, dark, or system
-- Detect more root managers (Kitsune Mask, SukiSU, KernelSU Next, SuperSU and more), each shown by name
+- Large screens: Settings, About, and Licenses open as a swipe-to-close dialog
+- Other Apps on the About screen refreshes from the web, in your language
 {% endhighlights %}
 
 
 ## Changelog
+### Version 2.5:
+* ➕ Large screens: Settings, About, and Licenses open as a dialog over the main screen, closed by swiping the card down, tapping outside, or with Back
+* ➕ Rate the app without leaving it, plus a "Rate this app" link on the About screen (Google Play builds)
+* ➕ Optional "Support development" card on the main screen after a root check, opening the tip jar in one tap (Google Play builds)
+* 🛠️ "Other Apps" on the About screen refreshes from the web, showing each app's current description and highlights in your language
+* 🛠️ Licenses credits every bundled library, grouped by license, each with its full text and a link to the project
+* 🛠️ Faster cold start and smoother first scroll
+* 🔨 The Magisk version on the result card reads as a version again, instead of "v27.0:MAGISK:R"
+* 🔨 Turning anonymous usage data back on in Settings takes effect immediately, and the in-app update progress bar fills smoothly
+
 ### Version 2.4:
 * ➕ Subtle haptic feedback across the app: taps, switches, and selections give a gentle tick
 * ➕ Check this device's root status from assistants and other apps, without opening it (Android 16+)
