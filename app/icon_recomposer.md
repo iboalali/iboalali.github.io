@@ -5,20 +5,45 @@ appName: Icon Recomposer
 icon: icon_recomposer.png
 appUrl: https://iboalali.com/Icon-Recomposer/
 repoUrl: https://github.com/iboalali/Icon-Recomposer
-tagline: Light vector icons with a movable 3D emboss, then export to PNG, SVG, or Android VectorDrawable.
+tagline: Build lit, layered app icons from shapes and materials, then export them as PNGs for Android and the Play Store.
 ---
 
-_Icon Recomposer_ is a browser tool that loads vector artwork (SVG or Android _VectorDrawable_ XML), applies a subtle 3D emboss driven by a single movable light, and exports the result as a PNG, an Android VectorDrawable, an SVG, or a re-editable project file.
+_Icon Recomposer_ is a browser editor for lit, layered app icons. You build an icon from rectangles and ellipses, give each shape a material under one scene light, keep several variants side by side, and export them all as ready-to-use PNGs for Android and the Play Store.
 
-It runs entirely in your browser. There's nothing to install, and your artwork never leaves your device.
+It runs entirely in your browser (Chrome is recommended). There's nothing to install, and your artwork never leaves your device.
 
 {% highlights %}
-- Your work is saved automatically and restored when you return
-- Installable and works offline, now on Android too
+- Dozens of materials, from frosted glass and chrome to wood, marble and denim, all lit by one light
+- Keep variants side by side and export them all for Android in one zip
 {% endhighlights %}
 
 
 ## Changelog
+### Version 2.0.0:
+* ✨ A complete rewrite: Icon Recomposer is now an editor for lit, layered app icons. Build an icon from shapes, give each one a material under one scene light, keep several variants side by side, and export them as PNGs for Android and the Play Store
+* ➕ Shape editor: place rectangles and ellipses on a 108dp canvas, then move, resize and rotate them on the canvas or set an exact position, size, corner radius and rotation. Select several shapes to move, duplicate, reorder or restyle them together
+* ➕ One scene light, with direction, key and fill strength, and tint, shades every shape and the background. Each shape has a color, a material, a surface (flat, concave, convex or groove), elevation, thickness, rounded or beveled edges, and an optional glow
+* ➕ Materials in six groups: Basic (matte, shiny, frosted glass, jelly, enamel, ceramic), Metal (brushed, blasted, chrome, gold, copper, anodized aluminum, hammered), Stone (marble, granite, terrazzo, slate, concrete, stucco, carved stone), Natural (wood, cork, leather, paper, cardboard), Fabric (denim, canvas, felt) and Special (carbon fiber, holographic, neon). Textures take the shape's color, follow its shading and stay sharp at any size, and Shuffle pattern gives a patterned material a new random layout
+* ➕ Hollow shapes: turn a rectangle into a frame or an ellipse into a ring, drag a handle on the canvas to set the wall width, and see the shapes behind through the hole
+* ➕ Reflections: glossy shapes can show a soft, blurred mirror image of the shapes lying on them, with adjustable strength and direction
+* ➕ Crossings for woven designs: where two shapes overlap, choose which one goes over the other regardless of the stacking order, so shapes can weave (A over B, B over C, C over A). Level with its neighbors keeps shapes that touch or nest from shadowing each other
+* ➕ Variants: keep several versions of an icon side by side with live thumbnails, apply an edit to all of them at once, or copy chosen parts (geometry, look, colors, light, background and more) from one variant into others
+* ➕ Android guides on the canvas for the launcher view and the safe zone, and foreground and background layers for adaptive icons
+* ➕ Import an Android VectorDrawable to start from an existing icon: simple shapes and straight-edged outlines become editable shapes, and the whole drawing stays visible as a tracing guide for the rest
+* ➕ PNG export for one or all variants: Play Store 512 px, legacy launcher icons at every density, adaptive icon layers with their mipmap-anydpi-v26 XML, and custom sizes, with an optional circle, rounded square or squircle mask. Several files download as one zip laid out like an Android res/ folder
+* ➕ Zoom up to 16× and pan the canvas, with Zoom to selection (Shift+2) and Fit (Shift+1). The icon stays sharp at every zoom
+* ➕ Your work is saved in the browser automatically, and projects save and open as .icjson files, also by drag and drop. The app asks before replacing unsaved changes, and a • in the tab title marks them
+* ➕ A short getting-started guide on the first visit (Help in the top bar opens it again), a one-time "What's new" after each update, and an About dialog with the version, links and this changelog
+* ➖ SVG and VectorDrawable export, SVG import and gradient emboss layers from 1.x are gone
+* ➖ Offline use and installing as an app are gone. If you installed 1.x, you are moved to the new version automatically
+* ➖ Project files from 1.x can no longer be opened
+
+### Version 1.8.0:
+* ➕ Watch external edits: on Chrome and Edge desktop, after you open a project, "Watch external edits" makes the app reload it whenever another program changes the file. Handy for editing a project in a text editor or generating one from a script and seeing it live. It is opt-in, stops as soon as you edit in the app yourself, and keeps zoom and pan across reloads
+* ➕ When the app is installed, double-clicking an .icjson project file in your file manager opens it in the app
+* ➕ A specification of the project file format (PROJECT_FORMAT.md in the repository) documents every field, range and default, so external tools can generate and edit projects
+* 🛠️ Projects now save as .icjson instead of .json, and older .json projects still open. On Chrome and Edge, Save overwrites the file you opened instead of downloading a duplicate, and a new Save As… button writes a new file. If the browser doesn't support this or you decline permission, Save downloads a copy as before
+
 ### Version 1.7.2:
 * 🛠️ The Install button now appears on Android phones too (Chrome and Edge) and installs the app on tap, with the browser's own install banner suppressed so there is a single, consistent button. On iPhone and iPad, install is still via Safari's Share menu and "Add to Home Screen"
 
