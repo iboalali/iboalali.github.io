@@ -1095,6 +1095,12 @@ module.exports = {
                 "Varianten nebeneinander halten und alle in einem ZIP für Android exportieren",
             ],
             changelog: {
+                "2.1.0": [
+                    "➕ Formen zu einem Objekt verbinden (Strg+G oder «Merge»): ein Umriss, ein Schatten, und Kanten und Textur laufen über die Verbindungsstellen hinweg, sodass ein «#» aus vier Balken ein einziges Stück Holz oder Marmor sein kann. «Split» (Strg+Umschalt+G) teilt es wieder in seine Formen",
+                    "➕ Jedes Material und jede Oberfläche folgt dem Umriss einer verbundenen Form: Nähte, Emaille-Ränder, Filzfasern, Milchglas, Gelee und Spiegelungen, und gewölbte Oberflächen, Rillen und Neon wölben sich wie ein Rohr über jedes Teil",
+                    "➕ Beim Import eines VectorDrawable wird ein Umriss, der in mehrere Rechtecke zerfällt, etwa ein «#», zu einer einzigen verbundenen Form",
+                    "🛠️ Ein Projekt, das mit einer neueren Version der App gespeichert wurde, öffnet sich nicht mehr mit fehlenden Teilen: Die App bittet stattdessen, die Seite neu zu laden",
+                ],
                 "2.0.0": [
                     "✨ Komplett neu geschrieben: Icon Recomposer ist jetzt ein Editor für beleuchtete, mehrschichtige App-Icons. Bauen Sie ein Icon aus Formen, geben Sie jeder ein Material unter einem gemeinsamen Szenenlicht, halten Sie mehrere Varianten nebeneinander und exportieren Sie sie als PNG für Android und den Play Store",
                     "➕ Formeditor: Rechtecke und Ellipsen auf einer 108-dp-Leinwand platzieren, auf der Leinwand verschieben, skalieren und drehen oder Position, Größe, Eckenradius und Drehung exakt festlegen. Mehrere ausgewählte Formen lassen sich gemeinsam verschieben, duplizieren, umordnen und gestalten",
@@ -1219,6 +1225,12 @@ module.exports = {
                 "احتفظ بالنسخ جنباً إلى جنب وصدّرها كلها لأندرويد في ملف zip واحد",
             ],
             changelog: {
+                "2.1.0": [
+                    "➕ ادمج الأشكال في كائن واحد (Ctrl+G أو «Merge»): محيط واحد وظل واحد، وحواف ونسيج يمتدان عبر نقاط الاتصال، فيصبح «#» المكوّن من أربعة أشرطة قطعة واحدة من الخشب أو الرخام. ويعيد «Split» (Ctrl+Shift+G) تقسيمه إلى أشكاله",
+                    "➕ تتبع كل مادة وكل سطح محيط الشكل المدمج: الدرزات وإطار المينا ووبر اللبّاد والزجاج المصنفر والجيلي والانعكاسات، وتنحني الأسطح المقعّرة والمحدّبة والأخاديد والنيون كأنبوب عبر عرض كل جزء",
+                    "➕ عند استيراد VectorDrawable، يصبح المحيط الذي ينقسم إلى عدة مستطيلات، مثل «#»، شكلاً مدمجاً واحداً",
+                    "🛠️ لم يعد المشروع المحفوظ بإصدار أحدث من التطبيق يُفتح بأجزاء ناقصة، بل يطلب التطبيق إعادة تحميل الصفحة",
+                ],
                 "2.0.0": [
                     "✨ إعادة كتابة كاملة: أصبح Icon Recomposer محرراً لأيقونات التطبيقات المُضاءة متعددة الطبقات. ابنِ أيقونة من أشكال، وامنح كل شكل مادة تحت ضوء مشهد واحد، واحتفظ بعدة نسخ جنباً إلى جنب، وصدّرها بصيغة PNG لأندرويد ومتجر Play",
                     "➕ محرر الأشكال: ضع مستطيلات وأشكالاً بيضاوية على لوحة بقياس 108dp، ثم حرّكها وغيّر حجمها وأدرها على اللوحة أو حدّد بدقة الموضع والحجم ونصف قطر الزوايا والدوران. حدّد عدة أشكال لتحريكها أو نسخها أو إعادة ترتيبها أو تغيير مظهرها معاً",
@@ -1343,6 +1355,12 @@ module.exports = {
                 "Mantenga variantes lado a lado y expórtelas todas para Android en un solo zip",
             ],
             changelog: {
+                "2.1.0": [
+                    "➕ Une formas en un solo objeto (Ctrl+G o «Merge»): un solo contorno, una sola sombra, y bordes y textura que continúan a través de las uniones, de modo que un «#» de cuatro barras puede ser una sola pieza de madera o mármol. «Split» (Ctrl+Mayús+G) lo vuelve a separar en sus formas",
+                    "➕ Cada material y superficie sigue el contorno de una forma unida: costuras, bordes de esmalte, pelusa de fieltro, vidrio esmerilado, gelatina y reflejos, y las superficies curvas, las ranuras y el neón se curvan como un tubo a lo ancho de cada parte",
+                    "➕ Al importar un VectorDrawable, un contorno que se divide en varios rectángulos, como un «#», llega como una sola forma unida",
+                    "🛠️ Un proyecto guardado con una versión más reciente de la app ya no se abre con partes que faltan: la app te pide recargar la página",
+                ],
                 "2.0.0": [
                     "✨ Reescrito por completo: Icon Recomposer ahora es un editor de iconos de app iluminados y por capas. Crea un icono con formas, dale a cada una un material bajo una única luz de escena, mantén varias variantes lado a lado y expórtalas como PNG para Android y Play Store",
                     "➕ Editor de formas: coloca rectángulos y elipses en un lienzo de 108 dp, muévelos, redimensiónalos y gíralos en el lienzo o fija con exactitud posición, tamaño, radio de esquina y rotación. Selecciona varias formas para moverlas, duplicarlas, reordenarlas o cambiar su estilo a la vez",
@@ -1467,6 +1485,12 @@ module.exports = {
                 "Храните варианты рядом и экспортируйте их все для Android одним zip-архивом",
             ],
             changelog: {
+                "2.1.0": [
+                    "➕ Объединяйте фигуры в один объект (Ctrl+G или «Merge»): один контур, одна тень, а края и текстура продолжаются через места соединения, так что «#» из четырёх полос может быть одним куском дерева или мрамора. «Split» (Ctrl+Shift+G) снова разделяет его на фигуры",
+                    "➕ Каждый материал и каждая поверхность следуют контуру объединённой фигуры: строчка, эмалевый ободок, ворс фетра, матовое стекло, желе и отражения, а выпуклые и вогнутые поверхности, канавки и неон изгибаются трубкой поперёк каждой части",
+                    "➕ При импорте VectorDrawable контур, который делится на несколько прямоугольников, например «#», становится одной объединённой фигурой",
+                    "🛠️ Проект, сохранённый более новой версией приложения, больше не открывается с недостающими частями: приложение просит перезагрузить страницу",
+                ],
                 "2.0.0": [
                     "✨ Полностью переписано: Icon Recomposer теперь редактор освещённых многослойных иконок приложений. Собирайте иконку из фигур, задавайте каждой материал под одним общим светом сцены, держите несколько вариантов рядом и экспортируйте их в PNG для Android и Play Store",
                     "➕ Редактор фигур: размещайте прямоугольники и эллипсы на холсте 108 dp, перемещайте, масштабируйте и поворачивайте их на холсте или задавайте точные положение, размер, радиус скругления и угол поворота. Выделите несколько фигур, чтобы перемещать, дублировать, переупорядочивать или менять их оформление вместе",

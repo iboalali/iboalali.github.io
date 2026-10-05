@@ -19,6 +19,12 @@ It runs entirely in your browser (Chrome is recommended). There's nothing to ins
 
 
 ## Changelog
+### Version 2.1.0:
+* ➕ Merge shapes into one object (Ctrl+G or Merge): one outline, one shadow, and edges and texture that run across the joints, so a "#" of four bars can be one piece of wood or marble. Split (Ctrl+Shift+G) turns it back into its shapes
+* ➕ Every material and surface follows a merged shape's outline: stitching, enamel rims, felt fuzz, frosted glass, jelly and reflections, and curved surfaces, grooves and neon curve like a tube across each part
+* ➕ Importing a VectorDrawable brings an outline that splits into several rectangles, like a "#", in as one merged shape
+* 🛠️ A project saved by a newer version of the app no longer opens with parts missing: the app asks you to reload the page instead
+
 ### Version 2.0.0:
 * ✨ A complete rewrite: Icon Recomposer is now an editor for lit, layered app icons. Build an icon from shapes, give each one a material under one scene light, keep several variants side by side, and export them as PNGs for Android and the Play Store
 * ➕ Shape editor: place rectangles and ellipses on a 108dp canvas, then move, resize and rotate them on the canvas or set an exact position, size, corner radius and rotation. Select several shapes to move, duplicate, reorder or restyle them together
