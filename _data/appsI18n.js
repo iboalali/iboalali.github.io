@@ -1089,12 +1089,37 @@ module.exports = {
     icon_recomposer: {
         de: {
             description:
-                "Vektor-Icons mit beweglichem 3D-Relief beleuchten und als PNG, SVG oder Android-VectorDrawable exportieren.",
+                "Beleuchtete, mehrschichtige App-Icons aus Formen und Materialien bauen und als PNG für Android und den Play Store exportieren.",
             highlights: [
-                "Ihre Arbeit wird automatisch gespeichert und bei der Rückkehr wiederhergestellt",
-                "Installierbar und offline nutzbar, jetzt auch unter Android",
+                "Dutzende Materialien, von Milchglas und Chrom bis Holz, Marmor und Denim, alle von einem Licht beleuchtet",
+                "Varianten nebeneinander halten und alle in einem ZIP für Android exportieren",
             ],
             changelog: {
+                "2.0.0": [
+                    "✨ Komplett neu geschrieben: Icon Recomposer ist jetzt ein Editor für beleuchtete, mehrschichtige App-Icons. Bauen Sie ein Icon aus Formen, geben Sie jeder ein Material unter einem gemeinsamen Szenenlicht, halten Sie mehrere Varianten nebeneinander und exportieren Sie sie als PNG für Android und den Play Store",
+                    "➕ Formeditor: Rechtecke und Ellipsen auf einer 108-dp-Leinwand platzieren, auf der Leinwand verschieben, skalieren und drehen oder Position, Größe, Eckenradius und Drehung exakt festlegen. Mehrere ausgewählte Formen lassen sich gemeinsam verschieben, duplizieren, umordnen und gestalten",
+                    "➕ Ein Szenenlicht mit Richtung, Haupt- und Fülllichtstärke und Tönung beleuchtet jede Form und den Hintergrund. Jede Form hat eine Farbe, ein Material, eine Oberfläche (flach, konkav, konvex oder Rille), Höhe, Dicke, abgerundete oder abgeschrägte Kanten und ein optionales Leuchten",
+                    "➕ Materialien in sechs Gruppen: Basis (matt, glänzend, Milchglas, Gelee, Emaille, Keramik), Metall (gebürstet, gestrahlt, Chrom, Gold, Kupfer, eloxiertes Aluminium, gehämmert), Stein (Marmor, Granit, Terrazzo, Schiefer, Beton, Stuck, behauener Stein), Natur (Holz, Kork, Leder, Papier, Karton), Stoff (Denim, Canvas, Filz) und Spezial (Carbon, holografisch, Neon). Texturen übernehmen die Farbe der Form, folgen ihrer Schattierung und bleiben in jeder Größe scharf, und «Shuffle pattern» gibt einem gemusterten Material ein neues zufälliges Muster",
+                    "➕ Hohle Formen: Aus einem Rechteck wird ein Rahmen, aus einer Ellipse ein Ring. Die Wandstärke lässt sich mit einem Griff auf der Leinwand einstellen, und Formen dahinter sind durch das Loch sichtbar",
+                    "➕ Spiegelungen: Glänzende Formen können ein weiches, unscharfes Spiegelbild der Formen zeigen, die auf ihnen liegen, mit einstellbarer Stärke und Richtung",
+                    "➕ Kreuzungen für geflochtene Designs: Wo sich zwei Formen überlappen, wählen Sie unabhängig von der Stapelreihenfolge, welche oben liegt, sodass sich Formen verflechten können (A über B, B über C, C über A). «Level with its neighbors» sorgt dafür, dass sich Formen, die sich berühren oder ineinander liegen, nicht gegenseitig beschatten",
+                    "➕ Varianten: Mehrere Versionen eines Icons mit Live-Vorschaubildern nebeneinander halten, eine Änderung auf alle gleichzeitig anwenden oder ausgewählte Teile (Geometrie, Aussehen, Farben, Licht, Hintergrund und mehr) von einer Variante in andere kopieren",
+                    "➕ Android-Hilfslinien auf der Leinwand für die Launcher-Ansicht und den sicheren Bereich sowie Vorder- und Hintergrundebenen für adaptive Icons",
+                    "➕ Android-VectorDrawable importieren, um von einem vorhandenen Icon auszugehen: Einfache Formen und geradlinige Umrisse werden zu bearbeitbaren Formen, und die ganze Zeichnung bleibt als Nachzeichenvorlage für den Rest sichtbar",
+                    "➕ PNG-Export für eine oder alle Varianten: Play Store 512 px, klassische Launcher-Icons in jeder Dichte, adaptive Icon-Ebenen mit ihrem mipmap-anydpi-v26-XML und eigene Größen, optional mit Kreis-, abgerundeter Quadrat- oder Squircle-Maske. Mehrere Dateien werden als ein ZIP heruntergeladen, aufgebaut wie ein Android-Ordner res/",
+                    "➕ Zoom bis 16× und Verschieben der Leinwand, mit «Zoom to selection» (Umschalt+2) und «Fit» (Umschalt+1). Das Icon bleibt bei jeder Zoomstufe scharf",
+                    "➕ Ihre Arbeit wird automatisch im Browser gespeichert, und Projekte werden als .icjson-Dateien gespeichert und geöffnet, auch per Drag-and-drop. Die App fragt nach, bevor sie ungespeicherte Änderungen ersetzt, und ein • im Tab-Titel kennzeichnet sie",
+                    "➕ Eine kurze Einführung beim ersten Besuch («Help» in der oberen Leiste öffnet sie erneut), ein einmaliges «What's new» nach jedem Update und ein About-Dialog mit Version, Links und diesem Changelog",
+                    "➖ SVG- und VectorDrawable-Export, SVG-Import und Verlaufs-Reliefebenen aus 1.x entfallen",
+                    "➖ Offline-Nutzung und Installation als App entfallen. Wer 1.x installiert hat, wird automatisch auf die neue Version umgeleitet",
+                    "➖ Projektdateien aus 1.x lassen sich nicht mehr öffnen",
+                ],
+                "1.8.0": [
+                    "➕ Externe Änderungen beobachten: In Chrome und Edge auf dem Desktop lädt die App ein geöffnetes Projekt nach einem Klick auf «Watch external edits» automatisch neu, sobald ein anderes Programm die Datei ändert. Praktisch, um ein Projekt in einem Texteditor zu bearbeiten oder per Skript zu erzeugen und das Ergebnis live zu sehen. Die Funktion ist optional, endet, sobald Sie selbst in der App etwas bearbeiten, und Zoom und Verschiebung bleiben beim Neuladen erhalten",
+                    "➕ Ist die App installiert, öffnet ein Doppelklick auf eine .icjson-Projektdatei im Dateimanager sie direkt in der App",
+                    "➕ Eine Spezifikation des Projektdateiformats (PROJECT_FORMAT.md im Repository) beschreibt jedes Feld, jeden Wertebereich und jeden Standardwert, sodass externe Werkzeuge Projekte erzeugen und bearbeiten können",
+                    "🛠️ Projekte werden jetzt als .icjson statt als .json gespeichert; ältere .json-Projekte lassen sich weiterhin öffnen. In Chrome und Edge überschreibt «Save» die geöffnete Datei, statt eine Kopie herunterzuladen, und eine neue Schaltfläche «Save As…» schreibt eine neue Datei. Unterstützt der Browser das nicht oder verweigern Sie die Berechtigung, lädt «Save» wie bisher eine Kopie herunter",
+                ],
                 "1.7.2": [
                     "🛠️ Die Schaltfläche «Installieren» erscheint jetzt auch auf Android-Smartphones (Chrome und Edge) und installiert die App per Tippen; das eigene Installations-Banner des Browsers wird unterdrückt, sodass es eine einzige, einheitliche Schaltfläche gibt. Auf iPhone und iPad erfolgt die Installation weiterhin über das Teilen-Menü von Safari und «Zum Home-Bildschirm»",
                 ],
@@ -1188,12 +1213,37 @@ module.exports = {
         },
         ar: {
             description:
-                "أضئ أيقونات متجهة بنقش ثلاثي الأبعاد قابل للتحريك، ثم صدّرها إلى PNG أو SVG أو Android VectorDrawable.",
+                "ابنِ أيقونات تطبيقات مُضاءة متعددة الطبقات من أشكال ومواد، ثم صدّرها بصيغة PNG لأندرويد ومتجر Play.",
             highlights: [
-                "يُحفظ عملك تلقائياً ويُستعاد عند عودتك",
-                "قابل للتثبيت ويعمل دون اتصال، والآن على أندرويد أيضاً",
+                "عشرات المواد، من الزجاج المصنفر والكروم إلى الخشب والرخام والدنيم، كلها مُضاءة بضوء واحد",
+                "احتفظ بالنسخ جنباً إلى جنب وصدّرها كلها لأندرويد في ملف zip واحد",
             ],
             changelog: {
+                "2.0.0": [
+                    "✨ إعادة كتابة كاملة: أصبح Icon Recomposer محرراً لأيقونات التطبيقات المُضاءة متعددة الطبقات. ابنِ أيقونة من أشكال، وامنح كل شكل مادة تحت ضوء مشهد واحد، واحتفظ بعدة نسخ جنباً إلى جنب، وصدّرها بصيغة PNG لأندرويد ومتجر Play",
+                    "➕ محرر الأشكال: ضع مستطيلات وأشكالاً بيضاوية على لوحة بقياس 108dp، ثم حرّكها وغيّر حجمها وأدرها على اللوحة أو حدّد بدقة الموضع والحجم ونصف قطر الزوايا والدوران. حدّد عدة أشكال لتحريكها أو نسخها أو إعادة ترتيبها أو تغيير مظهرها معاً",
+                    "➕ ضوء مشهد واحد، باتجاه وشدة للضوء الرئيسي وضوء التعبئة ولون، يظلّل كل شكل والخلفية. لكل شكل لون ومادة وسطح (مستوٍ أو مقعّر أو محدّب أو أخدود) وارتفاع وسماكة وحواف مستديرة أو مشطوفة وتوهج اختياري",
+                    "➕ مواد في ست مجموعات: أساسية (مطفأ، لامع، زجاج مصنفر، جيلي، مينا، سيراميك)، ومعدن (مصقول بالفرشاة، مسفوع، كروم، ذهب، نحاس، ألمنيوم مؤكسد، مطروق)، وحجر (رخام، غرانيت، تيرازو، أردواز، خرسانة، جص، حجر منحوت)، وطبيعية (خشب، فلين، جلد، ورق، كرتون)، وقماش (دنيم، كانفاس، لبّاد)، وخاصة (ألياف كربون، هولوغرافي، نيون). تأخذ الأنسجة لون الشكل وتتبع تظليله وتبقى حادة بأي حجم، ويمنح «Shuffle pattern» المادة المزخرفة توزيعاً عشوائياً جديداً",
+                    "➕ أشكال مجوّفة: حوّل المستطيل إلى إطار والشكل البيضاوي إلى حلقة، واسحب مقبضاً على اللوحة لضبط سماكة الجدار، وشاهد الأشكال الخلفية عبر الفتحة",
+                    "➕ الانعكاسات: يمكن للأشكال اللامعة أن تُظهر صورة منعكسة ناعمة وضبابية للأشكال الموضوعة عليها، مع قوة واتجاه قابلين للضبط",
+                    "➕ تقاطعات للتصاميم المنسوجة: حيث يتداخل شكلان، اختر أيهما يمر فوق الآخر بغض النظر عن ترتيب التكديس، لتتشابك الأشكال (A فوق B، وB فوق C، وC فوق A). يمنع «Level with its neighbors» الأشكال المتلامسة أو المتداخلة من أن يظلّل بعضها بعضاً",
+                    "➕ النسخ: احتفظ بعدة نسخ من الأيقونة جنباً إلى جنب مع صور مصغّرة حية، وطبّق تعديلاً على جميعها دفعة واحدة، أو انسخ أجزاء مختارة (الهندسة والمظهر والألوان والضوء والخلفية وغيرها) من نسخة إلى أخرى",
+                    "➕ أدلة أندرويد على اللوحة لعرض المشغّل والمنطقة الآمنة، وطبقات أمامية وخلفية للأيقونات التكيّفية",
+                    "➕ استورد VectorDrawable من أندرويد لتبدأ من أيقونة موجودة: تتحول الأشكال البسيطة والخطوط الخارجية ذات الحواف المستقيمة إلى أشكال قابلة للتحرير، ويبقى الرسم كاملاً ظاهراً كدليل تتبّع لبقية الأجزاء",
+                    "➕ تصدير PNG لنسخة واحدة أو لجميع النسخ: متجر Play بقياس 512 px، وأيقونات المشغّل التقليدية بكل الكثافات، وطبقات الأيقونة التكيّفية مع ملف XML الخاص بـ mipmap-anydpi-v26، وأحجام مخصصة، مع قناع اختياري دائري أو مربع مستدير الزوايا أو squircle. تُنزَّل الملفات المتعددة في ملف zip واحد مرتب مثل مجلد res/ في أندرويد",
+                    "➕ تكبير حتى 16× وتحريك اللوحة، مع «Zoom to selection» (Shift+2) و«Fit» (Shift+1). تبقى الأيقونة حادة عند أي تكبير",
+                    "➕ يُحفظ عملك في المتصفح تلقائياً، وتُحفظ المشاريع وتُفتح كملفات ‎.icjson، وبالسحب والإفلات أيضاً. يسأل التطبيق قبل استبدال التغييرات غير المحفوظة، وتدل علامة • في عنوان التبويب عليها",
+                    "➕ دليل بدء قصير عند الزيارة الأولى (يعيد «Help» في الشريط العلوي فتحه)، ونافذة «What's new» مرة واحدة بعد كل تحديث، ونافذة About فيها الإصدار والروابط وسجل التغييرات هذا",
+                    "➖ أُزيل من 1.x التصدير إلى SVG وVectorDrawable، واستيراد SVG، وطبقات النقش المتدرّج",
+                    "➖ أُزيل العمل دون اتصال والتثبيت كتطبيق. إن كنت قد ثبّت 1.x، تنتقل إلى الإصدار الجديد تلقائياً",
+                    "➖ لم يعد بالإمكان فتح ملفات مشاريع 1.x",
+                ],
+                "1.8.0": [
+                    "➕ مراقبة التعديلات الخارجية: في Chrome وEdge على سطح المكتب، بعد فتح مشروع، يجعل زر «Watch external edits» التطبيق يعيد تحميله تلقائياً كلما عدّل برنامج آخر الملف. مفيد لتحرير مشروع في محرر نصوص أو توليده من سكربت ورؤية النتيجة مباشرة. الميزة اختيارية، وتتوقف بمجرد أن تعدّل في التطبيق بنفسك، ويُحتفظ بالتكبير والتحريك عند إعادة التحميل",
+                    "➕ عندما يكون التطبيق مثبّتاً، يفتح النقر المزدوج على ملف مشروع ‎.icjson في مدير الملفات الملف مباشرة في التطبيق",
+                    "➕ مواصفة لتنسيق ملف المشروع (PROJECT_FORMAT.md في المستودع) توثّق كل حقل ونطاق وقيمة افتراضية، لتتمكن الأدوات الخارجية من توليد المشاريع وتحريرها",
+                    "🛠️ تُحفظ المشاريع الآن بصيغة ‎.icjson بدلاً من ‎.json، وما زالت المشاريع القديمة بصيغة ‎.json تُفتح. في Chrome وEdge، يستبدل «Save» الملف الذي فتحته بدلاً من تنزيل نسخة مكررة، وزر جديد «Save As…» يكتب ملفاً جديداً. إن لم يدعم المتصفح ذلك أو رفضت منح الإذن، ينزّل «Save» نسخة كما في السابق",
+                ],
                 "1.7.2": [
                     "🛠️ زر «تثبيت» يظهر الآن على هواتف أندرويد أيضاً (Chrome وEdge) ويثبّت التطبيق عند النقر، مع إخفاء شريط التثبيت الخاص بالمتصفح ليكون هناك زر واحد متّسق. على iPhone وiPad، يظل التثبيت عبر قائمة المشاركة في Safari و«أضف إلى الشاشة الرئيسية»",
                 ],
@@ -1287,12 +1337,37 @@ module.exports = {
         },
         es: {
             description:
-                "Ilumine iconos vectoriales con un relieve 3D movible y expórtelos a PNG, SVG o Android VectorDrawable.",
+                "Cree iconos de app iluminados y por capas a partir de formas y materiales, y expórtelos como PNG para Android y Play Store.",
             highlights: [
-                "Su trabajo se guarda automáticamente y se restaura cuando vuelve",
-                "Instalable y funciona sin conexión, ahora también en Android",
+                "Decenas de materiales, del vidrio esmerilado y el cromo a la madera, el mármol y el denim, todos iluminados por una sola luz",
+                "Mantenga variantes lado a lado y expórtelas todas para Android en un solo zip",
             ],
             changelog: {
+                "2.0.0": [
+                    "✨ Reescrito por completo: Icon Recomposer ahora es un editor de iconos de app iluminados y por capas. Crea un icono con formas, dale a cada una un material bajo una única luz de escena, mantén varias variantes lado a lado y expórtalas como PNG para Android y Play Store",
+                    "➕ Editor de formas: coloca rectángulos y elipses en un lienzo de 108 dp, muévelos, redimensiónalos y gíralos en el lienzo o fija con exactitud posición, tamaño, radio de esquina y rotación. Selecciona varias formas para moverlas, duplicarlas, reordenarlas o cambiar su estilo a la vez",
+                    "➕ Una única luz de escena, con dirección, intensidad principal y de relleno, y tono, sombrea cada forma y el fondo. Cada forma tiene un color, un material, una superficie (plana, cóncava, convexa o ranura), elevación, grosor, bordes redondeados o biselados y un brillo opcional",
+                    "➕ Materiales en seis grupos: Básico (mate, brillante, vidrio esmerilado, gelatina, esmalte, cerámica), Metal (cepillado, granallado, cromo, oro, cobre, aluminio anodizado, martillado), Piedra (mármol, granito, terrazo, pizarra, hormigón, estuco, piedra tallada), Natural (madera, corcho, cuero, papel, cartón), Tela (denim, lona, fieltro) y Especial (fibra de carbono, holográfico, neón). Las texturas toman el color de la forma, siguen su sombreado y se mantienen nítidas a cualquier tamaño, y «Shuffle pattern» da a un material con patrón una nueva disposición aleatoria",
+                    "➕ Formas huecas: convierte un rectángulo en un marco o una elipse en un anillo, arrastra un tirador en el lienzo para ajustar el grosor de la pared y ve las formas de detrás a través del hueco",
+                    "➕ Reflejos: las formas brillantes pueden mostrar una imagen especular suave y difuminada de las formas que tienen encima, con intensidad y dirección ajustables",
+                    "➕ Cruces para diseños entrelazados: donde dos formas se solapan, elige cuál pasa por encima sin importar el orden de apilado, para que las formas se entrelacen (A sobre B, B sobre C, C sobre A). «Level with its neighbors» evita que las formas que se tocan o se anidan se sombreen entre sí",
+                    "➕ Variantes: mantén varias versiones de un icono lado a lado con miniaturas en vivo, aplica un cambio a todas a la vez o copia partes elegidas (geometría, aspecto, colores, luz, fondo y más) de una variante a otras",
+                    "➕ Guías de Android en el lienzo para la vista del launcher y la zona segura, y capas de primer plano y de fondo para iconos adaptables",
+                    "➕ Importa un VectorDrawable de Android para partir de un icono existente: las formas simples y los contornos de bordes rectos se convierten en formas editables, y el dibujo completo queda visible como guía de calco para el resto",
+                    "➕ Exportación PNG para una o todas las variantes: Play Store 512 px, iconos de launcher clásicos en todas las densidades, capas de icono adaptable con su XML mipmap-anydpi-v26 y tamaños personalizados, con máscara opcional de círculo, cuadrado redondeado o squircle. Varios archivos se descargan en un solo zip organizado como una carpeta res/ de Android",
+                    "➕ Zoom de hasta 16× y desplazamiento del lienzo, con «Zoom to selection» (Mayús+2) y «Fit» (Mayús+1). El icono se ve nítido con cualquier zoom",
+                    "➕ Tu trabajo se guarda automáticamente en el navegador, y los proyectos se guardan y abren como archivos .icjson, también arrastrándolos. La app pregunta antes de reemplazar cambios sin guardar, y un • en el título de la pestaña los indica",
+                    "➕ Una breve guía de inicio en la primera visita («Help» en la barra superior la vuelve a abrir), un «What's new» una sola vez tras cada actualización y un diálogo About con la versión, enlaces y este registro de cambios",
+                    "➖ Se eliminan la exportación a SVG y VectorDrawable, la importación de SVG y las capas de relieve con degradado de 1.x",
+                    "➖ Se eliminan el uso sin conexión y la instalación como app. Si instalaste 1.x, pasas automáticamente a la nueva versión",
+                    "➖ Los archivos de proyecto de 1.x ya no se pueden abrir",
+                ],
+                "1.8.0": [
+                    "➕ Vigilar ediciones externas: en Chrome y Edge de escritorio, después de abrir un proyecto, «Watch external edits» hace que la app lo recargue cada vez que otro programa cambia el archivo. Útil para editar un proyecto en un editor de texto o generarlo con un script y verlo en vivo. Es opcional, se detiene en cuanto editas en la app y conserva el zoom y el desplazamiento entre recargas",
+                    "➕ Con la app instalada, hacer doble clic en un archivo de proyecto .icjson en el gestor de archivos lo abre directamente en la app",
+                    "➕ Una especificación del formato de archivo de proyecto (PROJECT_FORMAT.md en el repositorio) documenta cada campo, rango y valor predeterminado, para que herramientas externas puedan generar y editar proyectos",
+                    "🛠️ Los proyectos ahora se guardan como .icjson en lugar de .json, y los proyectos .json antiguos se siguen abriendo. En Chrome y Edge, «Save» sobrescribe el archivo que abriste en lugar de descargar un duplicado, y un nuevo botón «Save As…» escribe un archivo nuevo. Si el navegador no lo admite o no concedes el permiso, «Save» descarga una copia como antes",
+                ],
                 "1.7.2": [
                     "🛠️ El botón «Instalar» ahora también aparece en teléfonos Android (Chrome y Edge) e instala la app al tocarlo, con el banner de instalación del propio navegador suprimido para que haya un único botón coherente. En iPhone y iPad, la instalación sigue siendo desde el menú Compartir de Safari y «Añadir a pantalla de inicio»",
                 ],
@@ -1386,12 +1461,37 @@ module.exports = {
         },
         ru: {
             description:
-                "Освещайте векторные иконки подвижным 3D-рельефом и экспортируйте в PNG, SVG или Android VectorDrawable.",
+                "Собирайте освещённые многослойные иконки приложений из фигур и материалов и экспортируйте их в PNG для Android и Play Store.",
             highlights: [
-                "Ваша работа сохраняется автоматически и восстанавливается при возвращении",
-                "Можно установить, работает офлайн, теперь и на Android",
+                "Десятки материалов, от матового стекла и хрома до дерева, мрамора и джинсы, освещённых одним источником света",
+                "Храните варианты рядом и экспортируйте их все для Android одним zip-архивом",
             ],
             changelog: {
+                "2.0.0": [
+                    "✨ Полностью переписано: Icon Recomposer теперь редактор освещённых многослойных иконок приложений. Собирайте иконку из фигур, задавайте каждой материал под одним общим светом сцены, держите несколько вариантов рядом и экспортируйте их в PNG для Android и Play Store",
+                    "➕ Редактор фигур: размещайте прямоугольники и эллипсы на холсте 108 dp, перемещайте, масштабируйте и поворачивайте их на холсте или задавайте точные положение, размер, радиус скругления и угол поворота. Выделите несколько фигур, чтобы перемещать, дублировать, переупорядочивать или менять их оформление вместе",
+                    "➕ Один свет сцены с направлением, силой основного и заполняющего света и оттенком освещает каждую фигуру и фон. У каждой фигуры есть цвет, материал, поверхность (плоская, вогнутая, выпуклая или желобок), высота, толщина, скруглённые или скошенные края и необязательное свечение",
+                    "➕ Материалы в шести группах: Базовые (матовый, глянцевый, матовое стекло, желе, эмаль, керамика), Металл (шлифованный, пескоструйный, хром, золото, медь, анодированный алюминий, кованый), Камень (мрамор, гранит, терраццо, сланец, бетон, штукатурка, резной камень), Природные (дерево, пробка, кожа, бумага, картон), Ткань (джинса, холст, войлок) и Особые (углеволокно, голографический, неон). Текстуры берут цвет фигуры, следуют её затенению и остаются чёткими в любом размере, а «Shuffle pattern» даёт узорчатому материалу новый случайный рисунок",
+                    "➕ Полые фигуры: превратите прямоугольник в рамку, а эллипс в кольцо, перетаскивайте маркер на холсте, чтобы задать толщину стенки, и смотрите на фигуры позади сквозь отверстие",
+                    "➕ Отражения: глянцевые фигуры могут показывать мягкое размытое зеркальное отражение лежащих на них фигур, с настраиваемой силой и направлением",
+                    "➕ Пересечения для плетёных узоров: там, где две фигуры перекрываются, выберите, какая проходит сверху, независимо от порядка слоёв, чтобы фигуры сплетались (A над B, B над C, C над A). «Level with its neighbors» не даёт соприкасающимся или вложенным фигурам затенять друг друга",
+                    "➕ Варианты: держите несколько версий иконки рядом с живыми миниатюрами, применяйте правку ко всем сразу или копируйте выбранные части (геометрию, вид, цвета, свет, фон и другое) из одного варианта в другие",
+                    "➕ Направляющие Android на холсте для вида в лаунчере и безопасной зоны, а также слои переднего и заднего плана для адаптивных иконок",
+                    "➕ Импорт Android VectorDrawable, чтобы начать с существующей иконки: простые фигуры и контуры с прямыми краями становятся редактируемыми фигурами, а весь рисунок остаётся видимым как подложка для обводки остального",
+                    "➕ Экспорт PNG для одного или всех вариантов: Play Store 512 px, классические иконки лаунчера для всех плотностей, слои адаптивной иконки с XML mipmap-anydpi-v26 и произвольные размеры, с необязательной маской круга, скруглённого квадрата или сквиркла. Несколько файлов скачиваются одним zip-архивом со структурой папки res/ Android",
+                    "➕ Масштаб до 16× и прокрутка холста, с «Zoom to selection» (Shift+2) и «Fit» (Shift+1). Иконка остаётся чёткой при любом масштабе",
+                    "➕ Работа автоматически сохраняется в браузере, а проекты сохраняются и открываются как файлы .icjson, в том числе перетаскиванием. Приложение спрашивает перед заменой несохранённых изменений, а • в заголовке вкладки отмечает их",
+                    "➕ Краткое руководство при первом посещении («Help» в верхней панели открывает его снова), однократное окно «What's new» после каждого обновления и окно About с версией, ссылками и этим списком изменений",
+                    "➖ Удалены экспорт в SVG и VectorDrawable, импорт SVG и градиентные слои рельефа из 1.x",
+                    "➖ Удалены работа офлайн и установка как приложения. Если у вас установлена 1.x, вы автоматически переходите на новую версию",
+                    "➖ Файлы проектов 1.x больше нельзя открыть",
+                ],
+                "1.8.0": [
+                    "➕ Отслеживание внешних правок: в Chrome и Edge на компьютере после открытия проекта кнопка «Watch external edits» заставляет приложение перезагружать его всякий раз, когда другая программа изменяет файл. Удобно, чтобы править проект в текстовом редакторе или генерировать его скриптом и сразу видеть результат. Функция включается по желанию, отключается, как только вы сами что-то правите в приложении, а масштаб и прокрутка сохраняются при перезагрузке",
+                    "➕ Если приложение установлено, двойной щелчок по файлу проекта .icjson в файловом менеджере открывает его прямо в приложении",
+                    "➕ Спецификация формата файла проекта (PROJECT_FORMAT.md в репозитории) описывает каждое поле, диапазон и значение по умолчанию, чтобы внешние инструменты могли создавать и редактировать проекты",
+                    "🛠️ Проекты теперь сохраняются как .icjson вместо .json, а старые проекты .json по-прежнему открываются. В Chrome и Edge «Save» перезаписывает открытый файл, а не скачивает дубликат, а новая кнопка «Save As…» записывает новый файл. Если браузер это не поддерживает или вы не дали разрешение, «Save» скачивает копию, как раньше",
+                ],
                 "1.7.2": [
                     "🛠️ Кнопка «Установить» теперь появляется и на телефонах Android (Chrome и Edge) и устанавливает приложение по нажатию, при этом собственный баннер установки браузера подавляется, так что остаётся одна единая кнопка. На iPhone и iPad установка по-прежнему через меню «Поделиться» в Safari и «На экран Домой»",
                 ],

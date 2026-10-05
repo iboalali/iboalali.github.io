@@ -47,7 +47,7 @@ Local checkouts of the apps showcased on this site, recorded for fast access whe
 
 | App (website) | App page | Source project path |
 | --- | --- | --- |
-| Icon Recomposer | `app/icon_recomposer.md` | `/home/iboalali/Documents/Icon Recomposer` |
+| Icon Recomposer | `app/icon_recomposer.md` | `/home/iboalali/Projects/private/web/Icon Recomposer` |
 | Hide Persistent Notification | `app/hide_persistent_notification.md` | `/home/iboalali/Projects/private/android/Hide-Persistent-Notification` |
 | Book Keeper | `app/book_keeper.md` | `/home/iboalali/Projects/private/android/book-keeper` |
 | Billboard | `app/billboard.md` | `/home/iboalali/Projects/private/android/Billboard` |
