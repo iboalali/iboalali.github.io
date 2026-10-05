@@ -26,6 +26,7 @@ screenshots:
 Can be used in meeting to vote on a subject with a number or a text.
 
 {% highlights %}
+- **Billboard can be your screen saver:** pick a billboard from your Collection to fill the screen whenever the device idles, dimmed at night if you like. Free for everyone
 - **Rebuilt from the ground up around layers:** stack text, color, and effect layers, then combine, reorder, and rename them freely, all in a refreshed violet look
 - **Now speaks five languages:** German, Spanish, Russian, and Arabic (with full right-to-left layout), alongside English, with a Language setting independent of your device
 - A Collection home for the billboards you keep, and a Recent trail that auto-saves every billboard you show fullscreen, with free capacity growing from 3 to 10
@@ -35,6 +36,20 @@ Can be used in meeting to vote on a subject with a number or a text.
 
 
 ## Changelog
+### Version 3.1.0
+* ➕ Billboard can be your screen saver. Pick a billboard from your Collection in Settings > Display > Screen saver, then shade it with Dim and "Only when it's dark", which follows the light sensor. It drifts slowly so a static sign doesn't burn into an OLED screen. Free for everyone.
+* ➕ On Pixel phones, the screen saver settings warn that Low light mode may swap Billboard for the phone's own dim clock at night, with a button to the setting that turns it off.
+* ➕ A Text margin on every text layer, plus a "Keep clear of the camera" switch on phones with a camera cutout.
+* ➕ Billboards made with a newer version of the app now open instead of being refused. Layers this version can't read are kept exactly as they arrived, and you can edit the rest.
+* ➕ Collection tiles and Recent cards mark a billboard set to Portrait or Landscape, so opening one no longer rotates the screen unannounced.
+* ➕ A notice when a new version is ready. It downloads the update in the background, then offers the restart that installs it.
+* 🛠️ Now needs Android 7.0 or newer.
+* 🛠️ Open Source Credits groups libraries by license.
+* 🔨 The screen saver no longer crashes when Android swaps it for another one, as Low light mode does in a dark room.
+* 🔨 Long text is no longer cut short in the editor preview, on Collection tiles, or on Recent cards.
+* 🔨 Fast typing no longer loses characters.
+* 🔨 A billboard shown fullscreen keeps the display awake for as long as it's held up.
+
 ### Version 3.0.1
 * 🛠️ A small maintenance release. Nothing about what the app does has changed.
 * 🔨 The app starts a little faster, about 60 ms off launch. Checking whether anonymous usage stats are switched on no longer waits on storage before the first screen can be drawn.

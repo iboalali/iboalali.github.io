@@ -41,8 +41,13 @@
 //     corrected to "beim Tippen"). changelog 3.0.1 follows the repo's
 //     `Play Store/Release Notes/3.0.1/` notes per locale, with the launch-time
 //     bullet expanded for the site (the store has no length limit here).
-//     highlights condense those same 3.0.0 notes,
-//     reusing their per-locale wording. description and changelog 2.1.1 and
+//     changelog 3.1.0 builds on the repo's `Play Store/Release Notes/3.1.0/`
+//     notes per locale, expanded from the repo's CHANGELOG.md, with feature
+//     names (Dim, Text margin, Keep clear of the camera, …) quoted from the
+//     app's `res/values-<lang>` strings; the expansion was translated for this
+//     site. highlights condense the 3.0.0 notes, reusing their per-locale
+//     wording, plus a screen saver bullet from 3.1.0 that uses the same
+//     strings-based terms. description and changelog 2.1.1 and
 //     older were translated for this site, as the repo has no localized copy
 //     for them. Review welcome, especially ar/ru.
 //   icon_recomposer — no localized marketing copy exists in that repo, so
@@ -419,6 +424,7 @@ module.exports = {
             description:
                 "Großen Text auf dem Bildschirm anzeigen, passend skaliert und nie abgeschnitten.",
             highlights: [
+                "**Billboard als Bildschirmschoner:** Wähle ein Billboard aus deiner Sammlung, das den Bildschirm füllt, wenn das Gerät ruht, nachts auf Wunsch abgedunkelt. Für alle kostenlos",
                 "**Von Grund auf neu aufgebaut, rund um Ebenen:** Stapele Text-, Farb- und Effekt-Ebenen und kombiniere, sortiere und benenne sie frei, alles im frischen violetten Look",
                 "**Spricht jetzt fünf Sprachen:** Deutsch, Spanisch, Russisch und Arabisch (mit vollständigem Rechts-nach-links-Layout), zusätzlich zu Englisch, mit einer Sprach-Einstellung unabhängig vom Gerät",
                 "Eine Sammlung als Startbildschirm für deine Billboards und ein „Zuletzt“-Verlauf, der jedes im Vollbild gezeigte Billboard automatisch speichert, mit kostenloser Kapazität von 3 auf 10",
@@ -426,6 +432,20 @@ module.exports = {
                 "Unterstützung für Android 17",
             ],
             changelog: {
+                "3.1.0": [
+                    "➕ Billboard als Bildschirmschoner: Wähle unter Einstellungen > Display > Bildschirmschoner ein Billboard aus deiner Sammlung und dunkle es mit „Abdunkeln“ und „Nur bei Dunkelheit“ ab, das dem Lichtsensor folgt. Es wandert langsam, damit sich ein stehendes Bild nicht in ein OLED-Display einbrennt. Für alle kostenlos.",
+                    "➕ Auf Pixel-Telefonen warnen die Bildschirmschoner-Einstellungen, dass der Modus für schwaches Licht das Billboard nachts durch die eigene gedimmte Uhr des Telefons ersetzen kann, mit einer Schaltfläche zur Einstellung, die ihn ausschaltet.",
+                    "➕ Ein Textrand für jede Textebene, plus die Option „Kamera freihalten“ auf Telefonen mit Kameraaussparung.",
+                    "➕ Billboards aus neueren Versionen der App lassen sich jetzt öffnen, statt abgelehnt zu werden. Ebenen, die diese Version nicht lesen kann, bleiben genau so erhalten, wie sie ankamen, und den Rest kannst du bearbeiten.",
+                    "➕ Kacheln in der Sammlung und Karten in „Zuletzt“ zeigen an, wenn ein Billboard auf Hoch- oder Querformat festgelegt ist, damit sich der Bildschirm beim Öffnen nicht unangekündigt dreht.",
+                    "➕ Ein Hinweis, wenn eine neue Version bereitsteht. Das Update wird im Hintergrund heruntergeladen, danach bietet die App den Neustart an, der es installiert.",
+                    "🛠️ Benötigt jetzt Android 7.0 oder neuer.",
+                    "🛠️ Die Open-Source-Lizenzen sind nach Lizenz gruppiert.",
+                    "🔨 Der Bildschirmschoner stürzt nicht mehr ab, wenn Android ihn durch einen anderen ersetzt, wie es der Modus für schwaches Licht in einem dunklen Raum tut.",
+                    "🔨 Langer Text wird in der Editor-Vorschau, auf Kacheln in der Sammlung und auf Karten in „Zuletzt“ nicht mehr abgeschnitten.",
+                    "🔨 Schnelles Tippen verliert keine Zeichen mehr.",
+                    "🔨 Ein im Vollbild gezeigtes Billboard hält das Display wach, solange es angezeigt wird.",
+                ],
                 "3.0.1": [
                     "🛠️ Ein kleines Wartungs-Update. An dem, was die App tut, ändert sich nichts.",
                     "🔨 Die App startet etwas schneller, rund 60 ms weniger beim Start. Die Prüfung, ob anonyme Nutzungsdaten eingeschaltet sind, wartet nicht mehr auf den Speicher, bevor der erste Bildschirm gezeichnet werden kann.",
@@ -495,6 +515,7 @@ module.exports = {
             description:
                 "اعرض نصاً كبيراً على الشاشة بحجم يتناسب تماماً دون أن يُقتطع أبداً.",
             highlights: [
+                "**Billboard كشاشة توقف:** اختر لوحة من مجموعتك لتملأ الشاشة كلما كان الجهاز خاملًا، مع تعتيمها ليلًا إن شئت. مجانًا للجميع",
                 "**أُعيد بناء التطبيق من الصفر حول فكرة الطبقات:** كدّس طبقات النص واللون والتأثيرات، وادمجها ورتّبها وأعد تسميتها بحرية، بمظهر أرجواني منعش",
                 "**يتحدث الآن خمس لغات:** الألمانية والإسبانية والروسية والعربية (بدعم كامل للكتابة من اليمين لليسار)، إلى جانب الإنجليزية، مع إعداد للغة مستقل عن الجهاز",
                 "شاشة المجموعة للوحات التي تحتفظ بها، وسجل «الأخيرة» الذي يحفظ تلقائيًا كل لوحة تعرضها بملء الشاشة، مع سعة مجانية تنمو من 3 إلى 10",
@@ -502,6 +523,20 @@ module.exports = {
                 "دعم أندرويد 17",
             ],
             changelog: {
+                "3.1.0": [
+                    "➕ Billboard كشاشة توقف: اختر لوحة من مجموعتك من الإعدادات > الشاشة > شاشة التوقف، ثم اضبط «تعتيم» و«فقط عند الظلام» الذي يتبع مستشعر الضوء. تتحرك اللوحة ببطء كي لا تنطبع صورة ثابتة على شاشة OLED. مجانًا للجميع.",
+                    "➕ على هواتف Pixel، تنبّه إعدادات شاشة التوقف إلى أن وضع الإضاءة الخافتة قد يستبدل اللوحة ليلًا بساعة الهاتف المعتمة، مع زر يفتح الإعداد الذي يوقفه.",
+                    "➕ «هامش النص» لكل طبقة نص، مع خيار «إبعاد النص عن الكاميرا» على الهواتف التي فيها فتحة للكاميرا.",
+                    "➕ اللوحات المصنوعة بإصدار أحدث من التطبيق تُفتح الآن بدلًا من رفضها. الطبقات التي لا يستطيع هذا الإصدار قراءتها تبقى كما وصلت تمامًا، ويمكنك تحرير الباقي.",
+                    "➕ بطاقات المجموعة و«الأخيرة» تُظهر اللوحة المضبوطة على الوضع الرأسي أو الأفقي، فلا تدور الشاشة فجأة عند فتحها.",
+                    "➕ تنبيه عند توفر إصدار جديد. يُنزَّل التحديث في الخلفية، ثم يعرض التطبيق إعادة التشغيل التي تثبّته.",
+                    "🛠️ يتطلب الآن Android 7.0 أو أحدث.",
+                    "🛠️ صفحة شكر المصادر المفتوحة تجمع المكتبات حسب الترخيص.",
+                    "🔨 لم تعد شاشة التوقف تتعطل عندما يستبدلها Android بأخرى، كما يفعل وضع الإضاءة الخافتة في الغرفة المظلمة.",
+                    "🔨 النص الطويل لم يعد يُقتطع في معاينة المحرر ولا على بطاقات المجموعة و«الأخيرة».",
+                    "🔨 الكتابة السريعة لم تعد تفقد الأحرف.",
+                    "🔨 اللوحة المعروضة بملء الشاشة تُبقي الشاشة مضاءة طوال عرضها.",
+                ],
                 "3.0.1": [
                     "🛠️ تحديث صيانة صغير. لم يتغيّر شيء في ما يفعله التطبيق.",
                     "🔨 يبدأ التطبيق أسرع قليلًا، بنحو 60 مللي ثانية. لم يعد التحقق من تفعيل بيانات الاستخدام مجهولة المصدر ينتظر التخزين قبل رسم الشاشة الأولى.",
@@ -571,6 +606,7 @@ module.exports = {
             description:
                 "Muestre texto grande en la pantalla, ajustado para caber sin cortarse nunca.",
             highlights: [
+                "**Billboard como salvapantallas:** elige un billboard de tu Colección para que llene la pantalla cuando el dispositivo esté inactivo, atenuado de noche si quieres. Gratis para todos",
                 "**Reconstruida desde cero en torno a las capas:** apila capas de texto, color y efectos, y combínalas, reordénalas y renómbralas libremente, todo con un renovado look violeta",
                 "**Ahora habla cinco idiomas:** alemán, español, ruso y árabe (con diseño completo de derecha a izquierda), además de inglés, con un ajuste de Idioma independiente del dispositivo",
                 "Una Colección como pantalla de inicio para los billboards que conservas, y un historial de Recientes que guarda automáticamente cada billboard que muestras a pantalla completa, con la capacidad gratuita de 3 a 10",
@@ -578,6 +614,20 @@ module.exports = {
                 "Compatibilidad con Android 17",
             ],
             changelog: {
+                "3.1.0": [
+                    "➕ Billboard como salvapantallas: elige un billboard de tu Colección en Ajustes > Pantalla > Salvapantallas y atenúalo con «Atenuar» y «Solo cuando está oscuro», que sigue al sensor de luz. Se desplaza despacio para que una imagen fija no se queme en una pantalla OLED. Gratis para todos.",
+                    "➕ En los teléfonos Pixel, los ajustes del salvapantallas avisan de que el modo de poca luz puede sustituir el billboard de noche por el reloj atenuado del propio teléfono, con un botón al ajuste que lo desactiva.",
+                    "➕ «Margen del texto» en cada capa de texto, con la opción «Dejar libre la cámara» en teléfonos con recorte de cámara.",
+                    "➕ Los billboards creados con una versión más nueva de la app ya se abren en lugar de rechazarse. Las capas que esta versión no puede leer se conservan tal como llegaron, y puedes editar el resto.",
+                    "➕ Los mosaicos de la Colección y las tarjetas de Recientes marcan un billboard fijado en vertical u horizontal, así que abrirlo ya no gira la pantalla sin avisar.",
+                    "➕ Un aviso cuando hay una versión nueva. Descarga la actualización en segundo plano y luego ofrece el reinicio que la instala.",
+                    "🛠️ Ahora requiere Android 7.0 o posterior.",
+                    "🛠️ Los Créditos de código abierto agrupan las bibliotecas por licencia.",
+                    "🔨 El salvapantallas ya no se cierra con un error cuando Android lo sustituye por otro, como hace el modo de poca luz en una habitación oscura.",
+                    "🔨 El texto largo ya no se corta en la vista previa del editor, en los mosaicos de la Colección ni en las tarjetas de Recientes.",
+                    "🔨 Escribir rápido ya no pierde caracteres.",
+                    "🔨 Un billboard a pantalla completa mantiene la pantalla encendida mientras se muestra.",
+                ],
                 "3.0.1": [
                     "🛠️ Una pequeña actualización de mantenimiento. Nada de lo que hace la app ha cambiado.",
                     "🔨 La app arranca un poco más rápido, unos 60 ms menos al iniciarse. Comprobar si los datos anónimos de uso están activados ya no espera al almacenamiento antes de dibujar la primera pantalla.",
@@ -647,6 +697,7 @@ module.exports = {
             description:
                 "Показывайте крупный текст на экране, подогнанный по размеру и никогда не обрезанный.",
             highlights: [
+                "**Billboard как заставка:** выберите билборд из «Коллекции», и он заполнит экран, когда устройство простаивает, ночью при желании с затемнением. Бесплатно для всех",
                 "**Полностью пересобрано вокруг слоёв:** складывайте слои текста, цвета и эффектов, свободно комбинируйте, переставляйте и переименовывайте их, всё в обновлённом фиолетовом стиле",
                 "**Теперь говорит на пяти языках:** немецком, испанском, русском и арабском (с полной поддержкой письма справа налево) в дополнение к английскому, с настройкой языка, независимой от устройства",
                 "«Коллекция» для сохранённых билбордов и лента «Недавние», которая автоматически сохраняет каждый билборд, показанный на весь экран, а бесплатный лимит растёт с 3 до 10",
@@ -654,6 +705,20 @@ module.exports = {
                 "Поддержка Android 17",
             ],
             changelog: {
+                "3.1.0": [
+                    "➕ Billboard как заставка: выберите билборд из «Коллекции» в Настройки > Экран > Заставка и приглушите его с помощью «Затемнение» и «Только в темноте», который следует датчику света. Билборд медленно смещается, чтобы неподвижное изображение не выгорало на OLED-экране. Бесплатно для всех.",
+                    "➕ На телефонах Pixel настройки заставки предупреждают, что режим слабого освещения может ночью заменить билборд затемнёнными часами телефона, и дают кнопку к настройке, которая его отключает.",
+                    "➕ «Отступ текста» для каждого текстового слоя и опция «Не заходить под камеру» на телефонах с вырезом под камеру.",
+                    "➕ Билборды, созданные в более новой версии приложения, теперь открываются, а не отклоняются. Слои, которые эта версия не может прочитать, сохраняются в точности как пришли, а остальное можно редактировать.",
+                    "➕ Плитки «Коллекции» и карточки «Недавних» отмечают билборд с книжной или альбомной ориентацией, так что при открытии экран больше не поворачивается без предупреждения.",
+                    "➕ Уведомление о новой версии. Обновление загружается в фоне, затем приложение предлагает перезапуск, который его устанавливает.",
+                    "🛠️ Теперь нужен Android 7.0 или новее.",
+                    "🛠️ Лицензии открытого кода сгруппированы по лицензиям.",
+                    "🔨 Заставка больше не падает, когда Android заменяет её другой, как это делает режим слабого освещения в тёмной комнате.",
+                    "🔨 Длинный текст больше не обрезается в превью редактора, на плитках «Коллекции» и карточках «Недавних».",
+                    "🔨 Быстрый ввод больше не теряет символы.",
+                    "🔨 Билборд на весь экран не даёт дисплею погаснуть, пока он показан.",
+                ],
                 "3.0.1": [
                     "🛠️ Небольшое обновление. В том, что делает приложение, ничего не изменилось.",
                     "🔨 Приложение запускается немного быстрее, примерно на 60 мс. Проверка того, включены ли анонимные данные об использовании, больше не ждёт обращения к хранилищу до отрисовки первого экрана.",
