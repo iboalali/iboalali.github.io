@@ -426,10 +426,6 @@ module.exports = {
             highlights: [
                 "**Billboard als Bildschirmschoner:** Wähle ein Billboard aus deiner Sammlung, das den Bildschirm füllt, wenn das Gerät ruht, nachts auf Wunsch abgedunkelt. Für alle kostenlos",
                 "**Von Grund auf neu aufgebaut, rund um Ebenen:** Stapele Text-, Farb- und Effekt-Ebenen und kombiniere, sortiere und benenne sie frei, alles im frischen violetten Look",
-                "**Spricht jetzt fünf Sprachen:** Deutsch, Spanisch, Russisch und Arabisch (mit vollständigem Rechts-nach-links-Layout), zusätzlich zu Englisch, mit einer Sprach-Einstellung unabhängig vom Gerät",
-                "Eine Sammlung als Startbildschirm für deine Billboards und ein „Zuletzt“-Verlauf, der jedes im Vollbild gezeigte Billboard automatisch speichert, mit kostenloser Kapazität von 3 auf 10",
-                "Teile ein Billboard als bearbeitbare .billboard-Datei oder als PNG-Bild",
-                "Unterstützung für Android 17",
             ],
             changelog: {
                 "3.1.0": [
@@ -441,7 +437,6 @@ module.exports = {
                     "➕ Ein Hinweis, wenn eine neue Version bereitsteht. Das Update wird im Hintergrund heruntergeladen, danach bietet die App den Neustart an, der es installiert.",
                     "🛠️ Benötigt jetzt Android 7.0 oder neuer.",
                     "🛠️ Die Open-Source-Lizenzen sind nach Lizenz gruppiert.",
-                    "🔨 Der Bildschirmschoner stürzt nicht mehr ab, wenn Android ihn durch einen anderen ersetzt, wie es der Modus für schwaches Licht in einem dunklen Raum tut.",
                     "🔨 Langer Text wird in der Editor-Vorschau, auf Kacheln in der Sammlung und auf Karten in „Zuletzt“ nicht mehr abgeschnitten.",
                     "🔨 Schnelles Tippen verliert keine Zeichen mehr.",
                     "🔨 Ein im Vollbild gezeigtes Billboard hält das Display wach, solange es angezeigt wird.",
@@ -517,10 +512,6 @@ module.exports = {
             highlights: [
                 "**Billboard كشاشة توقف:** اختر لوحة من مجموعتك لتملأ الشاشة كلما كان الجهاز خاملًا، مع تعتيمها ليلًا إن شئت. مجانًا للجميع",
                 "**أُعيد بناء التطبيق من الصفر حول فكرة الطبقات:** كدّس طبقات النص واللون والتأثيرات، وادمجها ورتّبها وأعد تسميتها بحرية، بمظهر أرجواني منعش",
-                "**يتحدث الآن خمس لغات:** الألمانية والإسبانية والروسية والعربية (بدعم كامل للكتابة من اليمين لليسار)، إلى جانب الإنجليزية، مع إعداد للغة مستقل عن الجهاز",
-                "شاشة المجموعة للوحات التي تحتفظ بها، وسجل «الأخيرة» الذي يحفظ تلقائيًا كل لوحة تعرضها بملء الشاشة، مع سعة مجانية تنمو من 3 إلى 10",
-                "شارك اللوحة كملف .billboard قابل للتحرير أو كصورة PNG",
-                "دعم أندرويد 17",
             ],
             changelog: {
                 "3.1.0": [
@@ -532,7 +523,6 @@ module.exports = {
                     "➕ تنبيه عند توفر إصدار جديد. يُنزَّل التحديث في الخلفية، ثم يعرض التطبيق إعادة التشغيل التي تثبّته.",
                     "🛠️ يتطلب الآن Android 7.0 أو أحدث.",
                     "🛠️ صفحة شكر المصادر المفتوحة تجمع المكتبات حسب الترخيص.",
-                    "🔨 لم تعد شاشة التوقف تتعطل عندما يستبدلها Android بأخرى، كما يفعل وضع الإضاءة الخافتة في الغرفة المظلمة.",
                     "🔨 النص الطويل لم يعد يُقتطع في معاينة المحرر ولا على بطاقات المجموعة و«الأخيرة».",
                     "🔨 الكتابة السريعة لم تعد تفقد الأحرف.",
                     "🔨 اللوحة المعروضة بملء الشاشة تُبقي الشاشة مضاءة طوال عرضها.",
@@ -608,10 +598,6 @@ module.exports = {
             highlights: [
                 "**Billboard como salvapantallas:** elige un billboard de tu Colección para que llene la pantalla cuando el dispositivo esté inactivo, atenuado de noche si quieres. Gratis para todos",
                 "**Reconstruida desde cero en torno a las capas:** apila capas de texto, color y efectos, y combínalas, reordénalas y renómbralas libremente, todo con un renovado look violeta",
-                "**Ahora habla cinco idiomas:** alemán, español, ruso y árabe (con diseño completo de derecha a izquierda), además de inglés, con un ajuste de Idioma independiente del dispositivo",
-                "Una Colección como pantalla de inicio para los billboards que conservas, y un historial de Recientes que guarda automáticamente cada billboard que muestras a pantalla completa, con la capacidad gratuita de 3 a 10",
-                "Comparte un billboard como archivo .billboard editable o como imagen PNG",
-                "Compatibilidad con Android 17",
             ],
             changelog: {
                 "3.1.0": [
@@ -623,7 +609,6 @@ module.exports = {
                     "➕ Un aviso cuando hay una versión nueva. Descarga la actualización en segundo plano y luego ofrece el reinicio que la instala.",
                     "🛠️ Ahora requiere Android 7.0 o posterior.",
                     "🛠️ Los Créditos de código abierto agrupan las bibliotecas por licencia.",
-                    "🔨 El salvapantallas ya no se cierra con un error cuando Android lo sustituye por otro, como hace el modo de poca luz en una habitación oscura.",
                     "🔨 El texto largo ya no se corta en la vista previa del editor, en los mosaicos de la Colección ni en las tarjetas de Recientes.",
                     "🔨 Escribir rápido ya no pierde caracteres.",
                     "🔨 Un billboard a pantalla completa mantiene la pantalla encendida mientras se muestra.",
@@ -699,10 +684,6 @@ module.exports = {
             highlights: [
                 "**Billboard как заставка:** выберите билборд из «Коллекции», и он заполнит экран, когда устройство простаивает, ночью при желании с затемнением. Бесплатно для всех",
                 "**Полностью пересобрано вокруг слоёв:** складывайте слои текста, цвета и эффектов, свободно комбинируйте, переставляйте и переименовывайте их, всё в обновлённом фиолетовом стиле",
-                "**Теперь говорит на пяти языках:** немецком, испанском, русском и арабском (с полной поддержкой письма справа налево) в дополнение к английскому, с настройкой языка, независимой от устройства",
-                "«Коллекция» для сохранённых билбордов и лента «Недавние», которая автоматически сохраняет каждый билборд, показанный на весь экран, а бесплатный лимит растёт с 3 до 10",
-                "Делитесь билбордом как редактируемым файлом .billboard или как PNG-изображением",
-                "Поддержка Android 17",
             ],
             changelog: {
                 "3.1.0": [
@@ -714,7 +695,6 @@ module.exports = {
                     "➕ Уведомление о новой версии. Обновление загружается в фоне, затем приложение предлагает перезапуск, который его устанавливает.",
                     "🛠️ Теперь нужен Android 7.0 или новее.",
                     "🛠️ Лицензии открытого кода сгруппированы по лицензиям.",
-                    "🔨 Заставка больше не падает, когда Android заменяет её другой, как это делает режим слабого освещения в тёмной комнате.",
                     "🔨 Длинный текст больше не обрезается в превью редактора, на плитках «Коллекции» и карточках «Недавних».",
                     "🔨 Быстрый ввод больше не теряет символы.",
                     "🔨 Билборд на весь экран не даёт дисплею погаснуть, пока он показан.",

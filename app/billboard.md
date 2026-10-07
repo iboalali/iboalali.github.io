@@ -28,10 +28,6 @@ Can be used in meeting to vote on a subject with a number or a text.
 {% highlights %}
 - **Billboard can be your screen saver:** pick a billboard from your Collection to fill the screen whenever the device idles, dimmed at night if you like. Free for everyone
 - **Rebuilt from the ground up around layers:** stack text, color, and effect layers, then combine, reorder, and rename them freely, all in a refreshed violet look
-- **Now speaks five languages:** German, Spanish, Russian, and Arabic (with full right-to-left layout), alongside English, with a Language setting independent of your device
-- A Collection home for the billboards you keep, and a Recent trail that auto-saves every billboard you show fullscreen, with free capacity growing from 3 to 10
-- Share a billboard as an editable .billboard file or a PNG image
-- Support for Android 17
 {% endhighlights %}
 
 
@@ -45,7 +41,6 @@ Can be used in meeting to vote on a subject with a number or a text.
 * ➕ A notice when a new version is ready. It downloads the update in the background, then offers the restart that installs it.
 * 🛠️ Now needs Android 7.0 or newer.
 * 🛠️ Open Source Credits groups libraries by license.
-* 🔨 The screen saver no longer crashes when Android swaps it for another one, as Low light mode does in a dark room.
 * 🔨 Long text is no longer cut short in the editor preview, on Collection tiles, or on Recent cards.
 * 🔨 Fast typing no longer loses characters.
 * 🔨 A billboard shown fullscreen keeps the display awake for as long as it's held up.
