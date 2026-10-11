@@ -771,7 +771,7 @@ module.exports = {
             description:
                 "Eine dauerhafte Benachrichtigung auswählen und verborgen halten, solange die App installiert ist.",
             highlights: [
-                "**Hinweis: Die App wird mit einem optionalen In-App-Kauf kostenlos.** Wenn Sie sie bereits gekauft haben, öffnen Sie die Einstellungen und melden Sie sich an, damit Ihr Kauf übernommen wird und Sie alle Premium-Funktionen kostenlos behalten, kein zweiter Kauf nötig.",
+                "**Hinweis: Die App wird mit einem optionalen In-App-Kauf kostenlos.** Wenn du sie bereits gekauft hast, öffne die Einstellungen und melde dich an, damit dein Kauf übernommen wird und du alle Premium-Funktionen kostenlos behältst, kein zweiter Kauf nötig.",
                 "Assistenten wie Gemini auf dem Gerät können Benachrichtigungen per Sprache auflisten, ausblenden oder anzeigen, ohne die App zu öffnen (ab Android 16)",
                 "Neue Option „Entwickler kontaktieren“ unter „Über“ öffnet deine E-Mail-App",
             ],
