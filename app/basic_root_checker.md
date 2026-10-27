@@ -31,6 +31,21 @@ This app is not endorsed by or affiliated with _topjohnwu_ or _libsu_
 
 
 ## Changelog
+### Version 2.6:
+* ➕ New languages: Dutch, Chinese (Simplified), Malay and Tamil
+* ➕ The Email link on the About screen opens your mail app with the app's name as the subject
+* 🛠️ An animated result icon with its own symbol for each result, so an undetermined result no longer looks like a firm "no"
+* 🛠️ The "Support development" card appears after five root checks of any result (Google Play builds)
+* 🛠️ Now needs Android 7.0 or newer
+* 🔨 A device that already granted the app root access is reported as rooted on the first check, instead of "Root is available but this app has not been granted access"
+* 🔨 Devices rooted with KernelSU or APatch are no longer reported as "via Magisk"
+* 🔨 The update card no longer gets stuck on "Downloading" (Google Play builds)
+* 🔨 "Request Root access" asks again after you deny or ignore the superuser prompt
+* 🔨 Opening a link on a device without a browser no longer closes the app
+* 🔨 The language picker scrolls, and dialogs stay open when the device rotates
+* 🔨 Restoring a backup no longer brings the old phone's last root result along
+* 🔨 Many smaller fixes to the tip jar, right-to-left layouts, and Arabic and German texts
+
 ### Version 2.5:
 * ➕ Large screens: Settings, About, and Licenses open as a dialog over the main screen, closed by swiping the card down, tapping outside, or with Back
 * ➕ Rate the app without leaving it, plus a "Rate this app" link on the About screen (Google Play builds)
