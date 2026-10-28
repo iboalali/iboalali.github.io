@@ -32,6 +32,21 @@ Can be used in meeting to vote on a subject with a number or a text.
 
 
 ## Changelog
+### Version 3.2.0
+* ➕ All Access: every unlock in one subscription, including anything added later. Subscribe weekly, monthly, quarterly, or yearly with 3 days free the first time, or buy a week or month pass that simply runs out and never renews. The one-time unlocks stay on sale, and anything bought that way stays yours.
+* ➕ Full brightness while a billboard is shown, so it stays readable outdoors. A Full brightness switch in Settings turns it off. Your system brightness setting is never changed.
+* ➕ A Screen saver row in Settings opens the screen saver's settings directly.
+* 🛠️ A new paywall. It names what you reached for and shows the subscription and the one-time unlock side by side, with the price and renewal terms next to the button.
+* 🛠️ Lower prices in low-income countries, and the same price in every full-price eurozone country.
+* 🛠️ A color wheel that follows your finger with no delay and works with TalkBack.
+* 🔨 A line break in the text no longer shrinks a billboard to an unreadable speck. It now shows as a space, and Enter on the keyboard shows the billboard.
+* 🔨 Your unlocks count right away, even offline or just after the app opens.
+* 🔨 The paywall loads its prices again after it was opened offline.
+* 🔨 Tapping New, or an assistant changing your billboard, no longer erases the billboard on the other tab.
+* 🔨 A backup or a move to a new phone includes your latest changes.
+* 🔨 A quick double tap on Back no longer crashes the app.
+* 🔨 Many smaller fixes for imports, Recent, the screen saver, and shared images.
+
 ### Version 3.1.0
 * ➕ Billboard can be your screen saver. Pick a billboard from your Collection in Settings > Display > Screen saver, then shade it with Dim and "Only when it's dark", which follows the light sensor. It drifts slowly so a static sign doesn't burn into an OLED screen. Free for everyone.
 * ➕ On Pixel phones, the screen saver settings warn that Low light mode may swap Billboard for the phone's own dim clock at night, with a button to the setting that turns it off.

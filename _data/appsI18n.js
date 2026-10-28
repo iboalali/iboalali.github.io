@@ -17,7 +17,11 @@
 //     per-locale wording. changelog 2.1 and older were translated for this site
 //     to match the page's bullets (the repo's 2.1 notes are grouped
 //     differently, and older versions have no release notes). `name` set only
-//     where it differs from English (Arabic).
+//     where it differs from English (Arabic). changelog 2.6 was written for
+//     this site from the repo's CHANGELOG.md and covers every bullet of the
+//     repo's `Play Store/Release Notes/2.6/` notes, with result, button and
+//     screen names quoted from the app's
+//     `values-<locale>/strings.xml`.
 //   hide_persistent_notification — description translated for this site.
 //     changelog 2.2 (en + de/ar/es/ru) follows the repo's `Play Store/Release
 //     Notes/2.2/` notes per locale, expanded for the site (the store has a
@@ -32,7 +36,9 @@
 //     release notes, reused from the repo (em dashes normalized for site copy);
 //     its tablet/foldable + faster-startup bullets are from the repo's 2.1.2
 //     notes (2.1 was never published; 2.1.2 shipped the full 2.1+2.1.2 set, and
-//     2.1.2 carried nothing else user-facing). 2.0's German is likewise from
+//     2.1.2 carried nothing else user-facing). changelog 2.3 follows the
+//     repo's `Play Store/Release Notes/2.3/` notes per locale, expanded from
+//     its CHANGELOG.md; the added bullets were translated for this site. 2.0's German is likewise from
 //     the repo; the rest was translated for this site. Review welcome,
 //     especially ar/ru.
 //   billboard — changelog 3.0.0 (en + de/ar/es/ru) is the app's own Play Store
@@ -45,7 +51,11 @@
 //     notes per locale, expanded from the repo's CHANGELOG.md, with feature
 //     names (Dim, Text margin, Keep clear of the camera, …) quoted from the
 //     app's `res/values-<lang>` strings; the expansion was translated for this
-//     site. highlights condense the 3.0.0 notes, reusing their per-locale
+//     site. changelog 3.2.0 is built the same way from the repo's
+//     `Play Store/Release Notes/3.2.0/` notes and CHANGELOG.md, with the All
+//     Access name from `Play Store/In-App Products/all-access/listings.json`
+//     and Full brightness, Screen saver, New and Recent from the app's
+//     strings. highlights condense the 3.0.0 notes, reusing their per-locale
 //     wording, plus a screen saver bullet from 3.1.0 that uses the same
 //     strings-based terms. description and changelog 2.1.1 and
 //     older were translated for this site, as the repo has no localized copy
@@ -62,6 +72,21 @@ module.exports = {
                 "Weitere Apps im Über-Bildschirm lädt aktuelle Infos aus dem Web, in deiner Sprache",
             ],
             changelog: {
+                "2.6": [
+                    "➕ Neue Sprachen: Niederländisch, Chinesisch (vereinfacht), Malaiisch und Tamil",
+                    "➕ Der E-Mail-Link unter „Über“ öffnet deine E-Mail-App mit dem App-Namen als Betreff",
+                    "🛠️ Ein animiertes Ergebnis-Symbol mit eigenem Zeichen für jedes Ergebnis, damit ein unklares Ergebnis nicht mehr wie ein klares „Nein“ aussieht",
+                    "🛠️ Die Karte „Entwicklung unterstützen“ erscheint nach fünf Root-Prüfungen mit beliebigem Ergebnis (Google-Play-Builds)",
+                    "🛠️ Benötigt jetzt Android 7.0 oder neuer",
+                    "🔨 Ein Gerät, das der App schon Root-Zugriff gewährt hat, wird bei der ersten Prüfung als gerootet erkannt, statt als „Root ist verfügbar, aber diese App hat keinen Zugriff darauf“",
+                    "🔨 Geräte mit KernelSU oder APatch werden nicht mehr als „über Magisk“ gemeldet",
+                    "🔨 Die Update-Karte bleibt nicht mehr bei „Wird heruntergeladen“ hängen (Google-Play-Builds)",
+                    "🔨 „Root-Zugriff anfordern“ fragt erneut, nachdem du die Superuser-Abfrage abgelehnt oder ignoriert hast",
+                    "🔨 Ein Link auf einem Gerät ohne Browser schließt die App nicht mehr",
+                    "🔨 Die Sprachauswahl lässt sich scrollen, und Dialoge bleiben beim Drehen geöffnet",
+                    "🔨 Eine wiederhergestellte Sicherung bringt nicht mehr das letzte Root-Ergebnis des alten Telefons mit",
+                    "🔨 Viele kleinere Korrekturen an der Trinkgeldkasse, an Rechts-nach-links-Layouts und an arabischen und deutschen Texten",
+                ],
                 "2.5": [
                     "➕ Große Displays: Einstellungen, Über und Lizenzen öffnen sich als Dialog über dem Hauptbildschirm, schließbar durch Wischen nach unten, Tippen daneben oder Zurück",
                     "➕ Die App direkt in der App bewerten, plus ein Link „App bewerten“ im Über-Bildschirm (Google-Play-Version)",
@@ -154,6 +179,21 @@ module.exports = {
                 "«تطبيقات أخرى» في شاشة عن التطبيق تُحدَّث من الويب بلغتك",
             ],
             changelog: {
+                "2.6": [
+                    "➕ لغات جديدة: الهولندية والصينية المبسطة والملايوية والتاميلية",
+                    "➕ رابط البريد الإلكتروني في شاشة حول التطبيق يفتح تطبيق البريد مع اسم التطبيق كموضوع",
+                    "🛠️ أيقونة نتيجة متحركة برمز خاص لكل نتيجة، فلا تبدو النتيجة غير المحددة كأنها «لا» قاطعة",
+                    "🛠️ تظهر بطاقة «ادعم التطوير» بعد خمس عمليات فحص للـ Root أيًا كانت النتيجة (إصدارات Google Play)",
+                    "🛠️ يتطلب الآن Android 7.0 أو أحدث",
+                    "🔨 الجهاز الذي منح التطبيق صلاحية الـ Root سابقًا يُعرض كجهاز مروّت من أول فحص، بدلًا من «صلاحية الـ Root متوفرة ولكن لم يتم منحها لهذا التطبيق»",
+                    "🔨 الأجهزة التي تستخدم KernelSU أو APatch لم تعد تظهر «عبر Magisk»",
+                    "🔨 بطاقة التحديث لم تعد تتوقف عند «جارٍ التنزيل» (إصدارات Google Play)",
+                    "🔨 «طلب صلاحية الـ Root» يسأل من جديد بعد رفض طلب المستخدم الخارق أو تجاهله",
+                    "🔨 فتح رابط على جهاز بلا متصفح لم يعد يغلق التطبيق",
+                    "🔨 قائمة اختيار اللغة قابلة للتمرير، ومربعات الحوار تبقى مفتوحة عند تدوير الجهاز",
+                    "🔨 استعادة نسخة احتياطية لم تعد تجلب آخر نتيجة Root من الهاتف القديم",
+                    "🔨 إصلاحات أصغر كثيرة في صندوق الإكرامية وتخطيطات الكتابة من اليمين إلى اليسار والنصوص العربية والألمانية",
+                ],
                 "2.5": [
                     "➕ الشاشات الكبيرة: الإعدادات و«عن التطبيق» والتراخيص تُفتح كنافذة فوق الشاشة الرئيسية، تُغلق بسحب البطاقة للأسفل أو النقر خارجها أو بزر الرجوع",
                     "➕ قيّم التطبيق من داخله، مع رابط «قيّم التطبيق» في شاشة عن التطبيق (نسخة Google Play)",
@@ -242,6 +282,21 @@ module.exports = {
                 "Otras aplicaciones en Acerca de se actualiza desde la web, en tu idioma",
             ],
             changelog: {
+                "2.6": [
+                    "➕ Nuevos idiomas: neerlandés, chino (simplificado), malayo y tamil",
+                    "➕ El enlace Correo de Acerca de abre tu app de correo con el nombre de la app como asunto",
+                    "🛠️ Un icono de resultado animado, con su propio símbolo para cada resultado, para que un resultado indeterminado ya no parezca un «no» rotundo",
+                    "🛠️ La tarjeta «Apoya el desarrollo» aparece tras cinco comprobaciones de root con cualquier resultado (versiones de Google Play)",
+                    "🛠️ Ahora requiere Android 7.0 o posterior",
+                    "🔨 Un dispositivo que ya concedió acceso root a la app se muestra como rooteado desde la primera comprobación, en lugar de «Root está disponible, pero esta aplicación no tiene acceso concedido»",
+                    "🔨 Los dispositivos con KernelSU o APatch ya no aparecen «vía Magisk»",
+                    "🔨 La tarjeta de actualización ya no se queda atascada en «Descargando» (versiones de Google Play)",
+                    "🔨 «Solicitar acceso root» vuelve a preguntar después de rechazar o ignorar la solicitud de superusuario",
+                    "🔨 Abrir un enlace en un dispositivo sin navegador ya no cierra la app",
+                    "🔨 El selector de idioma se puede desplazar, y los diálogos siguen abiertos al girar el dispositivo",
+                    "🔨 Restaurar una copia de seguridad ya no trae el último resultado de root del teléfono anterior",
+                    "🔨 Muchas correcciones menores en el bote de propinas, los diseños de derecha a izquierda y los textos en árabe y alemán",
+                ],
                 "2.5": [
                     "➕ Pantallas grandes: Ajustes, Acerca de y Licencias se abren como un diálogo sobre la pantalla principal, que se cierra deslizando la tarjeta hacia abajo, tocando fuera o con Atrás",
                     "➕ Valora la app sin salir de ella, y un enlace «Valora la app» en Acerca de (versión de Google Play)",
@@ -333,6 +388,21 @@ module.exports = {
                 "«Другие приложения» в разделе «О приложении» обновляются из интернета, на вашем языке",
             ],
             changelog: {
+                "2.6": [
+                    "➕ Новые языки: нидерландский, китайский (упрощённый), малайский и тамильский",
+                    "➕ Ссылка «Эл. почта» на экране «О приложении» открывает почтовое приложение с названием приложения в теме",
+                    "🛠️ Анимированный значок результата со своим символом для каждого результата, чтобы неопределённый результат больше не выглядел как твёрдое «нет»",
+                    "🛠️ Карточка «Поддержать разработку» появляется после пяти проверок root с любым результатом (сборки Google Play)",
+                    "🛠️ Теперь требуется Android 7.0 или новее",
+                    "🔨 Устройство, уже предоставившее приложению root-доступ, определяется как рутированное с первой проверки, а не как «Root-доступ доступен, но не предоставлен этому приложению»",
+                    "🔨 Устройства с KernelSU или APatch больше не отображаются «через Magisk»",
+                    "🔨 Карточка обновления больше не застревает на «Загрузка» (сборки Google Play)",
+                    "🔨 «Запросить root-доступ» снова спрашивает после того, как вы отклонили или проигнорировали запрос суперпользователя",
+                    "🔨 Ссылка на устройстве без браузера больше не закрывает приложение",
+                    "🔨 Выбор языка прокручивается, а диалоги остаются открытыми при повороте устройства",
+                    "🔨 Восстановление резервной копии больше не переносит последний результат проверки root со старого телефона",
+                    "🔨 Множество мелких исправлений в копилке чаевых, в раскладках справа налево и в арабских и немецких текстах",
+                ],
                 "2.5": [
                     "➕ Большие экраны: «Настройки», «О приложении» и «Лицензии» открываются как диалог поверх главного экрана, закрывается свайпом карточки вниз, нажатием вне её или кнопкой «Назад»",
                     "➕ Оценка приложения прямо в нём и ссылка «Оценить приложение» в разделе «О приложении» (версия Google Play)",
@@ -428,6 +498,21 @@ module.exports = {
                 "**Von Grund auf neu aufgebaut, rund um Ebenen:** Stapele Text-, Farb- und Effekt-Ebenen und kombiniere, sortiere und benenne sie frei, alles im frischen violetten Look",
             ],
             changelog: {
+                "3.2.0": [
+                    "➕ Alles inklusive: alle Freischaltungen in einem Abo, auch alle, die später dazukommen. Wöchentlich, monatlich, vierteljährlich oder jährlich, beim ersten Mal 3 Tage gratis, oder als Wochen- oder Monatspass, der sich nie verlängert. Die Einzelkäufe bleiben im Angebot, und was du so gekauft hast, bleibt dir.",
+                    "➕ Volle Helligkeit, solange ein Billboard angezeigt wird, damit es auch draußen lesbar bleibt. Der Schalter „Volle Helligkeit“ in den Einstellungen schaltet das ab. Deine Systemhelligkeit wird nie verändert.",
+                    "➕ Die Zeile „Bildschirmschoner“ in den Einstellungen öffnet direkt die Einstellungen des Bildschirmschoners.",
+                    "🛠️ Eine neue Kaufseite: Sie nennt, was du freischalten wolltest, und zeigt Abo und Einzelkauf nebeneinander, mit Preis und Verlängerungsbedingungen direkt am Button.",
+                    "🛠️ Günstigere Preise in Ländern mit niedrigerem Einkommen und derselbe Preis in allen Euro-Ländern mit regulärem Preis.",
+                    "🛠️ Ein Farbrad, das deinem Finger ohne Verzögerung folgt und mit TalkBack bedienbar ist.",
+                    "🔨 Ein Zeilenumbruch im Text schrumpft ein Billboard nicht mehr zu einem unlesbaren Punkt. Er wird jetzt als Leerzeichen angezeigt, und die Eingabetaste zeigt das Billboard an.",
+                    "🔨 Freischaltungen gelten sofort, auch offline und direkt nach dem Start der App.",
+                    "🔨 Die Kaufseite lädt ihre Preise erneut, wenn sie offline geöffnet wurde.",
+                    "🔨 „Neu“ oder ein Assistent, der dein Billboard ändert, löscht nicht mehr das Billboard auf dem anderen Tab.",
+                    "🔨 Ein Backup oder der Umzug auf ein neues Telefon enthält deine letzten Änderungen.",
+                    "🔨 Zweimal schnell auf Zurück tippen bringt die App nicht mehr zum Absturz.",
+                    "🔨 Viele kleinere Korrekturen bei Importen, „Zuletzt“, dem Bildschirmschoner und geteilten Bildern.",
+                ],
                 "3.1.0": [
                     "➕ Billboard als Bildschirmschoner: Wähle unter Einstellungen > Display > Bildschirmschoner ein Billboard aus deiner Sammlung und dunkle es mit „Abdunkeln“ und „Nur bei Dunkelheit“ ab, das dem Lichtsensor folgt. Es wandert langsam, damit sich ein stehendes Bild nicht in ein OLED-Display einbrennt. Für alle kostenlos.",
                     "➕ Auf Pixel-Telefonen warnen die Bildschirmschoner-Einstellungen, dass der Modus für schwaches Licht das Billboard nachts durch die eigene gedimmte Uhr des Telefons ersetzen kann, mit einer Schaltfläche zur Einstellung, die ihn ausschaltet.",
@@ -514,6 +599,21 @@ module.exports = {
                 "**أُعيد بناء التطبيق من الصفر حول فكرة الطبقات:** كدّس طبقات النص واللون والتأثيرات، وادمجها ورتّبها وأعد تسميتها بحرية، بمظهر أرجواني منعش",
             ],
             changelog: {
+                "3.2.0": [
+                    "➕ الوصول الكامل: كل الميزات المدفوعة في اشتراك واحد، بما فيها كل ما يُضاف لاحقاً. اشترك أسبوعياً أو شهرياً أو كل ثلاثة أشهر أو سنوياً، مع 3 أيام مجاناً في المرة الأولى، أو اشترِ تذكرة أسبوع أو شهر تنتهي من تلقاء نفسها ولا تتجدد أبداً. الشراء لمرة واحدة ما زال متاحاً، وما اشتريته بهذه الطريقة يبقى لك.",
+                    "➕ سطوع كامل أثناء عرض اللوحة، لتبقى مقروءة حتى في الخارج. مفتاح «سطوع كامل» في الإعدادات يوقفه. لا يتغير إعداد السطوع في نظامك أبداً.",
+                    "➕ صف «شاشة التوقف» في الإعدادات يفتح إعدادات شاشة التوقف مباشرة.",
+                    "🛠️ شاشة شراء جديدة تذكر ما أردت فتحه، وتعرض الاشتراك والشراء لمرة واحدة جنباً إلى جنب، مع السعر وشروط التجديد بجانب الزر.",
+                    "🛠️ أسعار أقل في الدول ذات الدخل المنخفض، والسعر نفسه في كل دول منطقة اليورو ذات السعر الكامل.",
+                    "🛠️ عجلة ألوان تتبع إصبعك دون أي تأخير، وتعمل مع TalkBack.",
+                    "🔨 سطر جديد في النص لم يعد يصغّر اللوحة حتى تصبح نقطة لا تُقرأ. يظهر الآن كمسافة، وزر الإدخال في لوحة المفاتيح يعرض اللوحة.",
+                    "🔨 مشترياتك تُحتسب فوراً، حتى دون اتصال أو مباشرة بعد فتح التطبيق.",
+                    "🔨 شاشة الشراء تحمّل أسعارها من جديد إذا فُتحت دون اتصال.",
+                    "🔨 زر «جديد» أو مساعد يعدّل لوحتك لم يعد يمحو اللوحة الموجودة في التبويب الآخر.",
+                    "🔨 النسخ الاحتياطي أو الانتقال إلى هاتف جديد يشمل آخر تغييراتك.",
+                    "🔨 النقر مرتين بسرعة على زر الرجوع لم يعد يتسبب في تعطل التطبيق.",
+                    "🔨 إصلاحات أصغر كثيرة في الاستيراد و«الأخيرة» وشاشة التوقف والصور المشاركة.",
+                ],
                 "3.1.0": [
                     "➕ Billboard كشاشة توقف: اختر لوحة من مجموعتك من الإعدادات > الشاشة > شاشة التوقف، ثم اضبط «تعتيم» و«فقط عند الظلام» الذي يتبع مستشعر الضوء. تتحرك اللوحة ببطء كي لا تنطبع صورة ثابتة على شاشة OLED. مجانًا للجميع.",
                     "➕ على هواتف Pixel، تنبّه إعدادات شاشة التوقف إلى أن وضع الإضاءة الخافتة قد يستبدل اللوحة ليلًا بساعة الهاتف المعتمة، مع زر يفتح الإعداد الذي يوقفه.",
@@ -600,6 +700,21 @@ module.exports = {
                 "**Reconstruida desde cero en torno a las capas:** apila capas de texto, color y efectos, y combínalas, reordénalas y renómbralas libremente, todo con un renovado look violeta",
             ],
             changelog: {
+                "3.2.0": [
+                    "➕ Acceso total: todo desbloqueado en una suscripción, incluido todo lo que llegue después. Suscríbete por semana, mes, trimestre o año, con 3 días gratis la primera vez, o compra un pase de una semana o un mes que simplemente caduca y nunca se renueva. Las compras únicas siguen a la venta, y lo que compres así sigue siendo tuyo.",
+                    "➕ Brillo máximo mientras se muestra un billboard, para que se lea incluso al aire libre. El interruptor «Brillo máximo» en Ajustes lo desactiva. Tu ajuste de brillo del sistema nunca cambia.",
+                    "➕ La fila «Salvapantallas» en Ajustes abre directamente los ajustes del salvapantallas.",
+                    "🛠️ Una nueva pantalla de compra: indica lo que querías desbloquear y muestra la suscripción y la compra única una al lado de la otra, con el precio y las condiciones de renovación junto al botón.",
+                    "🛠️ Precios más bajos en los países con menos ingresos, y el mismo precio en todos los países de la eurozona con precio completo.",
+                    "🛠️ Una rueda de color que sigue tu dedo sin retraso y funciona con TalkBack.",
+                    "🔨 Un salto de línea en el texto ya no encoge un billboard hasta un punto ilegible. Ahora se muestra como un espacio, e Intro en el teclado muestra el billboard.",
+                    "🔨 Tus desbloqueos cuentan al instante, aun sin conexión o justo al abrir la app.",
+                    "🔨 La pantalla de compra vuelve a cargar sus precios si se abrió sin conexión.",
+                    "🔨 «Nuevo», o un asistente que cambia tu billboard, ya no borra el billboard de la otra pestaña.",
+                    "🔨 Una copia de seguridad o el paso a un teléfono nuevo incluye tus últimos cambios.",
+                    "🔨 Tocar Atrás dos veces seguidas ya no cierra la app por error.",
+                    "🔨 Muchas correcciones menores en importaciones, Recientes, el salvapantallas y las imágenes compartidas.",
+                ],
                 "3.1.0": [
                     "➕ Billboard como salvapantallas: elige un billboard de tu Colección en Ajustes > Pantalla > Salvapantallas y atenúalo con «Atenuar» y «Solo cuando está oscuro», que sigue al sensor de luz. Se desplaza despacio para que una imagen fija no se queme en una pantalla OLED. Gratis para todos.",
                     "➕ En los teléfonos Pixel, los ajustes del salvapantallas avisan de que el modo de poca luz puede sustituir el billboard de noche por el reloj atenuado del propio teléfono, con un botón al ajuste que lo desactiva.",
@@ -686,6 +801,21 @@ module.exports = {
                 "**Полностью пересобрано вокруг слоёв:** складывайте слои текста, цвета и эффектов, свободно комбинируйте, переставляйте и переименовывайте их, всё в обновлённом фиолетовом стиле",
             ],
             changelog: {
+                "3.2.0": [
+                    "➕ Полный доступ: все разблокировки в одной подписке, включая всё, что появится позже. Подписка на неделю, месяц, квартал или год, в первый раз 3 дня бесплатно, или пропуск на неделю или месяц, который просто заканчивается и никогда не продлевается. Разовые покупки остаются в продаже, и купленное так остаётся вашим.",
+                    "➕ Полная яркость, пока показывается билборд, чтобы его было видно даже на улице. Переключатель «Полная яркость» в настройках отключает её. Системная яркость никогда не меняется.",
+                    "➕ Пункт «Заставка» в настройках сразу открывает настройки заставки.",
+                    "🛠️ Новый экран покупки: он называет то, что вы хотели разблокировать, и показывает подписку и разовую покупку рядом, с ценой и условиями продления возле кнопки.",
+                    "🛠️ Цены ниже в странах с низким доходом и одна цена во всех странах еврозоны с полной ценой.",
+                    "🛠️ Цветовой круг без задержки следует за пальцем и работает с TalkBack.",
+                    "🔨 Перенос строки в тексте больше не сжимает билборд до нечитаемой точки. Теперь он показывается как пробел, а Enter на клавиатуре показывает билборд.",
+                    "🔨 Покупки действуют сразу, даже без сети или сразу после запуска приложения.",
+                    "🔨 Экран покупки снова загружает цены, если был открыт без сети.",
+                    "🔨 Кнопка «Новый» или ассистент, меняющий ваш билборд, больше не стирает билборд на другой вкладке.",
+                    "🔨 Резервная копия или переезд на новый телефон включает ваши последние изменения.",
+                    "🔨 Двойное быстрое нажатие «Назад» больше не приводит к сбою приложения.",
+                    "🔨 Множество мелких исправлений в импорте, «Недавних», заставке и отправленных картинках.",
+                ],
                 "3.1.0": [
                     "➕ Billboard как заставка: выберите билборд из «Коллекции» в Настройки > Экран > Заставка и приглушите его с помощью «Затемнение» и «Только в темноте», который следует датчику света. Билборд медленно смещается, чтобы неподвижное изображение не выгорало на OLED-экране. Бесплатно для всех.",
                     "➕ На телефонах Pixel настройки заставки предупреждают, что режим слабого освещения может ночью заменить билборд затемнёнными часами телефона, и дают кнопку к настройке, которая его отключает.",
@@ -776,6 +906,19 @@ module.exports = {
                 "Neue Option „Entwickler kontaktieren“ unter „Über“ öffnet deine E-Mail-App",
             ],
             changelog: {
+                "2.3": [
+                    "➕ Neue Sprachen: Niederländisch, Chinesisch (vereinfacht), Malaiisch und Tamil",
+                    "➕ Start warnt, wenn der Benachrichtigungszugriff ausgeschaltet ist, mit einer Schaltfläche zur Einstellung, die ihn wieder einschaltet",
+                    "➕ Auf großen Bildschirmen: Benachrichtigung auf Start ziehen, um sie auszublenden",
+                    "🛠️ Auf großen Bildschirmen öffnen sich Verlauf, Einstellungen, Über und Lizenzen als Karte, die du nach unten wischen kannst, um sie zu schließen",
+                    "🔨 Sicherung funktioniert wieder: Ausgeblendete Benachrichtigungen und Einstellungen kehren nach einer Neuinstallation oder auf einem neuen Telefon zurück",
+                    "🔨 Wieder angezeigte Benachrichtigungen werden am selben Tag nicht erneut ausgeblendet",
+                    "🔨 Eine ausgeblendete Benachrichtigung lässt sich auch anzeigen, während der Benachrichtigungsdienst nicht läuft",
+                    "🔨 Die Update-Leiste bleibt nicht mehr bei „Wird heruntergeladen“ hängen",
+                    "🔨 Fehler im Benachrichtigungsdienst bringen die App nicht mehr zum Absturz und stoppen das Ausblenden nicht mehr",
+                    "🔨 Abstürze beim schnellen doppelten Zurücktippen und bei Links ohne Browser behoben",
+                    "🔨 Dialoge bleiben beim Drehen geöffnet, und TalkBack benennt die Schaltflächen, die nur ein Symbol zeigen",
+                ],
                 "2.2": [
                     "➕ Assistenten wie Gemini auf dem Gerät können Benachrichtigungen per Sprache auflisten, ausblenden oder anzeigen, ohne die App zu öffnen (ab Android 16)",
                     "➕ Neue Option „Entwickler kontaktieren“ unter „Über“ öffnet deine E-Mail-App, mit Adresse und Betreff vorausgefüllt",
@@ -869,6 +1012,19 @@ module.exports = {
                 "خيار جديد «مراسلة المطوّر» في شاشة «حول التطبيق» يفتح تطبيق بريدك",
             ],
             changelog: {
+                "2.3": [
+                    "➕ لغات جديدة: الهولندية والصينية المبسطة والملايوية والتاميلية",
+                    "➕ تحذّرك الشاشة الرئيسية عند إيقاف الوصول إلى الإشعارات، مع زر يفتح الإعداد لتشغيله من جديد",
+                    "➕ على الشاشات الكبيرة، اسحب إشعارًا إلى الشاشة الرئيسية لإخفائه",
+                    "🛠️ على الشاشات الكبيرة، يُفتح السجل والإعدادات وحول التطبيق والتراخيص كبطاقة يمكنك سحبها إلى الأسفل لإغلاقها",
+                    "🔨 النسخ الاحتياطي يعمل من جديد: تعود الإشعارات المخفية والإعدادات بعد إعادة التثبيت أو على هاتف جديد",
+                    "🔨 الإشعار الذي تُظهره مجددًا لن يُخفى مرة أخرى في اليوم نفسه",
+                    "🔨 إظهار إشعار مخفي يعمل حتى عندما لا تكون خدمة الإشعارات قيد التشغيل",
+                    "🔨 شريط التحديث لم يعد يتوقف عند «جارٍ التنزيل»",
+                    "🔨 الأخطاء في خدمة الإشعارات لم تعد تتسبب في تعطل التطبيق أو إيقاف الإخفاء",
+                    "🔨 إصلاح تعطّل التطبيق عند النقر على الرجوع مرتين بسرعة وعند فتح رابط بلا متصفح",
+                    "🔨 تبقى مربعات الحوار مفتوحة عند تدوير الشاشة، ويقرأ TalkBack أسماء الأزرار التي تعرض أيقونة فقط",
+                ],
                 "2.2": [
                     "➕ استخدم مساعدين على الجهاز مثل Gemini لعرض الإشعارات أو إخفائها أو إظهارها بالصوت، دون فتح التطبيق (أندرويد 16 فأحدث)",
                     "➕ خيار جديد «مراسلة المطوّر» في شاشة «حول التطبيق» يفتح تطبيق بريدك، مع تعبئة العنوان والموضوع",
@@ -958,6 +1114,19 @@ module.exports = {
                 "Nueva opción «Contactar al desarrollador» en Acerca de abre tu app de correo",
             ],
             changelog: {
+                "2.3": [
+                    "➕ Nuevos idiomas: neerlandés, chino (simplificado), malayo y tamil",
+                    "➕ Inicio avisa cuando el acceso a las notificaciones está desactivado, con un botón al ajuste que lo vuelve a activar",
+                    "➕ En pantallas grandes, arrastra una notificación a Inicio para ocultarla",
+                    "🛠️ En pantallas grandes, Historial, Ajustes, Acerca de y Licencias se abren como una tarjeta que puedes deslizar hacia abajo para cerrarla",
+                    "🔨 La copia de seguridad vuelve a funcionar: las notificaciones ocultas y los ajustes regresan tras reinstalar o en un teléfono nuevo",
+                    "🔨 Lo que vuelves a mostrar no se oculta otra vez ese mismo día",
+                    "🔨 Mostrar una notificación oculta funciona aunque el servicio de notificaciones no esté en marcha",
+                    "🔨 La barra de actualización ya no se queda atascada en «Descargando»",
+                    "🔨 Los errores del servicio de notificaciones ya no cierran la app ni detienen la ocultación",
+                    "🔨 Corregidos cierres al pulsar atrás dos veces rápido y al abrir enlaces sin navegador",
+                    "🔨 Los diálogos siguen abiertos al girar la pantalla, y TalkBack nombra los botones que solo muestran un icono",
+                ],
                 "2.2": [
                     "➕ Usa asistentes en el dispositivo como Gemini para listar, ocultar o mostrar notificaciones por voz, sin abrir la app (Android 16+)",
                     "➕ Nueva opción «Contactar al desarrollador» en Acerca de abre tu app de correo, con la dirección y el asunto ya puestos",
@@ -1049,6 +1218,19 @@ module.exports = {
                 "Новый пункт «Связаться с разработчиком» в разделе «О приложении» открывает почту",
             ],
             changelog: {
+                "2.3": [
+                    "➕ Новые языки: нидерландский, китайский (упрощённый), малайский и тамильский",
+                    "➕ Главный экран предупреждает, если доступ к уведомлениям выключен, и даёт кнопку к настройке, которая его включает",
+                    "➕ На больших экранах перетащите уведомление на главный экран, чтобы скрыть",
+                    "🛠️ На больших экранах история, настройки, «О приложении» и лицензии открываются карточкой, которую можно смахнуть вниз, чтобы закрыть",
+                    "🔨 Резервное копирование снова работает: скрытые уведомления и настройки возвращаются после переустановки или на новом телефоне",
+                    "🔨 Показанное снова уведомление не скрывается повторно в тот же день",
+                    "🔨 Скрытое уведомление можно показать, даже когда служба уведомлений не запущена",
+                    "🔨 Полоса обновления больше не застревает на «Загрузка»",
+                    "🔨 Ошибки в службе уведомлений больше не приводят к сбою приложения и не останавливают скрытие",
+                    "🔨 Исправлены сбои при двойном быстром «Назад» и при открытии ссылки без браузера",
+                    "🔨 Диалоги остаются открытыми при повороте экрана, а TalkBack называет кнопки, у которых есть только значок",
+                ],
                 "2.2": [
                     "➕ Ассистенты на устройстве, например Gemini, могут голосом показать, скрыть или вернуть уведомления, не открывая приложение (Android 16+)",
                     "➕ Новый пункт «Связаться с разработчиком» в разделе «О приложении» открывает почту с заполненными адресом и темой",

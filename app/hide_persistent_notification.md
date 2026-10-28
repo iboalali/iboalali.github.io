@@ -27,6 +27,19 @@ screenshots:
 
 
 ## Changelog
+### Version 2.3:
+* ➕ New languages: Dutch, Chinese (Simplified), Malay and Tamil
+* ➕ Home warns you when notification access is off, with a button to the setting that turns it back on
+* ➕ On large screens, drag a notification onto Home to hide it
+* 🛠️ On large screens, History, Settings, About and Licenses open as a card you can swipe down to close
+* 🔨 Backup works again: hidden notifications and settings come back after a reinstall or on a new phone
+* 🔨 A notification you show again is no longer hidden again later that day
+* 🔨 Showing a hidden notification works even while the notification service isn't running
+* 🔨 The update bar no longer gets stuck on "Downloading"
+* 🔨 Errors in the notification service no longer crash the app or stop the hiding
+* 🔨 Fixed crashes when tapping back twice quickly or opening a link without a browser
+* 🔨 Dialogs stay open when you rotate the screen, and TalkBack names the icon-only buttons
+
 ### Version 2.2:
 * ➕ Use on-device assistants like Gemini to list, hide, or show notifications by voice, without opening the app (Android 16+)
 * ➕ New "Contact developer" option in About opens your email app, with the address and subject filled in
