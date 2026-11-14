@@ -57,10 +57,10 @@ Maintenance: these paths cover only apps already on the site. When a project mov
 
 ## Theming
 
-CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. The toggle button cycles through four modes — **light → dark → paper → auto** — and theming works via:
-1. **OS preference** — `@media (prefers-color-scheme: dark)` overrides variables when no user choice is stored (auto mode)
-2. **Explicit toggle** — `[data-theme="dark"]` / `[data-theme="light"]` / `[data-theme="paper"]` on `<html>`; in auto mode the attribute is *removed* so OS preference takes over
-3. **Persistence** — `localStorage.getItem('theme')` is applied in an inline `<script>` in `<head>` before paint to prevent flash; auto mode clears the key
+CSS uses custom properties (defined on `:root` in `media/styles.css`) for all theme-dependent colors. The toggle button cycles through four modes (**light, dark, paper, auto**), and theming works via:
+1. **Color tokens** - each color is declared once as a raw pair (`--bg-light`/`--bg-dark`) and the semantic token picks one with `light-dark()` (`--bg: light-dark(var(--bg-light), var(--bg-dark))`). `light-dark()` follows the computed `color-scheme`, which `:root` sets to `light dark` (follow the OS) by default. Browsers without `light-dark()` (before Safari 17.5 / Chrome 123) get an `@supports not (color: light-dark(...))` block that maps the same pairs by selector and `prefers-color-scheme`. Add a new color to the raw pairs, the `light-dark()` list *and* that fallback block.
+2. **Explicit toggle** - `[data-theme="dark"]` / `[data-theme="light"]` / `[data-theme="paper"]` on `<html>` set `color-scheme` to `dark`/`light`/`light` (Paper also overrides the tokens with its own plain values); in auto mode the attribute is *removed* so the OS preference takes over. `color-scheme` also themes native UI (scrollbars, focus rings, the loading canvas).
+3. **Persistence** - `localStorage.getItem('theme')` is applied in an inline `<script>` in `<head>` before paint to prevent flash; auto mode clears the key. That script and `applyMode()` in `main.js` also keep `<meta name="color-scheme">` in sync (`light dark` in auto, `light` for light/paper/e-ink paper, `dark` for dark), which is the browser's earliest hint before the stylesheet loads.
 
 Key variables: `--bg`, `--text`, `--accent`, `--border`, `--shadow-accent`. Light accent is `#B37FDF` (purple), dark accent is `#9adefe` (blue). When adding new themed elements, use these variables rather than hardcoded colors.
 

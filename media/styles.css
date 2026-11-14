@@ -53,53 +53,111 @@ html.via-vt .highlights {
 /* Theme variables */
 
 :root {
-    --bg: #FAFAFA;
-    --text: #424242;
-    --text-on-accent: #FAFAFA;
-    --accent: #B37FDF;
-    --accent-hover: #9a5fd0;
-    --link-hover: #01579B;
-    --border: #e0e0e0;
-    --icon-bg: #f0f0f0;
-    --shadow-accent: rgba(179, 127, 223, 0.2);
-    --shadow-accent-strong: rgba(179, 127, 223, 0.35);
-    --shadow-accent-glow: rgba(179, 127, 223, 0.15);
-    --shadow-accent-tint: rgba(179, 127, 223, 0.1);
-    --muted: #888;
+    color-scheme: light dark;
+
+    --bg-light: #FAFAFA;
+    --text-light: #424242;
+    --text-on-accent-light: #FAFAFA;
+    --accent-light: #B37FDF;
+    --accent-hover-light: #9a5fd0;
+    --link-hover-light: #01579B;
+    --border-light: #e0e0e0;
+    --icon-bg-light: #f0f0f0;
+    --shadow-accent-light: rgba(179, 127, 223, 0.2);
+    --shadow-accent-strong-light: rgba(179, 127, 223, 0.35);
+    --shadow-accent-glow-light: rgba(179, 127, 223, 0.15);
+    --shadow-accent-tint-light: rgba(179, 127, 223, 0.1);
+    --muted-light: #888;
+
+    --bg-dark: #262626;
+    --text-dark: #FAFAFA;
+    --text-on-accent-dark: #262626;
+    --accent-dark: #9adefe;
+    --accent-hover-dark: #7ec8e8;
+    --link-hover-dark: #9adefe;
+    --border-dark: #444;
+    --icon-bg-dark: #333;
+    --shadow-accent-dark: rgba(154, 222, 254, 0.15);
+    --shadow-accent-strong-dark: rgba(154, 222, 254, 0.25);
+    --shadow-accent-glow-dark: rgba(154, 222, 254, 0.1);
+    --shadow-accent-tint-dark: rgba(154, 222, 254, 0.1);
+    --muted-dark: #999;
+
+    --bg: light-dark(var(--bg-light), var(--bg-dark));
+    --text: light-dark(var(--text-light), var(--text-dark));
+    --text-on-accent: light-dark(var(--text-on-accent-light), var(--text-on-accent-dark));
+    --accent: light-dark(var(--accent-light), var(--accent-dark));
+    --accent-hover: light-dark(var(--accent-hover-light), var(--accent-hover-dark));
+    --link-hover: light-dark(var(--link-hover-light), var(--link-hover-dark));
+    --border: light-dark(var(--border-light), var(--border-dark));
+    --icon-bg: light-dark(var(--icon-bg-light), var(--icon-bg-dark));
+    --shadow-accent: light-dark(var(--shadow-accent-light), var(--shadow-accent-dark));
+    --shadow-accent-strong: light-dark(var(--shadow-accent-strong-light), var(--shadow-accent-strong-dark));
+    --shadow-accent-glow: light-dark(var(--shadow-accent-glow-light), var(--shadow-accent-glow-dark));
+    --shadow-accent-tint: light-dark(var(--shadow-accent-tint-light), var(--shadow-accent-tint-dark));
+    --muted: light-dark(var(--muted-light), var(--muted-dark));
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg: #262626;
-        --text: #FAFAFA;
-        --text-on-accent: #262626;
-        --accent: #9adefe;
-        --accent-hover: #7ec8e8;
-        --link-hover: #9adefe;
-        --border: #444;
-        --icon-bg: #333;
-        --shadow-accent: rgba(154, 222, 254, 0.15);
-        --shadow-accent-strong: rgba(154, 222, 254, 0.25);
-        --shadow-accent-glow: rgba(154, 222, 254, 0.1);
-        --shadow-accent-tint: rgba(154, 222, 254, 0.1);
-        --muted: #999;
-    }
+:root[data-theme="light"] {
+    color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-    --bg: #262626;
-    --text: #FAFAFA;
-    --text-on-accent: #262626;
-    --accent: #9adefe;
-    --accent-hover: #7ec8e8;
-    --link-hover: #9adefe;
-    --border: #444;
-    --icon-bg: #333;
-    --shadow-accent: rgba(154, 222, 254, 0.15);
-    --shadow-accent-strong: rgba(154, 222, 254, 0.25);
-    --shadow-accent-glow: rgba(154, 222, 254, 0.1);
-    --shadow-accent-tint: rgba(154, 222, 254, 0.1);
-    --muted: #999;
+    color-scheme: dark;
+}
+
+/* Browsers without light-dark() (before Safari 17.5 / Chrome 123) resolve
+   the tokens above to invalid values, so they pick each pair by selector. */
+@supports not (color: light-dark(white, black)) {
+    :root {
+        --bg: var(--bg-light);
+        --text: var(--text-light);
+        --text-on-accent: var(--text-on-accent-light);
+        --accent: var(--accent-light);
+        --accent-hover: var(--accent-hover-light);
+        --link-hover: var(--link-hover-light);
+        --border: var(--border-light);
+        --icon-bg: var(--icon-bg-light);
+        --shadow-accent: var(--shadow-accent-light);
+        --shadow-accent-strong: var(--shadow-accent-strong-light);
+        --shadow-accent-glow: var(--shadow-accent-glow-light);
+        --shadow-accent-tint: var(--shadow-accent-tint-light);
+        --muted: var(--muted-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: var(--bg-dark);
+            --text: var(--text-dark);
+            --text-on-accent: var(--text-on-accent-dark);
+            --accent: var(--accent-dark);
+            --accent-hover: var(--accent-hover-dark);
+            --link-hover: var(--link-hover-dark);
+            --border: var(--border-dark);
+            --icon-bg: var(--icon-bg-dark);
+            --shadow-accent: var(--shadow-accent-dark);
+            --shadow-accent-strong: var(--shadow-accent-strong-dark);
+            --shadow-accent-glow: var(--shadow-accent-glow-dark);
+            --shadow-accent-tint: var(--shadow-accent-tint-dark);
+            --muted: var(--muted-dark);
+        }
+    }
+
+    :root[data-theme="dark"] {
+        --bg: var(--bg-dark);
+        --text: var(--text-dark);
+        --text-on-accent: var(--text-on-accent-dark);
+        --accent: var(--accent-dark);
+        --accent-hover: var(--accent-hover-dark);
+        --link-hover: var(--link-hover-dark);
+        --border: var(--border-dark);
+        --icon-bg: var(--icon-bg-dark);
+        --shadow-accent: var(--shadow-accent-dark);
+        --shadow-accent-strong: var(--shadow-accent-strong-dark);
+        --shadow-accent-glow: var(--shadow-accent-glow-dark);
+        --shadow-accent-tint: var(--shadow-accent-tint-dark);
+        --muted: var(--muted-dark);
+    }
 }
 
 /* Paper variables also apply automatically on e-ink readers in auto mode,
@@ -107,6 +165,7 @@ html.via-vt .highlights {
    guard means any explicit toggle choice (including paper itself) still wins. */
 :root[data-theme="paper"],
 :root.eink-paper:not([data-theme]) {
+    color-scheme: light;
     --bg: #F4F1EA;            /* warm paper */
     --text: #1A1A1A;          /* near-black ink */
     --text-on-accent: #F4F1EA;
@@ -159,9 +218,7 @@ a:hover {
 
 a,
 img {
-    /* Fix image and link outlines in legacy web browsers */
     border: none;
-    outline: none;
 }
 
 h1,
@@ -349,14 +406,16 @@ a.btn-container img:hover {
     border: 2px solid var(--border);
     border-radius: 14px;
     transition: all 0.3s;
-    animation: about-reveal 0.6s ease-out both;
+    /* backwards, not both: a held final keyframe would override the hover lift. */
+    animation: about-reveal 0.6s ease-out backwards;
 }
 
-.app-item:nth-child(1) { animation-delay: 0.15s; }
-.app-item:nth-child(2) { animation-delay: 0.22s; }
-.app-item:nth-child(3) { animation-delay: 0.29s; }
-.app-item:nth-child(4) { animation-delay: 0.36s; }
-.app-item:nth-child(5) { animation-delay: 0.43s; }
+/* --sibling-index is set by main.js only where sibling-index() is unsupported;
+   those browsers drop the second declaration and keep the first. */
+.app-item {
+    animation-delay: calc(var(--sibling-index, 1) * 0.07s + 0.08s);
+    animation-delay: calc(sibling-index() * 0.07s + 0.08s);
+}
 
 .app-item:hover {
     border-color: var(--accent);
@@ -1115,6 +1174,10 @@ a.btn-container img:hover {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+
+    .app-item {
+        animation-delay: 0s;
     }
 
 }

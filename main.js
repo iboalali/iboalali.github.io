@@ -1,11 +1,17 @@
 // Open external links in new tab
-document.querySelectorAll('main a').forEach(function (linkEl) {
-    const link = new URL(linkEl.href).href;
-    if (!link.includes(window.location.hostname)) {
+document.querySelectorAll('main a[href]').forEach(function (linkEl) {
+    if (new URL(linkEl.href).origin !== window.location.origin) {
         linkEl.setAttribute('target', '_blank');
-        linkEl.setAttribute('rel', 'nofollow')
+        linkEl.relList.add('noopener', 'nofollow');
     }
 })
+
+// Stagger fallback for the home-page app cards (styles.css .app-item).
+if (window.CSS && CSS.supports && !CSS.supports('animation-delay: calc(sibling-index() * 0.1s)')) {
+    document.querySelectorAll('.app-list > .app-item').forEach(function (item, index) {
+        item.style.setProperty('--sibling-index', index + 1);
+    });
+}
 
 // Theme toggle: cycles light -> dark -> paper -> auto
 ;(function () {
@@ -94,13 +100,19 @@ document.querySelectorAll('main a').forEach(function (linkEl) {
     }
 
     function applyMode(mode) {
+        var root = document.documentElement;
         if (mode === 'auto') {
-            document.documentElement.removeAttribute('data-theme');
+            root.removeAttribute('data-theme');
             localStorage.removeItem('theme');
         } else {
-            document.documentElement.setAttribute('data-theme', mode);
+            root.setAttribute('data-theme', mode);
             localStorage.setItem('theme', mode);
         }
+        var scheme = mode === 'dark' ? 'dark'
+            : mode === 'auto' && !root.classList.contains('eink-paper') ? 'light dark'
+            : 'light';
+        var meta = document.querySelector('meta[name="color-scheme"]');
+        if (meta) meta.content = scheme;
         updateIcon();
     }
 
